@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Funny Cat Reaction",
+    "category": "Reactions",
+    "file": "funny-cat.gif"
+  },
+  {
+    "id": 2,
+    "title": "Programming Meme",
+    "category": "Memes",
+    "file": "programming-meme.gif"
+  },
+  {
+    "id": 3,
+    "title": "Thumbs Up",
+    "category": "Reactions",
+    "file": "thumbs-up.gif"
+  },
+  {
+    "id": 4,
+    "title": "Mind Blown",
+    "category": "Expressions",
+    "file": "mind-blown.gif"
+  }
+]
