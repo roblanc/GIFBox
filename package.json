@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "update-gifs": "node scripts/update-gifs.mjs"
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
