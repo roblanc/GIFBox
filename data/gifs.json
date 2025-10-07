@@ -1,38 +1,50 @@
 [
   {
     "id": 1,
-    "title": "6Tkc",
+    "title": "Anime Keyboard",
     "category": "Uncategorized",
-    "file": "6Tkc.gif"
+    "file": "anime keyboard.gif"
   },
   {
     "id": 2,
-    "title": "6vIk",
-    "category": "Uncategorized",
-    "file": "6vIk.gif"
-  },
-  {
-    "id": 3,
     "title": "Black Heart",
     "category": "Uncategorized",
     "file": "black-heart.gif"
   },
   {
+    "id": 3,
+    "title": "Stars Background",
+    "category": "Cosmic Textures",
+    "file": "cosmic textures/stars background.gif"
+  },
+  {
     "id": 4,
+    "title": "Figure Stick Woman Girl",
+    "category": "Uncategorized",
+    "file": "figure stick woman girl.gif"
+  },
+  {
+    "id": 5,
     "title": "Questioning",
     "category": "Ralph Hammer",
     "file": "ralph hammer/questioning.gif"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Rationalism",
     "category": "Ralph Hammer",
     "file": "ralph hammer/rationalism.gif"
   },
   {
-    "id": 6,
+    "id": 7,
     "title": "Undecided",
     "category": "Ralph Hammer",
     "file": "ralph hammer/undecided.gif"
+  },
+  {
+    "id": 8,
+    "title": "Spiderman Holding",
+    "category": "Uncategorized",
+    "file": "spiderman holding.gif"
   }
 ]
