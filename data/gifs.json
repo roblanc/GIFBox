@@ -16,5 +16,23 @@
     "title": "black-heart",
     "category": "Uncategorized",
     "file": "black-heart.gif"
+  },
+  {
+    "id": 4,
+    "title": "Questioning",
+    "category": "Ralph Hammer",
+    "file": "ralph hammer/questioning.gif"
+  },
+  {
+    "id": 5,
+    "title": "Rationalism",
+    "category": "Ralph Hammer",
+    "file": "ralph hammer/rationalism.gif"
+  },
+  {
+    "id": 6,
+    "title": "Undecided",
+    "category": "Ralph Hammer",
+    "file": "ralph hammer/undecided.gif"
   }
 ]
