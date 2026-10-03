@@ -1,25 +1,65 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import gifsData from '../../data/gifs.json';
+import gifsDataRaw from '../../data/gifs.json';
 
 interface Gif {
   id: number;
   title: string;
   category: string;
   file: string;
+  type?: string;
+  tags?: string[];
+  source?: string;
+  url?: string;
+}
+
+const gifsData = gifsDataRaw as Gif[];
+const PAGE_SIZE = 120;
+
+// Silent looping clip that only loads and plays while it is on screen.
+function VideoClip({ src, title }: { src: string; title: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { rootMargin: '200px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (visible) el.play().catch(() => {});
+    else el.pause();
+  }, [visible]);
+  return (
+    <video
+      ref={ref}
+      src={visible ? src : undefined}
+      title={title}
+      muted
+      loop
+      playsInline
+      preload="none"
+      style={{ maxWidth: '100%', maxHeight: '200px', objectFit: 'contain' }}
+    />
+  );
 }
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [shown, setShown] = useState(PAGE_SIZE);
 
   const categories = ['All', ...Array.from(new Set(gifsData.map((g) => g.category)))];
 
   const filteredGifs = gifsData.filter((gif) => {
     const categoryMatch = selectedCategory === 'All' || gif.category === selectedCategory;
-    const searchMatch = gif.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const haystack = [gif.title, ...(gif.tags || [])].join(' ').toLowerCase();
+    const searchMatch = haystack.includes(searchTerm.toLowerCase());
     return categoryMatch && searchMatch;
   });
 
@@ -39,7 +79,7 @@ export default function Home() {
               className="form-control"
               placeholder="Search for a GIF..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => { setSearchTerm(e.target.value); setShown(PAGE_SIZE); }}
             />
           </div>
         </div>
@@ -48,7 +88,7 @@ export default function Home() {
             <button
               key={category}
               className={`btn ${selectedCategory === category ? 'btn-primary' : 'btn-outline-secondary'} m-1`}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => { setSelectedCategory(category); setShown(PAGE_SIZE); }}
             >
               {category}
             </button>
@@ -58,10 +98,13 @@ export default function Home() {
         {/* GIF Grid */}
         <div className="row">
           {filteredGifs.length > 0 ? (
-            filteredGifs.map((gif: Gif) => (
+            filteredGifs.slice(0, shown).map((gif: Gif) => (
               <div key={gif.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div className="card h-100 shadow-sm">
                   <div style={{ width: '100%', height: '200px', backgroundColor: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    {gif.type === 'video' ? (
+                    <VideoClip src={`/gifs/${gif.file}`} title={gif.title} />
+                    ) : (
                     <Image
                       src={`/gifs/${gif.file}`}
                       alt={gif.title}
@@ -82,9 +125,15 @@ export default function Home() {
                         }
                       }}
                     />
+                    )}
                   </div>
                   <div className="card-body text-center">
                     <h5 className="card-title">{gif.title}</h5>
+                    {gif.source && (
+                      <p className="card-text small text-muted mb-0">
+                        {gif.url ? <a href={gif.url} target="_blank" rel="noreferrer">{gif.source}</a> : gif.source}
+                      </p>
+                    )}
                   </div>
                   <div className="card-footer text-center">
                     <a href={`/gifs/${gif.file}`} download className="btn btn-success w-100">
@@ -100,6 +149,13 @@ export default function Home() {
             </div>
           )}
         </div>
+        {filteredGifs.length > shown && (
+          <div className="text-center mb-5">
+            <button className="btn btn-outline-primary" onClick={() => setShown(shown + PAGE_SIZE)}>
+              Show more ({filteredGifs.length - shown} left)
+            </button>
+          </div>
+        )}
       </div>
     </main>
   );
