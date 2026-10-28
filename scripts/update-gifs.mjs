@@ -56,10 +56,24 @@ function formatCategory(dirname) {
 try {
   console.log('Scanning for GIFs...');
   const allGifs = getGifs(gifsDirectory);
+  const PINNED_ORDER = [
+    'memes/chad-dario.png',
+    'memes/donald-trump-looking-at-nicky-minaj.webp',
+    'memes/wojak-group-hug.webp',
+    'memes/chad-xi-template.jpg',
+  ];
   allGifs.sort((a, b) => {
-    const aPin = a.file === 'memes/chad-dario.png' ? 0 : 1;
-    const bPin = b.file === 'memes/chad-dario.png' ? 0 : 1;
-    return aPin - bPin;
+    const aIdx = PINNED_ORDER.indexOf(a.file);
+    const bIdx = PINNED_ORDER.indexOf(b.file);
+    if (aIdx !== -1 || bIdx !== -1) {
+      if (aIdx === -1) return 1;
+      if (bIdx === -1) return -1;
+      return aIdx - bIdx;
+    }
+    const aIsMeme = a.file.startsWith('memes/') ? 0 : 1;
+    const bIsMeme = b.file.startsWith('memes/') ? 0 : 1;
+    if (aIsMeme !== bIsMeme) return aIsMeme - bIsMeme;
+    return 0;
   });
 
   const gifsWithIds = allGifs.map((gif, index) => ({
