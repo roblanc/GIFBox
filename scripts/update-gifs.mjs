@@ -3,8 +3,9 @@ import path from 'path';
 
 const gifsDirectory = path.join(process.cwd(), 'public/gifs');
 const dataFile = path.join(process.cwd(), 'data/gifs.json');
+const seedFile = path.join(process.cwd(), 'data/gifs-seed.json');
 const publicCatalogFile = path.join(process.cwd(), 'public/catalog.json');
-// Optional credits for clips that came from elsewhere (Giphy, Internet Archive, Memelord, Reddit), keyed by file path.
+const memelordFullFile = path.join(process.cwd(), 'data/memelord_full.json');
 const sourcesFile = path.join(process.cwd(), 'data/sources.json');
 const sources = fs.existsSync(sourcesFile) ? JSON.parse(fs.readFileSync(sourcesFile, 'utf8')) : {};
 
@@ -21,10 +22,11 @@ const EXTENSIONS = {
 };
 
 function toSlug(str) {
-  return str
+  return (str || '')
     .toLowerCase()
     .replace(/[^a-z0-9_-]+/g, '-')
-    .replace(/^-+|-+$/g, '');
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 64);
 }
 
 function getGifs(dir, basePath = '') {
@@ -41,7 +43,6 @@ function getGifs(dir, basePath = '') {
       const src = sources[relativePath] || {};
       const baseName = path.basename(dirent.name, path.extname(dirent.name));
       const cleanBaseSlug = toSlug(baseName);
-      // Permanent slug ID: clean basename for memes/top-level or folder-prefixed if generic
       const slug = src.slug || cleanBaseSlug || toSlug(`${folder}-${baseName}`);
       return {
         slug,
@@ -50,7 +51,7 @@ function getGifs(dir, basePath = '') {
         file: relativePath,
         type,
         url: `${SITE_ORIGIN}/gifs/${relativePath}`,
-        ...(src.tags ? { tags: src.tags } : {}),
+        ...(src.tags ? { tags: src.tags.slice(0, 12) } : {}),
         ...(src.source ? { source: src.source } : {}),
         ...(src.url ? { sourceUrl: src.url } : {}),
       };
@@ -70,15 +71,16 @@ function formatCategory(dirname) {
 }
 
 try {
-  console.log('Scanning for GIFs...');
-  const allGifs = getGifs(gifsDirectory);
+  console.log('Scanning local GIFs...');
+  const localGifs = getGifs(gifsDirectory);
+
   const PINNED_ORDER = [
     'memes/chad-dario.png',
-    'memes/donald-trump-looking-at-nicky-minaj.webp',
+    'memes/donald-trump-looking-at-nicki-minaj.webp',
     'memes/wojak-group-hug.webp',
     'memes/chad-xi-template.jpg',
   ];
-  allGifs.sort((a, b) => {
+  localGifs.sort((a, b) => {
     const aIdx = PINNED_ORDER.indexOf(a.file);
     const bIdx = PINNED_ORDER.indexOf(b.file);
     if (aIdx !== -1 || bIdx !== -1) {
@@ -92,15 +94,66 @@ try {
     return 0;
   });
 
-  // Deduplicate slugs if any collision occurs across folders
-  const seenSlugs = new Set();
-  const gifsWithIds = allGifs.map((gif, index) => {
-    let uniqueSlug = gif.slug;
-    if (seenSlugs.has(uniqueSlug)) {
-      const folderPrefix = toSlug(gif.category);
-      uniqueSlug = `${folderPrefix}-${uniqueSlug}`;
+  // Track existing titles/slugs from local memes so we don't duplicate the 51 already downloaded
+  const existingLocalMemeSlugs = new Set(
+    localGifs.filter((g) => g.file.startsWith('memes/')).map((g) => g.slug)
+  );
+
+  // Load all 9,191 Memelord items if present
+  const memelordItems = [];
+  if (fs.existsSync(memelordFullFile)) {
+    const rawMemelord = JSON.parse(fs.readFileSync(memelordFullFile, 'utf8'));
+    const seenMemelordUrls = new Set();
+    for (const m of rawMemelord) {
+      const mainUrl = m.url || m.preview_url;
+      if (!mainUrl || seenMemelordUrls.has(mainUrl)) continue;
+      seenMemelordUrls.add(mainUrl);
+
+      const title = (m.name || 'Memelord Asset').trim();
+      const baseSlug = toSlug(title) || `memelord-${(m.id || '').slice(0, 8)}`;
+      if (existingLocalMemeSlugs.has(baseSlug)) continue;
+
+      const isVideo = m.type === 'video' || mainUrl.toLowerCase().endsWith('.mp4');
+      const isSticker = m.type === 'sticker';
+      const category = isVideo ? 'Video Memes' : isSticker ? 'Stickers' : 'Memes';
+      const itemType = isVideo ? 'video' : 'image';
+
+      const cleanTags = Array.from(
+        new Set(
+          (m.tags || [])
+            .map((t) => String(t).trim().toLowerCase())
+            .filter((t) => t.length > 1 && t.length < 36)
+        )
+      ).slice(0, 10);
+
+      memelordItems.push({
+        slug: baseSlug,
+        title,
+        category,
+        file: '',
+        type: itemType,
+        url: mainUrl,
+        ...(m.preview_url && m.preview_url !== mainUrl ? { previewUrl: m.preview_url } : {}),
+        ...(cleanTags.length > 0 ? { tags: cleanTags } : {}),
+        source: 'Memelord',
+        sourceUrl: 'https://www.memelord.com/dashboard',
+      });
     }
-    seenSlugs.add(uniqueSlug);
+    console.log(`Loaded ${memelordItems.length} additional Memelord assets.`);
+  }
+
+  // Place pinned/local memes first, then all 9,100+ Memelord assets, then the rest of local GIFs
+  const localMemes = localGifs.filter((g) => g.file.startsWith('memes/'));
+  const otherLocalGifs = localGifs.filter((g) => !g.file.startsWith('memes/'));
+  const combined = [...localMemes, ...memelordItems, ...otherLocalGifs];
+
+  // Ensure globally unique slugs
+  const seenSlugs = new Map();
+  const gifsWithIds = combined.map((gif, index) => {
+    let base = gif.slug || `item-${index + 1}`;
+    const count = seenSlugs.get(base) || 0;
+    seenSlugs.set(base, count + 1);
+    const uniqueSlug = count === 0 ? base : `${base}-${count + 1}`;
     return {
       id: index + 1,
       ...gif,
@@ -108,22 +161,21 @@ try {
     };
   });
 
-  fs.writeFileSync(dataFile, JSON.stringify(gifsWithIds, null, 2));
+  fs.writeFileSync(dataFile, JSON.stringify(gifsWithIds));
+  fs.writeFileSync(seedFile, JSON.stringify(gifsWithIds.slice(0, 240), null, 2));
   fs.writeFileSync(
     publicCatalogFile,
-    JSON.stringify(
-      {
-        schema: 'gifbox-catalog-v1',
-        site: SITE_ORIGIN,
-        updatedAt: new Date().toISOString(),
-        total: gifsWithIds.length,
-        items: gifsWithIds,
-      },
-      null,
-      2
-    )
+    JSON.stringify({
+      schema: 'gifbox-catalog-v1',
+      site: SITE_ORIGIN,
+      updatedAt: new Date().toISOString(),
+      total: gifsWithIds.length,
+      items: gifsWithIds,
+    })
   );
-  console.log(`Successfully updated ${dataFile} and ${publicCatalogFile} with ${gifsWithIds.length} items.`);
+  console.log(
+    `Successfully updated ${dataFile}, ${seedFile}, and ${publicCatalogFile} with ${gifsWithIds.length} total items.`
+  );
 } catch (error) {
   console.error('Error updating GIFs:', error);
 }

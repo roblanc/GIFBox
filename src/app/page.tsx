@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
-import gifsDataRaw from '../../data/gifs.json';
+import gifsSeedRaw from '../../data/gifs-seed.json';
 import FreeformBoard, { LibraryGifInput } from '../components/FreeformBoard';
 
 interface Gif {
@@ -15,14 +15,27 @@ interface Gif {
   tags?: string[];
   source?: string;
   url?: string;
+  previewUrl?: string;
   sourceUrl?: string;
 }
 
-const gifsData = gifsDataRaw as Gif[];
+const initialGifsData = gifsSeedRaw as Gif[];
 const PAGE_SIZE = 120;
 
+function getMediaSrc(gif: Gif): string {
+  if (gif.file && !gif.file.startsWith('http')) {
+    return `/gifs/${gif.file}`;
+  }
+  return gif.url || `/gifs/${gif.file}`;
+}
+
+function getPreviewSrc(gif: Gif): string {
+  if (gif.previewUrl) return gif.previewUrl;
+  return getMediaSrc(gif);
+}
+
 // Silent looping clip that only loads and plays while it is on screen.
-function VideoClip({ src, title }: { src: string; title: string }) {
+function VideoClip({ src, poster, title }: { src: string; poster?: string; title: string }) {
   const ref = useRef<HTMLVideoElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -44,6 +57,7 @@ function VideoClip({ src, title }: { src: string; title: string }) {
     <video
       ref={ref}
       src={visible ? src : undefined}
+      poster={poster}
       title={title}
       muted
       loop
@@ -55,9 +69,26 @@ function VideoClip({ src, title }: { src: string; title: string }) {
 }
 
 export default function Home() {
+  const [gifsData, setGifsData] = useState<Gif[]>(initialGifsData);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [shown, setShown] = useState(PAGE_SIZE);
+
+  // Hydrate full 11,405-item catalog in background after instant initial paint
+  useEffect(() => {
+    let active = true;
+    fetch('/catalog.json')
+      .then((r) => r.json())
+      .then((data) => {
+        if (active && Array.isArray(data?.items) && data.items.length > 0) {
+          setGifsData(data.items as Gif[]);
+        }
+      })
+      .catch(() => {});
+    return () => {
+      active = false;
+    };
+  }, []);
 
   // Split screen state
   const [splitMode, setSplitMode] = useState<'split' | 'library' | 'board'>('split');
@@ -93,6 +124,7 @@ export default function Home() {
   }, [isResizingSplit]);
 
   const handleDragStartCard = (e: React.DragEvent, gif: Gif) => {
+    const srcUrl = getMediaSrc(gif);
     const payload: LibraryGifInput = {
       id: gif.id,
       slug: gif.slug,
@@ -100,11 +132,11 @@ export default function Home() {
       category: gif.category,
       file: gif.file,
       type: gif.type,
-      srcUrl: `/gifs/${gif.file}`,
+      srcUrl,
     };
     e.dataTransfer.setData('application/x-gifbox-item', JSON.stringify(payload));
-    e.dataTransfer.setData('text/uri-list', `/gifs/${gif.file}`);
-    e.dataTransfer.setData('text/plain', `/gifs/${gif.file}`);
+    e.dataTransfer.setData('text/uri-list', srcUrl);
+    e.dataTransfer.setData('text/plain', srcUrl);
     e.dataTransfer.effectAllowed = 'copy';
   };
 
@@ -119,7 +151,7 @@ export default function Home() {
       category: gif.category,
       file: gif.file,
       type: gif.type,
-      srcUrl: `/gifs/${gif.file}`,
+      srcUrl: getMediaSrc(gif),
     });
   };
 
@@ -131,12 +163,16 @@ export default function Home() {
         .pop()
         ?.replace(/\.[^.]+$/, '') ||
       String(gif.id);
-    const directUrl = gif.url || `https://gifbox.netlify.app/gifs/${gif.file}`;
+    const mediaSrc = getMediaSrc(gif);
+    const directUrl = mediaSrc.startsWith('http')
+      ? mediaSrc
+      : `https://gifbox.netlify.app${mediaSrc}`;
     const refPayload = {
       id: slugId,
       title: gif.title,
       type: gif.type || 'gif',
       url: directUrl,
+      ...(gif.previewUrl ? { previewUrl: gif.previewUrl } : {}),
       category: gif.category,
       ...(gif.tags ? { tags: gif.tags } : {}),
     };
@@ -343,10 +379,14 @@ export default function Home() {
                           }}
                         >
                           {gif.type === 'video' ? (
-                            <VideoClip src={`/gifs/${gif.file}`} title={gif.title} />
+                            <VideoClip
+                              src={getMediaSrc(gif)}
+                              poster={gif.previewUrl}
+                              title={gif.title}
+                            />
                           ) : (
                             <Image
-                              src={`/gifs/${gif.file}`}
+                              src={getPreviewSrc(gif)}
                               alt={gif.title}
                               width={145}
                               height={145}
@@ -432,10 +472,12 @@ export default function Home() {
                             {copiedId === gif.id ? '✓ Ref' : '📋 Ref'}
                           </button>
                           <a
-                            href={`/gifs/${gif.file}`}
+                            href={getMediaSrc(gif)}
+                            target="_blank"
+                            rel="noreferrer"
                             download
                             className="btn btn-sm btn-success"
-                            title="Download file"
+                            title="Download original file"
                           >
                             ⬇
                           </a>
