@@ -16,7 +16,8 @@
       "meme",
       "portrait"
     ],
-    "source": "Memelord"
+    "source": "Memelord",
+    "format": "image"
   },
   {
     "id": 2,
@@ -39,7 +40,8 @@
       "nicki"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 3,
@@ -61,7 +63,8 @@
       "group"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 4,
@@ -82,7 +85,8 @@
       "reddit"
     ],
     "source": "Reddit",
-    "sourceUrl": "https://www.reddit.com/r/MemeTemplatesOfficial/comments/wslu4a/chad_xi_template/"
+    "sourceUrl": "https://www.reddit.com/r/MemeTemplatesOfficial/comments/wslu4a/chad_xi_template/",
+    "format": "image"
   },
   {
     "id": 5,
@@ -100,7 +104,8 @@
       "ansem"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 6,
@@ -123,7 +128,8 @@
       "blue man"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 7,
@@ -145,7 +151,8 @@
       "internet culture"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 8,
@@ -168,7 +175,8 @@
       "entrapment"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 9,
@@ -191,7 +199,8 @@
       "charlie day explaining"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 10,
@@ -214,7 +223,8 @@
       "children"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 11,
@@ -235,7 +245,8 @@
       "photo"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 12,
@@ -258,7 +269,8 @@
       "death knocking door"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 13,
@@ -273,7 +285,8 @@
       "meme"
     ],
     "source": "Giphy · The3Flamingos",
-    "sourceUrl": "https://giphy.com/gifs/3yCfFuAiPz22iMwa1e"
+    "sourceUrl": "https://giphy.com/gifs/3yCfFuAiPz22iMwa1e",
+    "format": "video"
   },
   {
     "id": 14,
@@ -288,7 +301,8 @@
       "meme"
     ],
     "source": "Giphy · The3Flamingos",
-    "sourceUrl": "https://giphy.com/gifs/5X1FqlU0ENGMjTEKdl"
+    "sourceUrl": "https://giphy.com/gifs/5X1FqlU0ENGMjTEKdl",
+    "format": "video"
   },
   {
     "id": 15,
@@ -303,7 +317,8 @@
       "meme"
     ],
     "source": "Giphy · LorenzoTheGawd",
-    "sourceUrl": "https://giphy.com/gifs/6gSFHyU1mb1LAVw5aT"
+    "sourceUrl": "https://giphy.com/gifs/6gSFHyU1mb1LAVw5aT",
+    "format": "video"
   },
   {
     "id": 16,
@@ -318,7 +333,8 @@
       "meme"
     ],
     "source": "Giphy · The3Flamingos",
-    "sourceUrl": "https://giphy.com/gifs/NhN0MBv4dftIk86Wt4"
+    "sourceUrl": "https://giphy.com/gifs/NhN0MBv4dftIk86Wt4",
+    "format": "video"
   },
   {
     "id": 17,
@@ -333,7 +349,8 @@
       "meme"
     ],
     "source": "Giphy · The3Flamingos",
-    "sourceUrl": "https://giphy.com/gifs/SUAysIRlRZelILFFWL"
+    "sourceUrl": "https://giphy.com/gifs/SUAysIRlRZelILFFWL",
+    "format": "video"
   },
   {
     "id": 18,
@@ -348,7 +365,8 @@
       "meme"
     ],
     "source": "Giphy · The3Flamingos",
-    "sourceUrl": "https://giphy.com/gifs/VdW4etsNc2Q3thukta"
+    "sourceUrl": "https://giphy.com/gifs/VdW4etsNc2Q3thukta",
+    "format": "video"
   },
   {
     "id": 19,
@@ -363,7 +381,8 @@
       "meme"
     ],
     "source": "Giphy · torquesuperwallet",
-    "sourceUrl": "https://giphy.com/gifs/lzYEj4dw7rcJJCsvjo"
+    "sourceUrl": "https://giphy.com/gifs/lzYEj4dw7rcJJCsvjo",
+    "format": "video"
   },
   {
     "id": 20,
@@ -378,7 +397,8 @@
       "meme"
     ],
     "source": "Giphy · The3Flamingos",
-    "sourceUrl": "https://giphy.com/gifs/yyiw4XQmFtnZBxG9yU"
+    "sourceUrl": "https://giphy.com/gifs/yyiw4XQmFtnZBxG9yU",
+    "format": "video"
   },
   {
     "id": 21,
@@ -393,7 +413,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/10ECejNtM1GyRy"
+    "sourceUrl": "https://giphy.com/gifs/10ECejNtM1GyRy",
+    "format": "video"
   },
   {
     "id": 22,
@@ -408,7 +429,8 @@
       "meme"
     ],
     "source": "Giphy · rockie8055",
-    "sourceUrl": "https://giphy.com/gifs/3Z38tJzEp1r9ZC54aX"
+    "sourceUrl": "https://giphy.com/gifs/3Z38tJzEp1r9ZC54aX",
+    "format": "video"
   },
   {
     "id": 23,
@@ -423,7 +445,8 @@
       "meme"
     ],
     "source": "Giphy · RespectiveCollective",
-    "sourceUrl": "https://giphy.com/gifs/GAIyKbdCGnWDkSvV5G"
+    "sourceUrl": "https://giphy.com/gifs/GAIyKbdCGnWDkSvV5G",
+    "format": "video"
   },
   {
     "id": 24,
@@ -438,7 +461,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/HCTfYH2Xk5yw"
+    "sourceUrl": "https://giphy.com/gifs/HCTfYH2Xk5yw",
+    "format": "video"
   },
   {
     "id": 25,
@@ -453,7 +477,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/VRKheDy4DkBMrQm66p"
+    "sourceUrl": "https://giphy.com/gifs/VRKheDy4DkBMrQm66p",
+    "format": "video"
   },
   {
     "id": 26,
@@ -468,7 +493,8 @@
       "meme"
     ],
     "source": "Giphy · OwnTheDoge",
-    "sourceUrl": "https://giphy.com/gifs/oeNZSeJSN70QslXgXt"
+    "sourceUrl": "https://giphy.com/gifs/oeNZSeJSN70QslXgXt",
+    "format": "video"
   },
   {
     "id": 27,
@@ -483,7 +509,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/qrwthQPPQrtEk"
+    "sourceUrl": "https://giphy.com/gifs/qrwthQPPQrtEk",
+    "format": "video"
   },
   {
     "id": 28,
@@ -498,7 +525,8 @@
       "meme"
     ],
     "source": "Giphy · justin",
-    "sourceUrl": "https://giphy.com/gifs/ukwPlCmJ5RmlqvQCpA"
+    "sourceUrl": "https://giphy.com/gifs/ukwPlCmJ5RmlqvQCpA",
+    "format": "video"
   },
   {
     "id": 29,
@@ -521,7 +549,8 @@
       "anime"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 30,
@@ -544,7 +573,8 @@
       "blank"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 31,
@@ -567,7 +597,8 @@
       "screen"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 32,
@@ -588,7 +619,8 @@
       "medic"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 33,
@@ -611,7 +643,8 @@
       "gay group of friends"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 34,
@@ -634,7 +667,8 @@
       "france"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 35,
@@ -653,7 +687,8 @@
       "staring"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 36,
@@ -676,7 +711,8 @@
       "nsfw"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 37,
@@ -699,7 +735,8 @@
       "iceberg model"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 38,
@@ -714,7 +751,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/CTX0ivSQbI78A"
+    "sourceUrl": "https://giphy.com/gifs/CTX0ivSQbI78A",
+    "format": "video"
   },
   {
     "id": 39,
@@ -729,7 +767,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/IwTWTsUzmIicM"
+    "sourceUrl": "https://giphy.com/gifs/IwTWTsUzmIicM",
+    "format": "video"
   },
   {
     "id": 40,
@@ -744,7 +783,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/LGzrggUppEBdm"
+    "sourceUrl": "https://giphy.com/gifs/LGzrggUppEBdm",
+    "format": "video"
   },
   {
     "id": 41,
@@ -759,7 +799,8 @@
       "meme"
     ],
     "source": "Giphy · Pentanet",
-    "sourceUrl": "https://giphy.com/gifs/SA5IWJfBbNCgLpqKjl"
+    "sourceUrl": "https://giphy.com/gifs/SA5IWJfBbNCgLpqKjl",
+    "format": "video"
   },
   {
     "id": 42,
@@ -774,7 +815,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/VbnUQpnihPSIgIXuZv"
+    "sourceUrl": "https://giphy.com/gifs/VbnUQpnihPSIgIXuZv",
+    "format": "video"
   },
   {
     "id": 43,
@@ -789,7 +831,8 @@
       "meme"
     ],
     "source": "Giphy · metadigital",
-    "sourceUrl": "https://giphy.com/gifs/YTzh3zw4mj1XpjjiIb"
+    "sourceUrl": "https://giphy.com/gifs/YTzh3zw4mj1XpjjiIb",
+    "format": "video"
   },
   {
     "id": 44,
@@ -804,7 +847,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/bAplZhiLAsNnG"
+    "sourceUrl": "https://giphy.com/gifs/bAplZhiLAsNnG",
+    "format": "video"
   },
   {
     "id": 45,
@@ -819,7 +863,8 @@
       "meme"
     ],
     "source": "Giphy · fuzzyghost",
-    "sourceUrl": "https://giphy.com/gifs/cp3EXAJY259ctiQP9K"
+    "sourceUrl": "https://giphy.com/gifs/cp3EXAJY259ctiQP9K",
+    "format": "video"
   },
   {
     "id": 46,
@@ -838,7 +883,8 @@
       "events"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 47,
@@ -858,7 +904,8 @@
       "tiger"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 48,
@@ -881,7 +928,8 @@
       "megamind peeking through peephole"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 49,
@@ -896,7 +944,8 @@
       "meme"
     ],
     "source": "Giphy · BasedXR",
-    "sourceUrl": "https://giphy.com/gifs/1TM8yYG2kMInpK69Rc"
+    "sourceUrl": "https://giphy.com/gifs/1TM8yYG2kMInpK69Rc",
+    "format": "video"
   },
   {
     "id": 50,
@@ -911,7 +960,8 @@
       "meme"
     ],
     "source": "Giphy · wectiee",
-    "sourceUrl": "https://giphy.com/gifs/4H52NOaFk9oMlxdU0D"
+    "sourceUrl": "https://giphy.com/gifs/4H52NOaFk9oMlxdU0D",
+    "format": "video"
   },
   {
     "id": 51,
@@ -926,7 +976,8 @@
       "meme"
     ],
     "source": "Giphy · guidoio",
-    "sourceUrl": "https://giphy.com/gifs/LR5GeZFCwDRcpG20PR"
+    "sourceUrl": "https://giphy.com/gifs/LR5GeZFCwDRcpG20PR",
+    "format": "video"
   },
   {
     "id": 52,
@@ -941,7 +992,8 @@
       "meme"
     ],
     "source": "Giphy · arpecx",
-    "sourceUrl": "https://giphy.com/gifs/NAdEYIRFMCBhMGkXSq"
+    "sourceUrl": "https://giphy.com/gifs/NAdEYIRFMCBhMGkXSq",
+    "format": "video"
   },
   {
     "id": 53,
@@ -956,7 +1008,8 @@
       "meme"
     ],
     "source": "Giphy · kiszkiloszki",
-    "sourceUrl": "https://giphy.com/gifs/gLm4hKRLpY6DkfOMtu"
+    "sourceUrl": "https://giphy.com/gifs/gLm4hKRLpY6DkfOMtu",
+    "format": "video"
   },
   {
     "id": 54,
@@ -971,7 +1024,8 @@
       "meme"
     ],
     "source": "Giphy · SphynxTTL",
-    "sourceUrl": "https://giphy.com/gifs/gvY2IXr0N6gV8IHZLU"
+    "sourceUrl": "https://giphy.com/gifs/gvY2IXr0N6gV8IHZLU",
+    "format": "video"
   },
   {
     "id": 55,
@@ -986,7 +1040,8 @@
       "meme"
     ],
     "source": "Giphy · keremdier",
-    "sourceUrl": "https://giphy.com/gifs/jGgC8JjZfLurTJSxQ8"
+    "sourceUrl": "https://giphy.com/gifs/jGgC8JjZfLurTJSxQ8",
+    "format": "video"
   },
   {
     "id": 56,
@@ -1007,7 +1062,8 @@
       "stain"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 57,
@@ -1030,7 +1086,8 @@
       "bell curve graph"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 58,
@@ -1049,7 +1106,8 @@
       "baby"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 59,
@@ -1072,7 +1130,8 @@
       "you"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 60,
@@ -1087,7 +1146,8 @@
       "meme"
     ],
     "source": "Giphy · rCryptoCurrencyMoons",
-    "sourceUrl": "https://giphy.com/gifs/0LMsk3vnAJLcBXInLx"
+    "sourceUrl": "https://giphy.com/gifs/0LMsk3vnAJLcBXInLx",
+    "format": "video"
   },
   {
     "id": 61,
@@ -1102,7 +1162,8 @@
       "meme"
     ],
     "source": "Giphy · verseapp",
-    "sourceUrl": "https://giphy.com/gifs/5QRtIHJTH1bzYf5GXg"
+    "sourceUrl": "https://giphy.com/gifs/5QRtIHJTH1bzYf5GXg",
+    "format": "video"
   },
   {
     "id": 62,
@@ -1117,7 +1178,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/BSx6mzbW1ew7K"
+    "sourceUrl": "https://giphy.com/gifs/BSx6mzbW1ew7K",
+    "format": "video"
   },
   {
     "id": 63,
@@ -1132,7 +1194,8 @@
       "meme"
     ],
     "source": "Giphy · Circumflex",
-    "sourceUrl": "https://giphy.com/gifs/GkD4U3VfiIbzcBhQNu"
+    "sourceUrl": "https://giphy.com/gifs/GkD4U3VfiIbzcBhQNu",
+    "format": "video"
   },
   {
     "id": 64,
@@ -1147,7 +1210,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/RH1zmTUvimQ8M"
+    "sourceUrl": "https://giphy.com/gifs/RH1zmTUvimQ8M",
+    "format": "video"
   },
   {
     "id": 65,
@@ -1162,7 +1226,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/f2Xvlh0MivT20"
+    "sourceUrl": "https://giphy.com/gifs/f2Xvlh0MivT20",
+    "format": "video"
   },
   {
     "id": 66,
@@ -1177,7 +1242,8 @@
       "meme"
     ],
     "source": "Giphy · giffffr",
-    "sourceUrl": "https://giphy.com/gifs/ik8lXlookVKpukjEC4"
+    "sourceUrl": "https://giphy.com/gifs/ik8lXlookVKpukjEC4",
+    "format": "video"
   },
   {
     "id": 67,
@@ -1192,7 +1258,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/sIIhZliB2McAo"
+    "sourceUrl": "https://giphy.com/gifs/sIIhZliB2McAo",
+    "format": "video"
   },
   {
     "id": 68,
@@ -1214,7 +1281,8 @@
       "paris"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 69,
@@ -1237,7 +1305,8 @@
       "padmé and anakin looking away"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 70,
@@ -1260,7 +1329,8 @@
       "part"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 71,
@@ -1282,7 +1352,8 @@
       "battle"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 72,
@@ -1305,7 +1376,8 @@
       "monkey dragging toy"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 73,
@@ -1320,7 +1392,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/AmHgqpGdXWsCs"
+    "sourceUrl": "https://giphy.com/gifs/AmHgqpGdXWsCs",
+    "format": "video"
   },
   {
     "id": 74,
@@ -1335,7 +1408,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/Ju7l5y9osyymQ"
+    "sourceUrl": "https://giphy.com/gifs/Ju7l5y9osyymQ",
+    "format": "video"
   },
   {
     "id": 75,
@@ -1350,7 +1424,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/Vuw9m5wXviFIQ"
+    "sourceUrl": "https://giphy.com/gifs/Vuw9m5wXviFIQ",
+    "format": "video"
   },
   {
     "id": 76,
@@ -1365,7 +1440,8 @@
       "meme"
     ],
     "source": "Giphy · GIFMakerX",
-    "sourceUrl": "https://giphy.com/gifs/Wm8EFyCrRmMKnvUyrB"
+    "sourceUrl": "https://giphy.com/gifs/Wm8EFyCrRmMKnvUyrB",
+    "format": "video"
   },
   {
     "id": 77,
@@ -1380,7 +1456,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/g7GKcSzwQfugw"
+    "sourceUrl": "https://giphy.com/gifs/g7GKcSzwQfugw",
+    "format": "video"
   },
   {
     "id": 78,
@@ -1395,7 +1472,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/lgcUUCXgC8mEo"
+    "sourceUrl": "https://giphy.com/gifs/lgcUUCXgC8mEo",
+    "format": "video"
   },
   {
     "id": 79,
@@ -1410,7 +1488,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/s07dyiRAcN0Fq"
+    "sourceUrl": "https://giphy.com/gifs/s07dyiRAcN0Fq",
+    "format": "video"
   },
   {
     "id": 80,
@@ -1425,7 +1504,8 @@
       "meme"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/tqI9aaw8dtoYM"
+    "sourceUrl": "https://giphy.com/gifs/tqI9aaw8dtoYM",
+    "format": "video"
   },
   {
     "id": 81,
@@ -1448,7 +1528,8 @@
       "salesman explaining"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 82,
@@ -1471,7 +1552,8 @@
       "thumbs up stick figure"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 83,
@@ -1493,7 +1575,8 @@
       "protests"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 84,
@@ -1516,7 +1599,8 @@
       "reaction"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "image"
   },
   {
     "id": 128,
@@ -1540,7 +1624,8 @@
       "the east is red"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 129,
@@ -1564,7 +1649,8 @@
       "sports"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 130,
@@ -1588,7 +1674,8 @@
       "movie star"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 131,
@@ -1612,7 +1699,8 @@
       "avengers"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 132,
@@ -1636,7 +1724,8 @@
       "europe"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 133,
@@ -1660,7 +1749,8 @@
       "work"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 134,
@@ -1684,7 +1774,8 @@
       "wet"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 135,
@@ -1708,7 +1799,8 @@
       "chris pratt"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 137,
@@ -1732,7 +1824,8 @@
       "villeneuve"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 138,
@@ -1756,7 +1849,8 @@
       "chubby"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 139,
@@ -1780,7 +1874,8 @@
       "texas"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 140,
@@ -1804,7 +1899,8 @@
       "japanese animation"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 141,
@@ -1828,7 +1924,8 @@
       "politician"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 142,
@@ -1852,7 +1949,8 @@
       "lock him up"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 143,
@@ -1876,7 +1974,8 @@
       "listening"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 145,
@@ -1891,7 +1990,8 @@
       "#iphone"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 146,
@@ -1915,7 +2015,8 @@
       "enthusiasm"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 147,
@@ -1939,7 +2040,8 @@
       "soccer game"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 148,
@@ -1963,7 +2065,8 @@
       "gentleman"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 150,
@@ -1987,7 +2090,8 @@
       "comfort"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 151,
@@ -2011,7 +2115,8 @@
       "anger"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 152,
@@ -2035,7 +2140,8 @@
       "mcu"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 153,
@@ -2059,7 +2165,8 @@
       "cute"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 154,
@@ -2083,7 +2190,8 @@
       "yujiro hanma"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "video"
   },
   {
     "id": 3037,
@@ -2106,7 +2214,8 @@
       "tongue out"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 3038,
@@ -2129,7 +2238,8 @@
       "machine learning"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 3039,
@@ -2152,7 +2262,8 @@
       "wacky"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 3041,
@@ -2176,7 +2287,8 @@
       "smiling donkey"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 3222,
@@ -2200,7 +2312,8 @@
       "inappropriate dance"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 3449,
@@ -2224,7 +2337,8 @@
       "manager"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 3451,
@@ -2248,7 +2362,8 @@
       "wonka"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 4065,
@@ -2272,7 +2387,8 @@
       "drinking helmet"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5576,
@@ -2296,7 +2412,8 @@
       "tech icon"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5778,
@@ -2320,7 +2437,8 @@
       "red bodysuit"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5779,
@@ -2344,7 +2462,8 @@
       "marvel comics"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5780,
@@ -2368,7 +2487,8 @@
       "female character"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5781,
@@ -2392,7 +2512,8 @@
       "unwinding"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5782,
@@ -2416,7 +2537,8 @@
       "entrepreneur"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5783,
@@ -2440,7 +2562,8 @@
       "gamer duolingo"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5784,
@@ -2464,7 +2587,8 @@
       "expensive watch"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5785,
@@ -2488,7 +2612,8 @@
       "hydration"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5786,
@@ -2512,7 +2637,8 @@
       "payment plan"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5787,
@@ -2536,7 +2662,8 @@
       "graduation album"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5788,
@@ -2560,7 +2687,8 @@
       "graduation album"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5789,
@@ -2584,7 +2712,8 @@
       "maga hat"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5790,
@@ -2608,7 +2737,8 @@
       "evil robot weapon"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5791,
@@ -2632,7 +2762,8 @@
       "stage walk"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 5792,
@@ -2656,7 +2787,8 @@
       "elon musk meme"
     ],
     "source": "Memelord",
-    "sourceUrl": "https://www.memelord.com/dashboard"
+    "sourceUrl": "https://www.memelord.com/dashboard",
+    "format": "sticker"
   },
   {
     "id": 9276,
@@ -2671,7 +2803,8 @@
       "animal"
     ],
     "source": "Giphy · puffinrock",
-    "sourceUrl": "https://giphy.com/gifs/3ohrysN9ge0eqKphCM"
+    "sourceUrl": "https://giphy.com/gifs/3ohrysN9ge0eqKphCM",
+    "format": "video"
   },
   {
     "id": 9277,
@@ -2686,7 +2819,8 @@
       "animal"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/JBbs1Y0dXT3ri"
+    "sourceUrl": "https://giphy.com/gifs/JBbs1Y0dXT3ri",
+    "format": "video"
   },
   {
     "id": 9278,
@@ -2701,7 +2835,8 @@
       "animal"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/QQgcoDDK95Qdy"
+    "sourceUrl": "https://giphy.com/gifs/QQgcoDDK95Qdy",
+    "format": "video"
   },
   {
     "id": 9279,
@@ -2716,7 +2851,8 @@
       "animal"
     ],
     "source": "Giphy · Oshiruko_illustration",
-    "sourceUrl": "https://giphy.com/gifs/RCk8WeG06ixJOmv9Gz"
+    "sourceUrl": "https://giphy.com/gifs/RCk8WeG06ixJOmv9Gz",
+    "format": "video"
   },
   {
     "id": 9280,
@@ -2731,7 +2867,8 @@
       "animal"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/UvIApNhjzIEhi"
+    "sourceUrl": "https://giphy.com/gifs/UvIApNhjzIEhi",
+    "format": "video"
   },
   {
     "id": 9281,
@@ -2746,7 +2883,8 @@
       "animal"
     ],
     "source": "Giphy · UneCactus",
-    "sourceUrl": "https://giphy.com/gifs/YG9ZrTpBcWt6kpsvaX"
+    "sourceUrl": "https://giphy.com/gifs/YG9ZrTpBcWt6kpsvaX",
+    "format": "video"
   },
   {
     "id": 9282,
@@ -2761,7 +2899,8 @@
       "animal"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/6WCTG9Qt1CL28"
+    "sourceUrl": "https://giphy.com/gifs/6WCTG9Qt1CL28",
+    "format": "video"
   },
   {
     "id": 9283,
@@ -2776,7 +2915,8 @@
       "animal"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/BKLKoUfdBeRG0"
+    "sourceUrl": "https://giphy.com/gifs/BKLKoUfdBeRG0",
+    "format": "video"
   },
   {
     "id": 9284,
@@ -2791,7 +2931,8 @@
       "animal"
     ],
     "source": "Giphy · OregonZoo",
-    "sourceUrl": "https://giphy.com/gifs/H4hK45nqTmkC3w6ZVK"
+    "sourceUrl": "https://giphy.com/gifs/H4hK45nqTmkC3w6ZVK",
+    "format": "video"
   },
   {
     "id": 9285,
@@ -2806,7 +2947,8 @@
       "animal"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/KmELrTPAgL3Qk"
+    "sourceUrl": "https://giphy.com/gifs/KmELrTPAgL3Qk",
+    "format": "video"
   },
   {
     "id": 9286,
@@ -2821,7 +2963,8 @@
       "animal"
     ],
     "source": "Giphy · nineviciouss",
-    "sourceUrl": "https://giphy.com/gifs/OlLpMZlPyg6uuHVZYT"
+    "sourceUrl": "https://giphy.com/gifs/OlLpMZlPyg6uuHVZYT",
+    "format": "video"
   },
   {
     "id": 9287,
@@ -2836,7 +2979,8 @@
       "animal"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/ZNLtdUlnNw96XFbbd2"
+    "sourceUrl": "https://giphy.com/gifs/ZNLtdUlnNw96XFbbd2",
+    "format": "video"
   },
   {
     "id": 9288,
@@ -2851,7 +2995,8 @@
       "animal"
     ],
     "source": "Giphy · fluffyhedgehogs",
-    "sourceUrl": "https://giphy.com/gifs/kS0anhAZCFQxDPtgHJ"
+    "sourceUrl": "https://giphy.com/gifs/kS0anhAZCFQxDPtgHJ",
+    "format": "video"
   },
   {
     "id": 9289,
@@ -2866,7 +3011,8 @@
       "animal"
     ],
     "source": "Giphy · viralhog",
-    "sourceUrl": "https://giphy.com/gifs/m68s4CCMg898Lc8QQx"
+    "sourceUrl": "https://giphy.com/gifs/m68s4CCMg898Lc8QQx",
+    "format": "video"
   },
   {
     "id": 9290,
@@ -2881,7 +3027,8 @@
       "animal"
     ],
     "source": "Giphy · hulu",
-    "sourceUrl": "https://giphy.com/gifs/1qhnR3TfKnlQ12bN72"
+    "sourceUrl": "https://giphy.com/gifs/1qhnR3TfKnlQ12bN72",
+    "format": "video"
   },
   {
     "id": 9291,
@@ -2896,7 +3043,8 @@
       "animal"
     ],
     "source": "Giphy · bbcamerica",
-    "sourceUrl": "https://giphy.com/gifs/3rWc8vc9MWdOdCGLme"
+    "sourceUrl": "https://giphy.com/gifs/3rWc8vc9MWdOdCGLme",
+    "format": "video"
   },
   {
     "id": 9292,
@@ -2911,7 +3059,8 @@
       "animal"
     ],
     "source": "Giphy · bbc",
-    "sourceUrl": "https://giphy.com/gifs/3oEhmOCVVhTXA7x3IA"
+    "sourceUrl": "https://giphy.com/gifs/3oEhmOCVVhTXA7x3IA",
+    "format": "video"
   },
   {
     "id": 9293,
@@ -2926,7 +3075,8 @@
       "animal"
     ],
     "source": "Giphy · buildingourzoo",
-    "sourceUrl": "https://giphy.com/gifs/LFsi9uo8X9g40vMeCl"
+    "sourceUrl": "https://giphy.com/gifs/LFsi9uo8X9g40vMeCl",
+    "format": "video"
   },
   {
     "id": 9294,
@@ -2941,7 +3091,8 @@
       "animal"
     ],
     "source": "Giphy · buildingourzoo",
-    "sourceUrl": "https://giphy.com/gifs/QfUXvi7QMiYs6VwbEf"
+    "sourceUrl": "https://giphy.com/gifs/QfUXvi7QMiYs6VwbEf",
+    "format": "video"
   },
   {
     "id": 9295,
@@ -2956,7 +3107,8 @@
       "animal"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/RY9KgLHFykV2"
+    "sourceUrl": "https://giphy.com/gifs/RY9KgLHFykV2",
+    "format": "video"
   },
   {
     "id": 9296,
@@ -2971,7 +3123,8 @@
       "animal"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/T5wQ1H6gtClt6"
+    "sourceUrl": "https://giphy.com/gifs/T5wQ1H6gtClt6",
+    "format": "video"
   },
   {
     "id": 9297,
@@ -2986,7 +3139,8 @@
       "animal"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/pmLRq26dVmuUU"
+    "sourceUrl": "https://giphy.com/gifs/pmLRq26dVmuUU",
+    "format": "video"
   },
   {
     "id": 9298,
@@ -3001,7 +3155,8 @@
       "animal"
     ],
     "source": "Giphy · JohnBallZooGR",
-    "sourceUrl": "https://giphy.com/gifs/uXLL47adIqTfMcrKMZ"
+    "sourceUrl": "https://giphy.com/gifs/uXLL47adIqTfMcrKMZ",
+    "format": "video"
   },
   {
     "id": 9299,
@@ -3010,7 +3165,8 @@
     "category": "Uncategorized",
     "file": "anime keyboard.gif",
     "type": "gif",
-    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/anime%20keyboard.gif"
+    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/anime%20keyboard.gif",
+    "format": "gif"
   },
   {
     "id": 9300,
@@ -3025,7 +3181,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop Cartoons",
-    "sourceUrl": "https://archive.org/details/BettyBoopCartoons"
+    "sourceUrl": "https://archive.org/details/BettyBoopCartoons",
+    "format": "video"
   },
   {
     "id": 9301,
@@ -3040,7 +3197,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop Cartoons",
-    "sourceUrl": "https://archive.org/details/BettyBoopCartoons"
+    "sourceUrl": "https://archive.org/details/BettyBoopCartoons",
+    "format": "video"
   },
   {
     "id": 9302,
@@ -3055,7 +3213,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop Cartoons",
-    "sourceUrl": "https://archive.org/details/BettyBoopCartoons"
+    "sourceUrl": "https://archive.org/details/BettyBoopCartoons",
+    "format": "video"
   },
   {
     "id": 9303,
@@ -3070,7 +3229,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop Cartoons",
-    "sourceUrl": "https://archive.org/details/BettyBoopCartoons"
+    "sourceUrl": "https://archive.org/details/BettyBoopCartoons",
+    "format": "video"
   },
   {
     "id": 9304,
@@ -3085,7 +3245,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop Cartoons",
-    "sourceUrl": "https://archive.org/details/BettyBoopCartoons"
+    "sourceUrl": "https://archive.org/details/BettyBoopCartoons",
+    "format": "video"
   },
   {
     "id": 9305,
@@ -3100,7 +3261,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop Cartoons",
-    "sourceUrl": "https://archive.org/details/BettyBoopCartoons"
+    "sourceUrl": "https://archive.org/details/BettyBoopCartoons",
+    "format": "video"
   },
   {
     "id": 9306,
@@ -3115,7 +3277,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop: Snow White (1933)",
-    "sourceUrl": "https://archive.org/details/bb_snow_white"
+    "sourceUrl": "https://archive.org/details/bb_snow_white",
+    "format": "video"
   },
   {
     "id": 9307,
@@ -3130,7 +3293,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop: Snow White (1933)",
-    "sourceUrl": "https://archive.org/details/bb_snow_white"
+    "sourceUrl": "https://archive.org/details/bb_snow_white",
+    "format": "video"
   },
   {
     "id": 9308,
@@ -3145,7 +3309,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop: Snow White (1933)",
-    "sourceUrl": "https://archive.org/details/bb_snow_white"
+    "sourceUrl": "https://archive.org/details/bb_snow_white",
+    "format": "video"
   },
   {
     "id": 9309,
@@ -3160,7 +3325,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop: Snow White (1933)",
-    "sourceUrl": "https://archive.org/details/bb_snow_white"
+    "sourceUrl": "https://archive.org/details/bb_snow_white",
+    "format": "video"
   },
   {
     "id": 9310,
@@ -3175,7 +3341,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop: Snow White (1933)",
-    "sourceUrl": "https://archive.org/details/bb_snow_white"
+    "sourceUrl": "https://archive.org/details/bb_snow_white",
+    "format": "video"
   },
   {
     "id": 9311,
@@ -3190,7 +3357,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Betty Boop: Snow White (1933)",
-    "sourceUrl": "https://archive.org/details/bb_snow_white"
+    "sourceUrl": "https://archive.org/details/bb_snow_white",
+    "format": "video"
   },
   {
     "id": 9312,
@@ -3205,7 +3373,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Felix the Cat: The Goose That Laid the Golden Egg (1936)",
-    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg"
+    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg",
+    "format": "video"
   },
   {
     "id": 9313,
@@ -3220,7 +3389,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Felix the Cat: The Goose That Laid the Golden Egg (1936)",
-    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg"
+    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg",
+    "format": "video"
   },
   {
     "id": 9314,
@@ -3235,7 +3405,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Felix the Cat: The Goose That Laid the Golden Egg (1936)",
-    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg"
+    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg",
+    "format": "video"
   },
   {
     "id": 9315,
@@ -3250,7 +3421,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Felix the Cat: The Goose That Laid the Golden Egg (1936)",
-    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg"
+    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg",
+    "format": "video"
   },
   {
     "id": 9316,
@@ -3265,7 +3437,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Felix the Cat: The Goose That Laid the Golden Egg (1936)",
-    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg"
+    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg",
+    "format": "video"
   },
   {
     "id": 9317,
@@ -3280,7 +3453,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Felix the Cat: The Goose That Laid the Golden Egg (1936)",
-    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg"
+    "sourceUrl": "https://archive.org/details/felix_the_cat_the_goos_that_laid_the_golden_egg",
+    "format": "video"
   },
   {
     "id": 9318,
@@ -3295,7 +3469,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Patriotic Popeye (1957)",
-    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye"
+    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye",
+    "format": "video"
   },
   {
     "id": 9319,
@@ -3310,7 +3485,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Patriotic Popeye (1957)",
-    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye"
+    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye",
+    "format": "video"
   },
   {
     "id": 9320,
@@ -3325,7 +3501,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Patriotic Popeye (1957)",
-    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye"
+    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye",
+    "format": "video"
   },
   {
     "id": 9321,
@@ -3340,7 +3517,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Patriotic Popeye (1957)",
-    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye"
+    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye",
+    "format": "video"
   },
   {
     "id": 9322,
@@ -3355,7 +3533,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Patriotic Popeye (1957)",
-    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye"
+    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye",
+    "format": "video"
   },
   {
     "id": 9323,
@@ -3370,7 +3549,8 @@
       "cartoon"
     ],
     "source": "Internet Archive · Patriotic Popeye (1957)",
-    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye"
+    "sourceUrl": "https://archive.org/details/popeye_patriotic_popeye",
+    "format": "video"
   },
   {
     "id": 9330,
@@ -3385,7 +3565,8 @@
       "archive"
     ],
     "source": "Internet Archive · To the Fair (1964)",
-    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00"
+    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00",
+    "format": "video"
   },
   {
     "id": 9331,
@@ -3400,7 +3581,8 @@
       "archive"
     ],
     "source": "Internet Archive · To the Fair (1964)",
-    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00"
+    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00",
+    "format": "video"
   },
   {
     "id": 9332,
@@ -3415,7 +3597,8 @@
       "archive"
     ],
     "source": "Internet Archive · To the Fair (1964)",
-    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00"
+    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00",
+    "format": "video"
   },
   {
     "id": 9333,
@@ -3430,7 +3613,8 @@
       "archive"
     ],
     "source": "Internet Archive · To the Fair (1964)",
-    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00"
+    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00",
+    "format": "video"
   },
   {
     "id": 9334,
@@ -3445,7 +3629,8 @@
       "archive"
     ],
     "source": "Internet Archive · To the Fair (1964)",
-    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00"
+    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00",
+    "format": "video"
   },
   {
     "id": 9335,
@@ -3460,7 +3645,8 @@
       "archive"
     ],
     "source": "Internet Archive · To the Fair (1964)",
-    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00"
+    "sourceUrl": "https://archive.org/details/0105_To_the_Fair_17_31_23_00",
+    "format": "video"
   },
   {
     "id": 9336,
@@ -3475,7 +3661,8 @@
       "archive"
     ],
     "source": "Internet Archive · Our Shrinking World (1946)",
-    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019"
+    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019",
+    "format": "video"
   },
   {
     "id": 9337,
@@ -3490,7 +3677,8 @@
       "archive"
     ],
     "source": "Internet Archive · Our Shrinking World (1946)",
-    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019"
+    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019",
+    "format": "video"
   },
   {
     "id": 9338,
@@ -3505,7 +3693,8 @@
       "archive"
     ],
     "source": "Internet Archive · Our Shrinking World (1946)",
-    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019"
+    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019",
+    "format": "video"
   },
   {
     "id": 9339,
@@ -3520,7 +3709,8 @@
       "archive"
     ],
     "source": "Internet Archive · Our Shrinking World (1946)",
-    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019"
+    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019",
+    "format": "video"
   },
   {
     "id": 9340,
@@ -3535,7 +3725,8 @@
       "archive"
     ],
     "source": "Internet Archive · Our Shrinking World (1946)",
-    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019"
+    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019",
+    "format": "video"
   },
   {
     "id": 9341,
@@ -3550,7 +3741,8 @@
       "archive"
     ],
     "source": "Internet Archive · Our Shrinking World (1946)",
-    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019"
+    "sourceUrl": "https://archive.org/details/0119_Our_Shrinking_World_E00960_09_22_46_18-0019",
+    "format": "video"
   },
   {
     "id": 9342,
@@ -3565,7 +3757,8 @@
       "archive"
     ],
     "source": "Internet Archive · RFD Greenwich Village (1969)",
-    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24"
+    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24",
+    "format": "video"
   },
   {
     "id": 9343,
@@ -3580,7 +3773,8 @@
       "archive"
     ],
     "source": "Internet Archive · RFD Greenwich Village (1969)",
-    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24"
+    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24",
+    "format": "video"
   },
   {
     "id": 9344,
@@ -3595,7 +3789,8 @@
       "archive"
     ],
     "source": "Internet Archive · RFD Greenwich Village (1969)",
-    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24"
+    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24",
+    "format": "video"
   },
   {
     "id": 9345,
@@ -3610,7 +3805,8 @@
       "archive"
     ],
     "source": "Internet Archive · RFD Greenwich Village (1969)",
-    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24"
+    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24",
+    "format": "video"
   },
   {
     "id": 9346,
@@ -3625,7 +3821,8 @@
       "archive"
     ],
     "source": "Internet Archive · RFD Greenwich Village (1969)",
-    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24"
+    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24",
+    "format": "video"
   },
   {
     "id": 9347,
@@ -3640,7 +3837,8 @@
       "archive"
     ],
     "source": "Internet Archive · RFD Greenwich Village (1969)",
-    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24"
+    "sourceUrl": "https://archive.org/details/0574_RFD_Greenwich_Village_08_01_00_24",
+    "format": "video"
   },
   {
     "id": 9348,
@@ -3655,7 +3853,8 @@
       "archive"
     ],
     "source": "Internet Archive · Duck and Cover (1951)",
-    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12"
+    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12",
+    "format": "video"
   },
   {
     "id": 9349,
@@ -3670,7 +3869,8 @@
       "archive"
     ],
     "source": "Internet Archive · Duck and Cover (1951)",
-    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12"
+    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12",
+    "format": "video"
   },
   {
     "id": 9350,
@@ -3685,7 +3885,8 @@
       "archive"
     ],
     "source": "Internet Archive · Duck and Cover (1951)",
-    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12"
+    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12",
+    "format": "video"
   },
   {
     "id": 9351,
@@ -3700,7 +3901,8 @@
       "archive"
     ],
     "source": "Internet Archive · Duck and Cover (1951)",
-    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12"
+    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12",
+    "format": "video"
   },
   {
     "id": 9352,
@@ -3715,7 +3917,8 @@
       "archive"
     ],
     "source": "Internet Archive · Duck and Cover (1951)",
-    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12"
+    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12",
+    "format": "video"
   },
   {
     "id": 9353,
@@ -3730,7 +3933,8 @@
       "archive"
     ],
     "source": "Internet Archive · Duck and Cover (1951)",
-    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12"
+    "sourceUrl": "https://archive.org/details/0771_Duck_and_Cover_12_33_20_12",
+    "format": "video"
   },
   {
     "id": 9652,
@@ -3739,7 +3943,8 @@
     "category": "Uncategorized",
     "file": "black-heart.gif",
     "type": "gif",
-    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/black-heart.gif"
+    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/black-heart.gif",
+    "format": "gif"
   },
   {
     "id": 9653,
@@ -3748,7 +3953,8 @@
     "category": "Cosmic Textures",
     "file": "cosmic textures/stars background.gif",
     "type": "gif",
-    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/cosmic%20textures/stars%20background.gif"
+    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/cosmic%20textures/stars%20background.gif",
+    "format": "gif"
   },
   {
     "id": 9654,
@@ -3757,7 +3963,8 @@
     "category": "Uncategorized",
     "file": "figure stick woman girl.gif",
     "type": "gif",
-    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/figure%20stick%20woman%20girl.gif"
+    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/figure%20stick%20woman%20girl.gif",
+    "format": "gif"
   },
   {
     "id": 9655,
@@ -3772,7 +3979,8 @@
       "philosophy"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/2bYewTk7K2No1NvcuK"
+    "sourceUrl": "https://giphy.com/gifs/2bYewTk7K2No1NvcuK",
+    "format": "video"
   },
   {
     "id": 9656,
@@ -3787,7 +3995,8 @@
       "philosophy"
     ],
     "source": "Giphy · chuckdin",
-    "sourceUrl": "https://giphy.com/gifs/4o8hUD1e84PcUo3Xti"
+    "sourceUrl": "https://giphy.com/gifs/4o8hUD1e84PcUo3Xti",
+    "format": "video"
   },
   {
     "id": 9657,
@@ -3802,7 +4011,8 @@
       "philosophy"
     ],
     "source": "Giphy · spongebob",
-    "sourceUrl": "https://giphy.com/gifs/D0RvPABUNF3AQ"
+    "sourceUrl": "https://giphy.com/gifs/D0RvPABUNF3AQ",
+    "format": "video"
   },
   {
     "id": 9658,
@@ -3817,7 +4027,8 @@
       "philosophy"
     ],
     "source": "Giphy · StoryLeaf",
-    "sourceUrl": "https://giphy.com/gifs/FBhp575ry2zTK1R6Zk"
+    "sourceUrl": "https://giphy.com/gifs/FBhp575ry2zTK1R6Zk",
+    "format": "video"
   },
   {
     "id": 9659,
@@ -3832,7 +4043,8 @@
       "philosophy"
     ],
     "source": "Giphy · gabrielsokol",
-    "sourceUrl": "https://giphy.com/gifs/UW3z9pbRilwifhBwmy"
+    "sourceUrl": "https://giphy.com/gifs/UW3z9pbRilwifhBwmy",
+    "format": "video"
   },
   {
     "id": 9660,
@@ -3847,7 +4059,8 @@
       "philosophy"
     ],
     "source": "Giphy · PERFECTL00P",
-    "sourceUrl": "https://giphy.com/gifs/hN8BGpsTCdrsPoH3oO"
+    "sourceUrl": "https://giphy.com/gifs/hN8BGpsTCdrsPoH3oO",
+    "format": "video"
   },
   {
     "id": 9661,
@@ -3862,7 +4075,8 @@
       "philosophy"
     ],
     "source": "Giphy · fartedloud",
-    "sourceUrl": "https://giphy.com/gifs/lz2BeNDXEnvhC7Awhm"
+    "sourceUrl": "https://giphy.com/gifs/lz2BeNDXEnvhC7Awhm",
+    "format": "video"
   },
   {
     "id": 9662,
@@ -3877,7 +4091,8 @@
       "philosophy"
     ],
     "source": "Giphy · nerdbugs",
-    "sourceUrl": "https://giphy.com/gifs/oNRluiVoSyIF1VCAEP"
+    "sourceUrl": "https://giphy.com/gifs/oNRluiVoSyIF1VCAEP",
+    "format": "video"
   },
   {
     "id": 9663,
@@ -3892,7 +4107,8 @@
       "philosophy"
     ],
     "source": "Giphy · warnerarchive",
-    "sourceUrl": "https://giphy.com/gifs/3o8doTrOWoQMV8h74k"
+    "sourceUrl": "https://giphy.com/gifs/3o8doTrOWoQMV8h74k",
+    "format": "video"
   },
   {
     "id": 9664,
@@ -3907,7 +4123,8 @@
       "philosophy"
     ],
     "source": "Giphy · Trippyogi",
-    "sourceUrl": "https://giphy.com/gifs/3oEjHBa34dVLv0jnoc"
+    "sourceUrl": "https://giphy.com/gifs/3oEjHBa34dVLv0jnoc",
+    "format": "video"
   },
   {
     "id": 9665,
@@ -3922,7 +4139,8 @@
       "philosophy"
     ],
     "source": "Giphy · natumendez",
-    "sourceUrl": "https://giphy.com/gifs/LwDCpj1rNguobMWzrF"
+    "sourceUrl": "https://giphy.com/gifs/LwDCpj1rNguobMWzrF",
+    "format": "video"
   },
   {
     "id": 9666,
@@ -3937,7 +4155,8 @@
       "philosophy"
     ],
     "source": "Giphy · bailentheband",
-    "sourceUrl": "https://giphy.com/gifs/QZQCo1MgjmnJ1oOeip"
+    "sourceUrl": "https://giphy.com/gifs/QZQCo1MgjmnJ1oOeip",
+    "format": "video"
   },
   {
     "id": 9667,
@@ -3952,7 +4171,8 @@
       "philosophy"
     ],
     "source": "Giphy · DrRoots",
-    "sourceUrl": "https://giphy.com/gifs/busKMYtljvj1lPak9r"
+    "sourceUrl": "https://giphy.com/gifs/busKMYtljvj1lPak9r",
+    "format": "video"
   },
   {
     "id": 9668,
@@ -3967,7 +4187,8 @@
       "philosophy"
     ],
     "source": "Giphy · fborfw",
-    "sourceUrl": "https://giphy.com/gifs/j2FvSxxKF0ctNKDaSY"
+    "sourceUrl": "https://giphy.com/gifs/j2FvSxxKF0ctNKDaSY",
+    "format": "video"
   },
   {
     "id": 9669,
@@ -3982,7 +4203,8 @@
       "philosophy"
     ],
     "source": "Giphy · abcnetwork",
-    "sourceUrl": "https://giphy.com/gifs/pE12f8sTnlxW4FlJhx"
+    "sourceUrl": "https://giphy.com/gifs/pE12f8sTnlxW4FlJhx",
+    "format": "video"
   },
   {
     "id": 9670,
@@ -3997,7 +4219,8 @@
       "philosophy"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/vXeeHUPxgBtp6"
+    "sourceUrl": "https://giphy.com/gifs/vXeeHUPxgBtp6",
+    "format": "video"
   },
   {
     "id": 9671,
@@ -4012,7 +4235,8 @@
       "philosophy"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/11VHM1eTXu0kms"
+    "sourceUrl": "https://giphy.com/gifs/11VHM1eTXu0kms",
+    "format": "video"
   },
   {
     "id": 9672,
@@ -4027,7 +4251,8 @@
       "philosophy"
     ],
     "source": "Giphy · 1091",
-    "sourceUrl": "https://giphy.com/gifs/26DMXp40UPujjrH5C"
+    "sourceUrl": "https://giphy.com/gifs/26DMXp40UPujjrH5C",
+    "format": "video"
   },
   {
     "id": 9673,
@@ -4042,7 +4267,8 @@
       "philosophy"
     ],
     "source": "Giphy · SadNuggie",
-    "sourceUrl": "https://giphy.com/gifs/2tSnssrUEVALBnBRmQ"
+    "sourceUrl": "https://giphy.com/gifs/2tSnssrUEVALBnBRmQ",
+    "format": "video"
   },
   {
     "id": 9674,
@@ -4057,7 +4283,8 @@
       "philosophy"
     ],
     "source": "Giphy · cbs",
-    "sourceUrl": "https://giphy.com/gifs/8NnRjvZRSv89DecsnR"
+    "sourceUrl": "https://giphy.com/gifs/8NnRjvZRSv89DecsnR",
+    "format": "video"
   },
   {
     "id": 9675,
@@ -4072,7 +4299,8 @@
       "philosophy"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/JDfQEoSR7Rpgk"
+    "sourceUrl": "https://giphy.com/gifs/JDfQEoSR7Rpgk",
+    "format": "video"
   },
   {
     "id": 9676,
@@ -4087,7 +4315,8 @@
       "philosophy"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/UZStIMu2MTx3W"
+    "sourceUrl": "https://giphy.com/gifs/UZStIMu2MTx3W",
+    "format": "video"
   },
   {
     "id": 9677,
@@ -4102,7 +4331,8 @@
       "philosophy"
     ],
     "source": "Giphy · snl",
-    "sourceUrl": "https://giphy.com/gifs/ZaKcIYMjNYNf4lEuC7"
+    "sourceUrl": "https://giphy.com/gifs/ZaKcIYMjNYNf4lEuC7",
+    "format": "video"
   },
   {
     "id": 9678,
@@ -4117,7 +4347,8 @@
       "philosophy"
     ],
     "source": "Giphy · snl",
-    "sourceUrl": "https://giphy.com/gifs/zdPTU3dZpC2zuxHijE"
+    "sourceUrl": "https://giphy.com/gifs/zdPTU3dZpC2zuxHijE",
+    "format": "video"
   },
   {
     "id": 9734,
@@ -4126,7 +4357,8 @@
     "category": "Portraits",
     "file": "portraits/freud-1921-halberstadt.jpg",
     "type": "image",
-    "url": "https://gifbox.netlify.app/gifs/portraits/freud-1921-halberstadt.jpg"
+    "url": "https://gifbox.netlify.app/gifs/portraits/freud-1921-halberstadt.jpg",
+    "format": "image"
   },
   {
     "id": 9735,
@@ -4141,7 +4373,8 @@
       "portrait"
     ],
     "source": "Wikimedia Commons · Max Halberstadt, 1921 (Public domain)",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sigmund_Freud,_by_Max_Halberstadt_(cropped).jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sigmund_Freud,_by_Max_Halberstadt_(cropped).jpg",
+    "format": "video"
   },
   {
     "id": 9736,
@@ -4150,7 +4383,8 @@
     "category": "Portraits",
     "file": "portraits/schopenhauer-1852-daguerreotype-seib.jpg",
     "type": "image",
-    "url": "https://gifbox.netlify.app/gifs/portraits/schopenhauer-1852-daguerreotype-seib.jpg"
+    "url": "https://gifbox.netlify.app/gifs/portraits/schopenhauer-1852-daguerreotype-seib.jpg",
+    "format": "image"
   },
   {
     "id": 9737,
@@ -4165,7 +4399,8 @@
       "portrait"
     ],
     "source": "Wikimedia Commons · Jacob Seib, 1852 (Public domain)",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schopenhauer_1852.jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Schopenhauer_1852.jpg",
+    "format": "video"
   },
   {
     "id": 9738,
@@ -4174,7 +4409,8 @@
     "category": "Portraits",
     "file": "portraits/schopenhauer-1859-schaefer.jpg",
     "type": "image",
-    "url": "https://gifbox.netlify.app/gifs/portraits/schopenhauer-1859-schaefer.jpg"
+    "url": "https://gifbox.netlify.app/gifs/portraits/schopenhauer-1859-schaefer.jpg",
+    "format": "image"
   },
   {
     "id": 9739,
@@ -4189,7 +4425,8 @@
       "portrait"
     ],
     "source": "Wikimedia Commons · Johann Schäfer, 1859 (Public domain)",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arthur_Schopenhauer_by_J_Sch%C3%A4fer,_1859b.jpg"
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arthur_Schopenhauer_by_J_Sch%C3%A4fer,_1859b.jpg",
+    "format": "video"
   },
   {
     "id": 9740,
@@ -4205,7 +4442,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/bergson-why-we-live-in-the-past/"
+    "sourceUrl": "https://ralphammer.com/bergson-why-we-live-in-the-past/",
+    "format": "gif"
   },
   {
     "id": 9741,
@@ -4220,7 +4458,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/bergson-why-we-live-in-the-past/"
+    "sourceUrl": "https://ralphammer.com/bergson-why-we-live-in-the-past/",
+    "format": "gif"
   },
   {
     "id": 9742,
@@ -4236,7 +4475,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/immanuel-kant-beauty/"
+    "sourceUrl": "https://ralphammer.com/immanuel-kant-beauty/",
+    "format": "gif"
   },
   {
     "id": 9743,
@@ -4251,7 +4491,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/immanuel-kant-beauty/"
+    "sourceUrl": "https://ralphammer.com/immanuel-kant-beauty/",
+    "format": "gif"
   },
   {
     "id": 9744,
@@ -4267,7 +4508,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/aristotle-how-to-live-a-good-life/"
+    "sourceUrl": "https://ralphammer.com/aristotle-how-to-live-a-good-life/",
+    "format": "gif"
   },
   {
     "id": 9745,
@@ -4282,7 +4524,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/aristotle-how-to-live-a-good-life/"
+    "sourceUrl": "https://ralphammer.com/aristotle-how-to-live-a-good-life/",
+    "format": "gif"
   },
   {
     "id": 9746,
@@ -4298,7 +4541,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/xunzi-vs-mengzi-are-people-no-good/"
+    "sourceUrl": "https://ralphammer.com/xunzi-vs-mengzi-are-people-no-good/",
+    "format": "gif"
   },
   {
     "id": 9747,
@@ -4313,7 +4557,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/xunzi-vs-mengzi-are-people-no-good/"
+    "sourceUrl": "https://ralphammer.com/xunzi-vs-mengzi-are-people-no-good/",
+    "format": "gif"
   },
   {
     "id": 9748,
@@ -4329,7 +4574,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/a-quick-beginners-guide-to-animation/"
+    "sourceUrl": "https://ralphammer.com/a-quick-beginners-guide-to-animation/",
+    "format": "gif"
   },
   {
     "id": 9749,
@@ -4344,7 +4590,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/a-quick-beginners-guide-to-animation/"
+    "sourceUrl": "https://ralphammer.com/a-quick-beginners-guide-to-animation/",
+    "format": "gif"
   },
   {
     "id": 9750,
@@ -4360,7 +4607,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/edmund-husserl-consciousness/"
+    "sourceUrl": "https://ralphammer.com/edmund-husserl-consciousness/",
+    "format": "gif"
   },
   {
     "id": 9751,
@@ -4375,7 +4623,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/edmund-husserl-consciousness/"
+    "sourceUrl": "https://ralphammer.com/edmund-husserl-consciousness/",
+    "format": "gif"
   },
   {
     "id": 9752,
@@ -4391,7 +4640,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/thomas-aquinas-the-world-is-divine/"
+    "sourceUrl": "https://ralphammer.com/thomas-aquinas-the-world-is-divine/",
+    "format": "gif"
   },
   {
     "id": 9753,
@@ -4400,7 +4650,8 @@
     "category": "Ralph Hammer",
     "file": "ralph hammer/01_ThomasAquinas.gif",
     "type": "gif",
-    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/ralph%20hammer/01_ThomasAquinas.gif"
+    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/ralph%20hammer/01_ThomasAquinas.gif",
+    "format": "gif"
   },
   {
     "id": 9754,
@@ -4416,7 +4667,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/aristotle-how-to-live-a-good-life/"
+    "sourceUrl": "https://ralphammer.com/aristotle-how-to-live-a-good-life/",
+    "format": "gif"
   },
   {
     "id": 9755,
@@ -4431,7 +4683,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/aristotle-how-to-live-a-good-life/"
+    "sourceUrl": "https://ralphammer.com/aristotle-how-to-live-a-good-life/",
+    "format": "gif"
   },
   {
     "id": 9756,
@@ -4447,7 +4700,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/thomas-aquinas-the-world-is-divine/"
+    "sourceUrl": "https://ralphammer.com/thomas-aquinas-the-world-is-divine/",
+    "format": "gif"
   },
   {
     "id": 9757,
@@ -4462,7 +4716,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/thomas-aquinas-the-world-is-divine/"
+    "sourceUrl": "https://ralphammer.com/thomas-aquinas-the-world-is-divine/",
+    "format": "gif"
   },
   {
     "id": 9758,
@@ -4478,7 +4733,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/edmund-husserl-consciousness/"
+    "sourceUrl": "https://ralphammer.com/edmund-husserl-consciousness/",
+    "format": "gif"
   },
   {
     "id": 9759,
@@ -4493,7 +4749,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/edmund-husserl-consciousness/"
+    "sourceUrl": "https://ralphammer.com/edmund-husserl-consciousness/",
+    "format": "gif"
   },
   {
     "id": 9760,
@@ -4509,7 +4766,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/immanuel-kant-beauty/"
+    "sourceUrl": "https://ralphammer.com/immanuel-kant-beauty/",
+    "format": "gif"
   },
   {
     "id": 9761,
@@ -4524,7 +4782,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/immanuel-kant-beauty/"
+    "sourceUrl": "https://ralphammer.com/immanuel-kant-beauty/",
+    "format": "gif"
   },
   {
     "id": 9762,
@@ -4540,7 +4799,8 @@
       "dark mode"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/show-me/"
+    "sourceUrl": "https://ralphammer.com/show-me/",
+    "format": "gif"
   },
   {
     "id": 9763,
@@ -4555,7 +4815,8 @@
       "hand-drawn animation"
     ],
     "source": "Ralph Ammer · © all rights reserved",
-    "sourceUrl": "https://ralphammer.com/show-me/"
+    "sourceUrl": "https://ralphammer.com/show-me/",
+    "format": "gif"
   },
   {
     "id": 10671,
@@ -4570,7 +4831,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/3etP8HqLPVixUc9Y3s"
+    "sourceUrl": "https://giphy.com/gifs/3etP8HqLPVixUc9Y3s",
+    "format": "video"
   },
   {
     "id": 10672,
@@ -4585,7 +4847,8 @@
       "reaction"
     ],
     "source": "Giphy · netflixlat",
-    "sourceUrl": "https://giphy.com/gifs/5zoxhCaYbdVHoJkmpf"
+    "sourceUrl": "https://giphy.com/gifs/5zoxhCaYbdVHoJkmpf",
+    "format": "video"
   },
   {
     "id": 10673,
@@ -4600,7 +4863,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/APqEbxBsVlkWSuFpth"
+    "sourceUrl": "https://giphy.com/gifs/APqEbxBsVlkWSuFpth",
+    "format": "video"
   },
   {
     "id": 10674,
@@ -4615,7 +4879,8 @@
       "reaction"
     ],
     "source": "Giphy · assoAIDES",
-    "sourceUrl": "https://giphy.com/gifs/UeT0nnRnkuaUo"
+    "sourceUrl": "https://giphy.com/gifs/UeT0nnRnkuaUo",
+    "format": "video"
   },
   {
     "id": 10675,
@@ -4630,7 +4895,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/WRQBXSCnEFJIuxktnw"
+    "sourceUrl": "https://giphy.com/gifs/WRQBXSCnEFJIuxktnw",
+    "format": "video"
   },
   {
     "id": 10676,
@@ -4645,7 +4911,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/idKeY3nvmdIsM"
+    "sourceUrl": "https://giphy.com/gifs/idKeY3nvmdIsM",
+    "format": "video"
   },
   {
     "id": 10677,
@@ -4660,7 +4927,8 @@
       "reaction"
     ],
     "source": "Giphy · ifhtfilms",
-    "sourceUrl": "https://giphy.com/gifs/lHfxDepSGlzom6f65K"
+    "sourceUrl": "https://giphy.com/gifs/lHfxDepSGlzom6f65K",
+    "format": "video"
   },
   {
     "id": 10678,
@@ -4675,7 +4943,8 @@
       "reaction"
     ],
     "source": "Giphy · gilmorebrasil",
-    "sourceUrl": "https://giphy.com/gifs/xUPGcjUQcWclgK94ti"
+    "sourceUrl": "https://giphy.com/gifs/xUPGcjUQcWclgK94ti",
+    "format": "video"
   },
   {
     "id": 10679,
@@ -4690,7 +4959,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/10tIjpzIu8fe0"
+    "sourceUrl": "https://giphy.com/gifs/10tIjpzIu8fe0",
+    "format": "video"
   },
   {
     "id": 10680,
@@ -4705,7 +4975,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/1BXa2alBjrCXC"
+    "sourceUrl": "https://giphy.com/gifs/1BXa2alBjrCXC",
+    "format": "video"
   },
   {
     "id": 10681,
@@ -4720,7 +4991,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/P53TSsopKicrm"
+    "sourceUrl": "https://giphy.com/gifs/P53TSsopKicrm",
+    "format": "video"
   },
   {
     "id": 10682,
@@ -4735,7 +5007,8 @@
       "reaction"
     ],
     "source": "Giphy · frommemetoyou",
-    "sourceUrl": "https://giphy.com/gifs/WF7boIogNoMYfyEMfJ"
+    "sourceUrl": "https://giphy.com/gifs/WF7boIogNoMYfyEMfJ",
+    "format": "video"
   },
   {
     "id": 10683,
@@ -4750,7 +5023,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/Wvo6vaUsQa3Di"
+    "sourceUrl": "https://giphy.com/gifs/Wvo6vaUsQa3Di",
+    "format": "video"
   },
   {
     "id": 10684,
@@ -4765,7 +5039,8 @@
       "reaction"
     ],
     "source": "Giphy · doubleshotatlove",
-    "sourceUrl": "https://giphy.com/gifs/ckGndVa23sCk9pae4l"
+    "sourceUrl": "https://giphy.com/gifs/ckGndVa23sCk9pae4l",
+    "format": "video"
   },
   {
     "id": 10685,
@@ -4780,7 +5055,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/d2lcHJTG5Tscg"
+    "sourceUrl": "https://giphy.com/gifs/d2lcHJTG5Tscg",
+    "format": "video"
   },
   {
     "id": 10686,
@@ -4795,7 +5071,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/pynZagVcYxVUk"
+    "sourceUrl": "https://giphy.com/gifs/pynZagVcYxVUk",
+    "format": "video"
   },
   {
     "id": 10687,
@@ -4810,7 +5087,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/54PaD9dWT0go"
+    "sourceUrl": "https://giphy.com/gifs/54PaD9dWT0go",
+    "format": "video"
   },
   {
     "id": 10688,
@@ -4825,7 +5103,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/B4ORVnBvJCVvq"
+    "sourceUrl": "https://giphy.com/gifs/B4ORVnBvJCVvq",
+    "format": "video"
   },
   {
     "id": 10689,
@@ -4840,7 +5119,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/Rhhr8D5mKSX7O"
+    "sourceUrl": "https://giphy.com/gifs/Rhhr8D5mKSX7O",
+    "format": "video"
   },
   {
     "id": 10690,
@@ -4855,7 +5135,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/ZaF4Vl1NQxwaVsStQU"
+    "sourceUrl": "https://giphy.com/gifs/ZaF4Vl1NQxwaVsStQU",
+    "format": "video"
   },
   {
     "id": 10691,
@@ -4870,7 +5151,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/dEdmW17JnZhiU"
+    "sourceUrl": "https://giphy.com/gifs/dEdmW17JnZhiU",
+    "format": "video"
   },
   {
     "id": 10692,
@@ -4885,7 +5167,8 @@
       "reaction"
     ],
     "source": "Giphy · agentm",
-    "sourceUrl": "https://giphy.com/gifs/eUrE2DuMKOE0g"
+    "sourceUrl": "https://giphy.com/gifs/eUrE2DuMKOE0g",
+    "format": "video"
   },
   {
     "id": 10693,
@@ -4900,7 +5183,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/kJ8qYls8n2tDW"
+    "sourceUrl": "https://giphy.com/gifs/kJ8qYls8n2tDW",
+    "format": "video"
   },
   {
     "id": 10694,
@@ -4915,7 +5199,8 @@
       "reaction"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/qmfpjpAT2fJRK"
+    "sourceUrl": "https://giphy.com/gifs/qmfpjpAT2fJRK",
+    "format": "video"
   },
   {
     "id": 10818,
@@ -4930,7 +5215,8 @@
       "relationship"
     ],
     "source": "Giphy · kevlavery",
-    "sourceUrl": "https://giphy.com/gifs/BtekuIqZ8xDzLaNQkH"
+    "sourceUrl": "https://giphy.com/gifs/BtekuIqZ8xDzLaNQkH",
+    "format": "video"
   },
   {
     "id": 10819,
@@ -4945,7 +5231,8 @@
       "relationship"
     ],
     "source": "Giphy · danikie",
-    "sourceUrl": "https://giphy.com/gifs/D0q6mmkycvWhtI6U6p"
+    "sourceUrl": "https://giphy.com/gifs/D0q6mmkycvWhtI6U6p",
+    "format": "video"
   },
   {
     "id": 10820,
@@ -4960,7 +5247,8 @@
       "relationship"
     ],
     "source": "Giphy · digitalducks",
-    "sourceUrl": "https://giphy.com/gifs/Uba5wdBAfvB9zfHCps"
+    "sourceUrl": "https://giphy.com/gifs/Uba5wdBAfvB9zfHCps",
+    "format": "video"
   },
   {
     "id": 10821,
@@ -4975,7 +5263,8 @@
       "relationship"
     ],
     "source": "Giphy · BareTreeMedia",
-    "sourceUrl": "https://giphy.com/gifs/htiljQEcNlU3wf6pL0"
+    "sourceUrl": "https://giphy.com/gifs/htiljQEcNlU3wf6pL0",
+    "format": "video"
   },
   {
     "id": 10822,
@@ -4990,7 +5279,8 @@
       "relationship"
     ],
     "source": "Giphy · BareTreeMedia",
-    "sourceUrl": "https://giphy.com/gifs/lOaf0LBA2mluwm8cY8"
+    "sourceUrl": "https://giphy.com/gifs/lOaf0LBA2mluwm8cY8",
+    "format": "video"
   },
   {
     "id": 10823,
@@ -5005,7 +5295,8 @@
       "relationship"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/57YD9VMoN291u"
+    "sourceUrl": "https://giphy.com/gifs/57YD9VMoN291u",
+    "format": "video"
   },
   {
     "id": 10824,
@@ -5020,7 +5311,8 @@
       "relationship"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/UN0NJVJlddGZa"
+    "sourceUrl": "https://giphy.com/gifs/UN0NJVJlddGZa",
+    "format": "video"
   },
   {
     "id": 10825,
@@ -5035,7 +5327,8 @@
       "relationship"
     ],
     "source": "Giphy · wtFOCK",
-    "sourceUrl": "https://giphy.com/gifs/YqETZ9xLqhsRMCJKHs"
+    "sourceUrl": "https://giphy.com/gifs/YqETZ9xLqhsRMCJKHs",
+    "format": "video"
   },
   {
     "id": 10826,
@@ -5050,7 +5343,8 @@
       "relationship"
     ],
     "source": "Giphy · maxcomedian",
-    "sourceUrl": "https://giphy.com/gifs/fqby3Zr5YEeJjS9Xxs"
+    "sourceUrl": "https://giphy.com/gifs/fqby3Zr5YEeJjS9Xxs",
+    "format": "video"
   },
   {
     "id": 10827,
@@ -5065,7 +5359,8 @@
       "relationship"
     ],
     "source": "Giphy · the_valentines",
-    "sourceUrl": "https://giphy.com/gifs/hAHrtgni47K56vOfsk"
+    "sourceUrl": "https://giphy.com/gifs/hAHrtgni47K56vOfsk",
+    "format": "video"
   },
   {
     "id": 10828,
@@ -5080,7 +5375,8 @@
       "relationship"
     ],
     "source": "Giphy · the_valentines",
-    "sourceUrl": "https://giphy.com/gifs/lNKjlynKPPuviD9ND0"
+    "sourceUrl": "https://giphy.com/gifs/lNKjlynKPPuviD9ND0",
+    "format": "video"
   },
   {
     "id": 10829,
@@ -5095,7 +5391,8 @@
       "relationship"
     ],
     "source": "Giphy · cosytales",
-    "sourceUrl": "https://giphy.com/gifs/o03OxDKZXW3Ej0Zgf0"
+    "sourceUrl": "https://giphy.com/gifs/o03OxDKZXW3Ej0Zgf0",
+    "format": "video"
   },
   {
     "id": 10830,
@@ -5110,7 +5407,8 @@
       "relationship"
     ],
     "source": "Giphy · vibermyanmar",
-    "sourceUrl": "https://giphy.com/gifs/tKkJqsqfRB90QqC1oT"
+    "sourceUrl": "https://giphy.com/gifs/tKkJqsqfRB90QqC1oT",
+    "format": "video"
   },
   {
     "id": 10831,
@@ -5125,7 +5423,8 @@
       "relationship"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/1xICpuVfAihb2"
+    "sourceUrl": "https://giphy.com/gifs/1xICpuVfAihb2",
+    "format": "video"
   },
   {
     "id": 10832,
@@ -5140,7 +5439,8 @@
       "relationship"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/7vdZWm9lL82ru"
+    "sourceUrl": "https://giphy.com/gifs/7vdZWm9lL82ru",
+    "format": "video"
   },
   {
     "id": 10833,
@@ -5155,7 +5455,8 @@
       "relationship"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/AjWLRCGRJUgbC"
+    "sourceUrl": "https://giphy.com/gifs/AjWLRCGRJUgbC",
+    "format": "video"
   },
   {
     "id": 10834,
@@ -5170,7 +5471,8 @@
       "relationship"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/O1w2wSTriddUA"
+    "sourceUrl": "https://giphy.com/gifs/O1w2wSTriddUA",
+    "format": "video"
   },
   {
     "id": 10835,
@@ -5185,7 +5487,8 @@
       "relationship"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/RsovLXVXN8BKo"
+    "sourceUrl": "https://giphy.com/gifs/RsovLXVXN8BKo",
+    "format": "video"
   },
   {
     "id": 10836,
@@ -5200,7 +5503,8 @@
       "relationship"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/XArfwywQ4D3Pi"
+    "sourceUrl": "https://giphy.com/gifs/XArfwywQ4D3Pi",
+    "format": "video"
   },
   {
     "id": 10837,
@@ -5215,7 +5519,8 @@
       "relationship"
     ],
     "source": "Giphy · NinderwalEntertainment",
-    "sourceUrl": "https://giphy.com/gifs/e3axbmr3DcqA9Pe7J2"
+    "sourceUrl": "https://giphy.com/gifs/e3axbmr3DcqA9Pe7J2",
+    "format": "video"
   },
   {
     "id": 10838,
@@ -5230,7 +5535,8 @@
       "relationship"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/k8ijaVQ9SPWZG"
+    "sourceUrl": "https://giphy.com/gifs/k8ijaVQ9SPWZG",
+    "format": "video"
   },
   {
     "id": 10839,
@@ -5245,7 +5551,8 @@
       "relationship"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/I3EsiEPZWgpqg"
+    "sourceUrl": "https://giphy.com/gifs/I3EsiEPZWgpqg",
+    "format": "video"
   },
   {
     "id": 10840,
@@ -5260,7 +5567,8 @@
       "relationship"
     ],
     "source": "Giphy · shohruhex",
-    "sourceUrl": "https://giphy.com/gifs/LTRZAX3vBuWtPtmKrL"
+    "sourceUrl": "https://giphy.com/gifs/LTRZAX3vBuWtPtmKrL",
+    "format": "video"
   },
   {
     "id": 10841,
@@ -5275,7 +5583,8 @@
       "relationship"
     ],
     "source": "Giphy · ClubImmobilier",
-    "sourceUrl": "https://giphy.com/gifs/OsCjI6eOX6xL2dJIto"
+    "sourceUrl": "https://giphy.com/gifs/OsCjI6eOX6xL2dJIto",
+    "format": "video"
   },
   {
     "id": 10870,
@@ -5290,7 +5599,8 @@
       "retro"
     ],
     "source": "Giphy · boomunderground",
-    "sourceUrl": "https://giphy.com/gifs/3o72FhmG3DCDVa0QVy"
+    "sourceUrl": "https://giphy.com/gifs/3o72FhmG3DCDVa0QVy",
+    "format": "video"
   },
   {
     "id": 10871,
@@ -5305,7 +5615,8 @@
       "retro"
     ],
     "source": "Giphy · boomunderground",
-    "sourceUrl": "https://giphy.com/gifs/3ornk2bpyiMVz2MMjC"
+    "sourceUrl": "https://giphy.com/gifs/3ornk2bpyiMVz2MMjC",
+    "format": "video"
   },
   {
     "id": 10872,
@@ -5320,7 +5631,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/B4gZT0xIEFrYk"
+    "sourceUrl": "https://giphy.com/gifs/B4gZT0xIEFrYk",
+    "format": "video"
   },
   {
     "id": 10873,
@@ -5335,7 +5647,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/M9PIbkhowuhLa"
+    "sourceUrl": "https://giphy.com/gifs/M9PIbkhowuhLa",
+    "format": "video"
   },
   {
     "id": 10874,
@@ -5350,7 +5663,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/pWT1KREi3UaFW"
+    "sourceUrl": "https://giphy.com/gifs/pWT1KREi3UaFW",
+    "format": "video"
   },
   {
     "id": 10875,
@@ -5365,7 +5679,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/wPdBXNYKpMZGg"
+    "sourceUrl": "https://giphy.com/gifs/wPdBXNYKpMZGg",
+    "format": "video"
   },
   {
     "id": 10876,
@@ -5380,7 +5695,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/xmXUarKqywPhS"
+    "sourceUrl": "https://giphy.com/gifs/xmXUarKqywPhS",
+    "format": "video"
   },
   {
     "id": 10877,
@@ -5395,7 +5711,8 @@
       "retro"
     ],
     "source": "Giphy · warnerarchive",
-    "sourceUrl": "https://giphy.com/gifs/xvbsRjxG72E5RumBCZ"
+    "sourceUrl": "https://giphy.com/gifs/xvbsRjxG72E5RumBCZ",
+    "format": "video"
   },
   {
     "id": 10878,
@@ -5410,7 +5727,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/26xBONeDEE2I0FIzu"
+    "sourceUrl": "https://giphy.com/gifs/26xBONeDEE2I0FIzu",
+    "format": "video"
   },
   {
     "id": 10879,
@@ -5425,7 +5743,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/4LTGEdPueINFzycY1Ixq"
+    "sourceUrl": "https://giphy.com/gifs/4LTGEdPueINFzycY1Ixq",
+    "format": "video"
   },
   {
     "id": 10880,
@@ -5440,7 +5759,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/BoPUZQRQEPogo"
+    "sourceUrl": "https://giphy.com/gifs/BoPUZQRQEPogo",
+    "format": "video"
   },
   {
     "id": 10881,
@@ -5455,7 +5775,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/K4ppHUZTYKJYk"
+    "sourceUrl": "https://giphy.com/gifs/K4ppHUZTYKJYk",
+    "format": "video"
   },
   {
     "id": 10882,
@@ -5470,7 +5791,8 @@
       "retro"
     ],
     "source": "Giphy · themarisjones",
-    "sourceUrl": "https://giphy.com/gifs/SxMMNyNTMGw2uwqSNl"
+    "sourceUrl": "https://giphy.com/gifs/SxMMNyNTMGw2uwqSNl",
+    "format": "video"
   },
   {
     "id": 10883,
@@ -5485,7 +5807,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/fmeTX8AURI4co"
+    "sourceUrl": "https://giphy.com/gifs/fmeTX8AURI4co",
+    "format": "video"
   },
   {
     "id": 10884,
@@ -5500,7 +5823,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/koPkNVkQAh6py"
+    "sourceUrl": "https://giphy.com/gifs/koPkNVkQAh6py",
+    "format": "video"
   },
   {
     "id": 10885,
@@ -5515,7 +5839,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/y2PC6nZkU3Jja"
+    "sourceUrl": "https://giphy.com/gifs/y2PC6nZkU3Jja",
+    "format": "video"
   },
   {
     "id": 10886,
@@ -5530,7 +5855,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/13T0POY9Pd8MAo"
+    "sourceUrl": "https://giphy.com/gifs/13T0POY9Pd8MAo",
+    "format": "video"
   },
   {
     "id": 10887,
@@ -5545,7 +5871,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/3Pp8ASpv9U72U"
+    "sourceUrl": "https://giphy.com/gifs/3Pp8ASpv9U72U",
+    "format": "video"
   },
   {
     "id": 10888,
@@ -5560,7 +5887,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/BNvdZezB6USGY"
+    "sourceUrl": "https://giphy.com/gifs/BNvdZezB6USGY",
+    "format": "video"
   },
   {
     "id": 10889,
@@ -5575,7 +5903,8 @@
       "retro"
     ],
     "source": "Giphy · gfw22",
-    "sourceUrl": "https://giphy.com/gifs/Hm5a8ZwgMLDx0TOZRv"
+    "sourceUrl": "https://giphy.com/gifs/Hm5a8ZwgMLDx0TOZRv",
+    "format": "video"
   },
   {
     "id": 10890,
@@ -5590,7 +5919,8 @@
       "retro"
     ],
     "source": "Giphy · fleischerstudios",
-    "sourceUrl": "https://giphy.com/gifs/Sto042PqwwG83OcIur"
+    "sourceUrl": "https://giphy.com/gifs/Sto042PqwwG83OcIur",
+    "format": "video"
   },
   {
     "id": 10891,
@@ -5605,7 +5935,8 @@
       "retro"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/UdodQXUQ9sx3i"
+    "sourceUrl": "https://giphy.com/gifs/UdodQXUQ9sx3i",
+    "format": "video"
   },
   {
     "id": 10892,
@@ -5620,7 +5951,8 @@
       "retro"
     ],
     "source": "Giphy · fleischerstudios",
-    "sourceUrl": "https://giphy.com/gifs/l1mNpWckhRX9cTS2Z2"
+    "sourceUrl": "https://giphy.com/gifs/l1mNpWckhRX9cTS2Z2",
+    "format": "video"
   },
   {
     "id": 10893,
@@ -5635,7 +5967,8 @@
       "retro"
     ],
     "source": "Giphy · fleischerstudios",
-    "sourceUrl": "https://giphy.com/gifs/mEVCELz16x2a6kobeY"
+    "sourceUrl": "https://giphy.com/gifs/mEVCELz16x2a6kobeY",
+    "format": "video"
   },
   {
     "id": 10963,
@@ -5644,7 +5977,8 @@
     "category": "Uncategorized",
     "file": "smash challange rage.gif",
     "type": "gif",
-    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/smash%20challange%20rage.gif"
+    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/smash%20challange%20rage.gif",
+    "format": "gif"
   },
   {
     "id": 10964,
@@ -5659,7 +5993,8 @@
       "society"
     ],
     "source": "Giphy · tvlandclassic",
-    "sourceUrl": "https://giphy.com/gifs/3o7TKEP6YngkCKFofC"
+    "sourceUrl": "https://giphy.com/gifs/3o7TKEP6YngkCKFofC",
+    "format": "video"
   },
   {
     "id": 10965,
@@ -5674,7 +6009,8 @@
       "society"
     ],
     "source": "Giphy · hulu",
-    "sourceUrl": "https://giphy.com/gifs/3o7TKRwpns23QMNNiE"
+    "sourceUrl": "https://giphy.com/gifs/3o7TKRwpns23QMNNiE",
+    "format": "video"
   },
   {
     "id": 10966,
@@ -5689,7 +6025,8 @@
       "society"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/4ytUZzb1pRPBS"
+    "sourceUrl": "https://giphy.com/gifs/4ytUZzb1pRPBS",
+    "format": "video"
   },
   {
     "id": 10967,
@@ -5704,7 +6041,8 @@
       "society"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/H2Qwbfw4FctdS"
+    "sourceUrl": "https://giphy.com/gifs/H2Qwbfw4FctdS",
+    "format": "video"
   },
   {
     "id": 10968,
@@ -5719,7 +6057,8 @@
       "society"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/LfQzCXmICSoa4"
+    "sourceUrl": "https://giphy.com/gifs/LfQzCXmICSoa4",
+    "format": "video"
   },
   {
     "id": 10969,
@@ -5734,7 +6073,8 @@
       "society"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/XtdHWMoKNGPtvZ9Z9n"
+    "sourceUrl": "https://giphy.com/gifs/XtdHWMoKNGPtvZ9Z9n",
+    "format": "video"
   },
   {
     "id": 10970,
@@ -5749,7 +6089,8 @@
       "society"
     ],
     "source": "Giphy · dieselrcorp",
-    "sourceUrl": "https://giphy.com/gifs/YNRa2YpJgN0rCj3jrK"
+    "sourceUrl": "https://giphy.com/gifs/YNRa2YpJgN0rCj3jrK",
+    "format": "video"
   },
   {
     "id": 10971,
@@ -5764,7 +6105,8 @@
       "society"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/wRYbY8OPGkHxS"
+    "sourceUrl": "https://giphy.com/gifs/wRYbY8OPGkHxS",
+    "format": "video"
   },
   {
     "id": 10972,
@@ -5779,7 +6121,8 @@
       "society"
     ],
     "source": "Giphy · soulpancake",
-    "sourceUrl": "https://giphy.com/gifs/1ipKDVkFDsfYf2sxHP"
+    "sourceUrl": "https://giphy.com/gifs/1ipKDVkFDsfYf2sxHP",
+    "format": "video"
   },
   {
     "id": 10973,
@@ -5794,7 +6137,8 @@
       "society"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/9eArabyvbzqEM"
+    "sourceUrl": "https://giphy.com/gifs/9eArabyvbzqEM",
+    "format": "video"
   },
   {
     "id": 10974,
@@ -5809,7 +6153,8 @@
       "society"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/Dumy6VxTrZfS8"
+    "sourceUrl": "https://giphy.com/gifs/Dumy6VxTrZfS8",
+    "format": "video"
   },
   {
     "id": 10975,
@@ -5824,7 +6169,8 @@
       "society"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/ViaqlyyNZGMyA"
+    "sourceUrl": "https://giphy.com/gifs/ViaqlyyNZGMyA",
+    "format": "video"
   },
   {
     "id": 10976,
@@ -5839,7 +6185,8 @@
       "society"
     ],
     "source": "Giphy · TheBroadMuseum",
-    "sourceUrl": "https://giphy.com/gifs/cCbJVPuLg4MZNmBnNv"
+    "sourceUrl": "https://giphy.com/gifs/cCbJVPuLg4MZNmBnNv",
+    "format": "video"
   },
   {
     "id": 10977,
@@ -5854,7 +6201,8 @@
       "society"
     ],
     "source": "Giphy · butler",
-    "sourceUrl": "https://giphy.com/gifs/cPAsPss2lGe7EuDSmt"
+    "sourceUrl": "https://giphy.com/gifs/cPAsPss2lGe7EuDSmt",
+    "format": "video"
   },
   {
     "id": 10978,
@@ -5869,7 +6217,8 @@
       "society"
     ],
     "source": "Giphy · earthhour",
-    "sourceUrl": "https://giphy.com/gifs/fBUYOmOywHnJoIn82O"
+    "sourceUrl": "https://giphy.com/gifs/fBUYOmOywHnJoIn82O",
+    "format": "video"
   },
   {
     "id": 10979,
@@ -5884,7 +6233,8 @@
       "society"
     ],
     "source": "Giphy · cyberwar",
-    "sourceUrl": "https://giphy.com/gifs/l46CutOvKQ9oks8WQ"
+    "sourceUrl": "https://giphy.com/gifs/l46CutOvKQ9oks8WQ",
+    "format": "video"
   },
   {
     "id": 10980,
@@ -5899,7 +6249,8 @@
       "society"
     ],
     "source": "Giphy · xponentialdesign",
-    "sourceUrl": "https://giphy.com/gifs/1zKRbqUmytgKKjTqtY"
+    "sourceUrl": "https://giphy.com/gifs/1zKRbqUmytgKKjTqtY",
+    "format": "video"
   },
   {
     "id": 10981,
@@ -5914,7 +6265,8 @@
       "society"
     ],
     "source": "Giphy · rewiredotorg",
-    "sourceUrl": "https://giphy.com/gifs/3ohs4rNEuAQEkjfd6w"
+    "sourceUrl": "https://giphy.com/gifs/3ohs4rNEuAQEkjfd6w",
+    "format": "video"
   },
   {
     "id": 10982,
@@ -5929,7 +6281,8 @@
       "society"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/3ohs4zYPGdgINTKVGg"
+    "sourceUrl": "https://giphy.com/gifs/3ohs4zYPGdgINTKVGg",
+    "format": "video"
   },
   {
     "id": 10983,
@@ -5944,7 +6297,8 @@
       "society"
     ],
     "source": "Giphy · DCKS",
-    "sourceUrl": "https://giphy.com/gifs/XEOO5wa1nyiaeAKll1"
+    "sourceUrl": "https://giphy.com/gifs/XEOO5wa1nyiaeAKll1",
+    "format": "video"
   },
   {
     "id": 10984,
@@ -5959,7 +6313,8 @@
       "society"
     ],
     "source": "Giphy · xponentialdesign",
-    "sourceUrl": "https://giphy.com/gifs/cPSeb8U6cjALDo0GGL"
+    "sourceUrl": "https://giphy.com/gifs/cPSeb8U6cjALDo0GGL",
+    "format": "video"
   },
   {
     "id": 10985,
@@ -5974,7 +6329,8 @@
       "society"
     ],
     "source": "Giphy · HannahWitton",
-    "sourceUrl": "https://giphy.com/gifs/ch1mghbgEC2iB59Fyg"
+    "sourceUrl": "https://giphy.com/gifs/ch1mghbgEC2iB59Fyg",
+    "format": "video"
   },
   {
     "id": 10986,
@@ -5989,7 +6345,8 @@
       "society"
     ],
     "source": "Giphy · digijing",
-    "sourceUrl": "https://giphy.com/gifs/d3mmdNnW5hkoUxTG"
+    "sourceUrl": "https://giphy.com/gifs/d3mmdNnW5hkoUxTG",
+    "format": "video"
   },
   {
     "id": 10987,
@@ -6004,7 +6361,8 @@
       "society"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/fwfbJvRNHb5sI"
+    "sourceUrl": "https://giphy.com/gifs/fwfbJvRNHb5sI",
+    "format": "video"
   },
   {
     "id": 11083,
@@ -6013,7 +6371,8 @@
     "category": "Uncategorized",
     "file": "spiderman holding.gif",
     "type": "gif",
-    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/spiderman%20holding.gif"
+    "url": "https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/spiderman%20holding.gif",
+    "format": "gif"
   },
   {
     "id": 11084,
@@ -6028,7 +6387,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/3o7bu9HvCRRp7MjpT2"
+    "sourceUrl": "https://giphy.com/gifs/3o7bu9HvCRRp7MjpT2",
+    "format": "video"
   },
   {
     "id": 11085,
@@ -6043,7 +6403,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/CVtNe84hhYF9u"
+    "sourceUrl": "https://giphy.com/gifs/CVtNe84hhYF9u",
+    "format": "video"
   },
   {
     "id": 11086,
@@ -6058,7 +6419,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/EizPK3InQbrNK"
+    "sourceUrl": "https://giphy.com/gifs/EizPK3InQbrNK",
+    "format": "video"
   },
   {
     "id": 11087,
@@ -6073,7 +6435,8 @@
       "tech"
     ],
     "source": "Giphy · Windpress",
-    "sourceUrl": "https://giphy.com/gifs/HZFxBu5dMqwA1cIB1k"
+    "sourceUrl": "https://giphy.com/gifs/HZFxBu5dMqwA1cIB1k",
+    "format": "video"
   },
   {
     "id": 11088,
@@ -6088,7 +6451,8 @@
       "tech"
     ],
     "source": "Giphy · xponentialdesign",
-    "sourceUrl": "https://giphy.com/gifs/YnexM9LwlwGu4Z1QnS"
+    "sourceUrl": "https://giphy.com/gifs/YnexM9LwlwGu4Z1QnS",
+    "format": "video"
   },
   {
     "id": 11089,
@@ -6103,7 +6467,8 @@
       "tech"
     ],
     "source": "Giphy · adweek",
-    "sourceUrl": "https://giphy.com/gifs/kE6xCyOOHoxlS"
+    "sourceUrl": "https://giphy.com/gifs/kE6xCyOOHoxlS",
+    "format": "video"
   },
   {
     "id": 11090,
@@ -6118,7 +6483,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/pIMlKqgdZgvo4"
+    "sourceUrl": "https://giphy.com/gifs/pIMlKqgdZgvo4",
+    "format": "video"
   },
   {
     "id": 11091,
@@ -6133,7 +6499,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/3fjtbGWBsKeDC"
+    "sourceUrl": "https://giphy.com/gifs/3fjtbGWBsKeDC",
+    "format": "video"
   },
   {
     "id": 11092,
@@ -6148,7 +6515,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/4NKJhDAEv8TRu"
+    "sourceUrl": "https://giphy.com/gifs/4NKJhDAEv8TRu",
+    "format": "video"
   },
   {
     "id": 11093,
@@ -6163,7 +6531,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/GoHD0xCYwjM5y"
+    "sourceUrl": "https://giphy.com/gifs/GoHD0xCYwjM5y",
+    "format": "video"
   },
   {
     "id": 11094,
@@ -6178,7 +6547,8 @@
       "tech"
     ],
     "source": "Giphy · RosarioplusNoticias",
-    "sourceUrl": "https://giphy.com/gifs/f61hh6QisPuWJkZtin"
+    "sourceUrl": "https://giphy.com/gifs/f61hh6QisPuWJkZtin",
+    "format": "video"
   },
   {
     "id": 11095,
@@ -6193,7 +6563,8 @@
       "tech"
     ],
     "source": "Giphy · ugolize",
-    "sourceUrl": "https://giphy.com/gifs/kbaF0X3YRKzmlsq7Ct"
+    "sourceUrl": "https://giphy.com/gifs/kbaF0X3YRKzmlsq7Ct",
+    "format": "video"
   },
   {
     "id": 11096,
@@ -6208,7 +6579,8 @@
       "tech"
     ],
     "source": "Giphy · wearebigbeat",
-    "sourceUrl": "https://giphy.com/gifs/l378vMO5yhVuap3pe"
+    "sourceUrl": "https://giphy.com/gifs/l378vMO5yhVuap3pe",
+    "format": "video"
   },
   {
     "id": 11097,
@@ -6223,7 +6595,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/lcYkeZa1gBCzS"
+    "sourceUrl": "https://giphy.com/gifs/lcYkeZa1gBCzS",
+    "format": "video"
   },
   {
     "id": 11098,
@@ -6238,7 +6611,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/nv99yd56AMNDa"
+    "sourceUrl": "https://giphy.com/gifs/nv99yd56AMNDa",
+    "format": "video"
   },
   {
     "id": 11099,
@@ -6253,7 +6627,8 @@
       "tech"
     ],
     "source": "Giphy · youngertv",
-    "sourceUrl": "https://giphy.com/gifs/26AHumw7ezGDRpYmk"
+    "sourceUrl": "https://giphy.com/gifs/26AHumw7ezGDRpYmk",
+    "format": "video"
   },
   {
     "id": 11100,
@@ -6268,7 +6643,8 @@
       "tech"
     ],
     "source": "Giphy · huggleapp123",
-    "sourceUrl": "https://giphy.com/gifs/3o7aDaznCrAfeK5r7G"
+    "sourceUrl": "https://giphy.com/gifs/3o7aDaznCrAfeK5r7G",
+    "format": "video"
   },
   {
     "id": 11101,
@@ -6283,7 +6659,8 @@
       "tech"
     ],
     "source": "Giphy · huggleapp123",
-    "sourceUrl": "https://giphy.com/gifs/3ov9jZZmMlz6ssgUi4"
+    "sourceUrl": "https://giphy.com/gifs/3ov9jZZmMlz6ssgUi4",
+    "format": "video"
   },
   {
     "id": 11102,
@@ -6298,7 +6675,8 @@
       "tech"
     ],
     "source": "Giphy · DoubledayBooks",
-    "sourceUrl": "https://giphy.com/gifs/5IIFYzFf4KiFY4Hjie"
+    "sourceUrl": "https://giphy.com/gifs/5IIFYzFf4KiFY4Hjie",
+    "format": "video"
   },
   {
     "id": 11103,
@@ -6313,7 +6691,8 @@
       "tech"
     ],
     "source": "Giphy · foals",
-    "sourceUrl": "https://giphy.com/gifs/UPvizSoRj69bOnRDu8"
+    "sourceUrl": "https://giphy.com/gifs/UPvizSoRj69bOnRDu8",
+    "format": "video"
   },
   {
     "id": 11104,
@@ -6328,7 +6707,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/kbW7QyL5arfEI"
+    "sourceUrl": "https://giphy.com/gifs/kbW7QyL5arfEI",
+    "format": "video"
   },
   {
     "id": 11105,
@@ -6343,7 +6723,8 @@
       "tech"
     ],
     "source": "Giphy · huggleapp123",
-    "sourceUrl": "https://giphy.com/gifs/xT9IgEWozYXHAI3wl2"
+    "sourceUrl": "https://giphy.com/gifs/xT9IgEWozYXHAI3wl2",
+    "format": "video"
   },
   {
     "id": 11106,
@@ -6358,7 +6739,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/11v8gJRwB2fE3u"
+    "sourceUrl": "https://giphy.com/gifs/11v8gJRwB2fE3u",
+    "format": "video"
   },
   {
     "id": 11107,
@@ -6373,7 +6755,8 @@
       "tech"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/1yT8T3tCobJWlMW7NO"
+    "sourceUrl": "https://giphy.com/gifs/1yT8T3tCobJWlMW7NO",
+    "format": "video"
   },
   {
     "id": 11251,
@@ -6388,7 +6771,8 @@
       "vibe"
     ],
     "source": "Giphy · dozestudio",
-    "sourceUrl": "https://giphy.com/gifs/3o6gaWDquwZ1PMZqpi"
+    "sourceUrl": "https://giphy.com/gifs/3o6gaWDquwZ1PMZqpi",
+    "format": "video"
   },
   {
     "id": 11252,
@@ -6403,7 +6787,8 @@
       "vibe"
     ],
     "source": "Giphy · StoryofThisLife",
-    "sourceUrl": "https://giphy.com/gifs/6cJjMs1gjjdUD4E6VH"
+    "sourceUrl": "https://giphy.com/gifs/6cJjMs1gjjdUD4E6VH",
+    "format": "video"
   },
   {
     "id": 11253,
@@ -6418,7 +6803,8 @@
       "vibe"
     ],
     "source": "Giphy · DreamImaginations",
-    "sourceUrl": "https://giphy.com/gifs/FkpkETgytEB4LcSGWR"
+    "sourceUrl": "https://giphy.com/gifs/FkpkETgytEB4LcSGWR",
+    "format": "video"
   },
   {
     "id": 11254,
@@ -6433,7 +6819,8 @@
       "vibe"
     ],
     "source": "Giphy · johnnyorlando",
-    "sourceUrl": "https://giphy.com/gifs/MENpnxrSw4HifLtwmX"
+    "sourceUrl": "https://giphy.com/gifs/MENpnxrSw4HifLtwmX",
+    "format": "video"
   },
   {
     "id": 11255,
@@ -6448,7 +6835,8 @@
       "vibe"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/YkEep16xmsvO8"
+    "sourceUrl": "https://giphy.com/gifs/YkEep16xmsvO8",
+    "format": "video"
   },
   {
     "id": 11256,
@@ -6463,7 +6851,8 @@
       "vibe"
     ],
     "source": "Giphy · RobotGentleman",
-    "sourceUrl": "https://giphy.com/gifs/ay9PimGj2i91qd5rhp"
+    "sourceUrl": "https://giphy.com/gifs/ay9PimGj2i91qd5rhp",
+    "format": "video"
   },
   {
     "id": 11257,
@@ -6478,7 +6867,8 @@
       "vibe"
     ],
     "source": "Giphy · thesimpsons",
-    "sourceUrl": "https://giphy.com/gifs/eXo5eC1tK7cas"
+    "sourceUrl": "https://giphy.com/gifs/eXo5eC1tK7cas",
+    "format": "video"
   },
   {
     "id": 11258,
@@ -6493,7 +6883,8 @@
       "vibe"
     ],
     "source": "Giphy · psychrome",
-    "sourceUrl": "https://giphy.com/gifs/hvrVRkDoXuTd2n6A2o"
+    "sourceUrl": "https://giphy.com/gifs/hvrVRkDoXuTd2n6A2o",
+    "format": "video"
   },
   {
     "id": 11259,
@@ -6508,7 +6899,8 @@
       "vibe"
     ],
     "source": "Giphy · aardman",
-    "sourceUrl": "https://giphy.com/gifs/3oz8xtBx06mcZWoNJm"
+    "sourceUrl": "https://giphy.com/gifs/3oz8xtBx06mcZWoNJm",
+    "format": "video"
   },
   {
     "id": 11260,
@@ -6523,7 +6915,8 @@
       "vibe"
     ],
     "source": "Giphy · bullettrainmovie",
-    "sourceUrl": "https://giphy.com/gifs/5ySKoLmVrCjCHNlSTM"
+    "sourceUrl": "https://giphy.com/gifs/5ySKoLmVrCjCHNlSTM",
+    "format": "video"
   },
   {
     "id": 11261,
@@ -6538,7 +6931,8 @@
       "vibe"
     ],
     "source": "Giphy · Le_Figaro",
-    "sourceUrl": "https://giphy.com/gifs/Jp569XhzyxVYXv8OQI"
+    "sourceUrl": "https://giphy.com/gifs/Jp569XhzyxVYXv8OQI",
+    "format": "video"
   },
   {
     "id": 11262,
@@ -6553,7 +6947,8 @@
       "vibe"
     ],
     "source": "Giphy · KingsFilmsSiddhant",
-    "sourceUrl": "https://giphy.com/gifs/WXmOOwhb6nU1sVs5f1"
+    "sourceUrl": "https://giphy.com/gifs/WXmOOwhb6nU1sVs5f1",
+    "format": "video"
   },
   {
     "id": 11263,
@@ -6568,7 +6963,8 @@
       "vibe"
     ],
     "source": "Giphy · Caltrain",
-    "sourceUrl": "https://giphy.com/gifs/f7BCVt7TKB9x4bLZXc"
+    "sourceUrl": "https://giphy.com/gifs/f7BCVt7TKB9x4bLZXc",
+    "format": "video"
   },
   {
     "id": 11264,
@@ -6583,7 +6979,8 @@
       "vibe"
     ],
     "source": "Giphy · grishmajethiya",
-    "sourceUrl": "https://giphy.com/gifs/jKlWZAgZClO4lzjG9O"
+    "sourceUrl": "https://giphy.com/gifs/jKlWZAgZClO4lzjG9O",
+    "format": "video"
   },
   {
     "id": 11265,
@@ -6598,7 +6995,8 @@
       "vibe"
     ],
     "source": "Giphy · bullettrainmovie",
-    "sourceUrl": "https://giphy.com/gifs/nU2XDf4DFXrPnH7b7y"
+    "sourceUrl": "https://giphy.com/gifs/nU2XDf4DFXrPnH7b7y",
+    "format": "video"
   },
   {
     "id": 11266,
@@ -6613,7 +7011,8 @@
       "vibe"
     ],
     "source": "Giphy · bullettrainmovie",
-    "sourceUrl": "https://giphy.com/gifs/p1WvRtN0FuA1sOmV6L"
+    "sourceUrl": "https://giphy.com/gifs/p1WvRtN0FuA1sOmV6L",
+    "format": "video"
   },
   {
     "id": 11267,
@@ -6628,7 +7027,8 @@
       "vibe"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/13hxeOYjoTWtK8"
+    "sourceUrl": "https://giphy.com/gifs/13hxeOYjoTWtK8",
+    "format": "video"
   },
   {
     "id": 11268,
@@ -6643,7 +7043,8 @@
       "vibe"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/8m4R4pvViWtRzbloJ1"
+    "sourceUrl": "https://giphy.com/gifs/8m4R4pvViWtRzbloJ1",
+    "format": "video"
   },
   {
     "id": 11269,
@@ -6658,7 +7059,8 @@
       "vibe"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/Bl10664xbIVkk"
+    "sourceUrl": "https://giphy.com/gifs/Bl10664xbIVkk",
+    "format": "video"
   },
   {
     "id": 11270,
@@ -6673,7 +7075,8 @@
       "vibe"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/EJMyMO22UxP68"
+    "sourceUrl": "https://giphy.com/gifs/EJMyMO22UxP68",
+    "format": "video"
   },
   {
     "id": 11271,
@@ -6688,7 +7091,8 @@
       "vibe"
     ],
     "source": "Giphy · Lunchtre",
-    "sourceUrl": "https://giphy.com/gifs/UZxzsNx1kpZZwTCSSp"
+    "sourceUrl": "https://giphy.com/gifs/UZxzsNx1kpZZwTCSSp",
+    "format": "video"
   },
   {
     "id": 11272,
@@ -6703,7 +7107,8 @@
       "vibe"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/atQF1zaSGq8s8"
+    "sourceUrl": "https://giphy.com/gifs/atQF1zaSGq8s8",
+    "format": "video"
   },
   {
     "id": 11273,
@@ -6718,7 +7123,8 @@
       "vibe"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/ujTVMASREzuRbH6zy5"
+    "sourceUrl": "https://giphy.com/gifs/ujTVMASREzuRbH6zy5",
+    "format": "video"
   },
   {
     "id": 11274,
@@ -6733,7 +7139,8 @@
       "vibe"
     ],
     "source": "Giphy · alisami332",
-    "sourceUrl": "https://giphy.com/gifs/ybnrXkdf8jAxIkMuwr"
+    "sourceUrl": "https://giphy.com/gifs/ybnrXkdf8jAxIkMuwr",
+    "format": "video"
   },
   {
     "id": 11382,
@@ -6748,7 +7155,8 @@
       "weather"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/8TIbelFjFXjIJ0Zg1l"
+    "sourceUrl": "https://giphy.com/gifs/8TIbelFjFXjIJ0Zg1l",
+    "format": "video"
   },
   {
     "id": 11383,
@@ -6763,7 +7171,8 @@
       "weather"
     ],
     "source": "Giphy · willsmithx4",
-    "sourceUrl": "https://giphy.com/gifs/KFUx0Rtz7p0HTzbJ7x"
+    "sourceUrl": "https://giphy.com/gifs/KFUx0Rtz7p0HTzbJ7x",
+    "format": "video"
   },
   {
     "id": 11384,
@@ -6778,7 +7187,8 @@
       "weather"
     ],
     "source": "Giphy · spongebob",
-    "sourceUrl": "https://giphy.com/gifs/KaW6fNYZf6eSk"
+    "sourceUrl": "https://giphy.com/gifs/KaW6fNYZf6eSk",
+    "format": "video"
   },
   {
     "id": 11385,
@@ -6793,7 +7203,8 @@
       "weather"
     ],
     "source": "Giphy · DigitalDiscovery",
-    "sourceUrl": "https://giphy.com/gifs/QDie5G4HyfUrmf1Zs6"
+    "sourceUrl": "https://giphy.com/gifs/QDie5G4HyfUrmf1Zs6",
+    "format": "video"
   },
   {
     "id": 11386,
@@ -6808,7 +7219,8 @@
       "weather"
     ],
     "source": "Giphy · giphyirl",
-    "sourceUrl": "https://giphy.com/gifs/fAbq4YrtdsdQ6tmp4j"
+    "sourceUrl": "https://giphy.com/gifs/fAbq4YrtdsdQ6tmp4j",
+    "format": "video"
   },
   {
     "id": 11387,
@@ -6823,7 +7235,8 @@
       "weather"
     ],
     "source": "Giphy · marko",
-    "sourceUrl": "https://giphy.com/gifs/l0ExudAUhVIyBcqyI"
+    "sourceUrl": "https://giphy.com/gifs/l0ExudAUhVIyBcqyI",
+    "format": "video"
   },
   {
     "id": 11388,
@@ -6838,7 +7251,8 @@
       "weather"
     ],
     "source": "Giphy · NTEtrondelag",
-    "sourceUrl": "https://giphy.com/gifs/quzrFyG9TsCAhSp9wY"
+    "sourceUrl": "https://giphy.com/gifs/quzrFyG9TsCAhSp9wY",
+    "format": "video"
   },
   {
     "id": 11389,
@@ -6853,7 +7267,8 @@
       "weather"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/s4Bi420mMDRBK"
+    "sourceUrl": "https://giphy.com/gifs/s4Bi420mMDRBK",
+    "format": "video"
   },
   {
     "id": 11390,
@@ -6868,7 +7283,8 @@
       "weather"
     ],
     "source": "Giphy · BrzzyWeather",
-    "sourceUrl": "https://giphy.com/gifs/8h0aCTL8OpOCMkhcX7"
+    "sourceUrl": "https://giphy.com/gifs/8h0aCTL8OpOCMkhcX7",
+    "format": "video"
   },
   {
     "id": 11391,
@@ -6883,7 +7299,8 @@
       "weather"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/8uBI4YjfZWXlu"
+    "sourceUrl": "https://giphy.com/gifs/8uBI4YjfZWXlu",
+    "format": "video"
   },
   {
     "id": 11392,
@@ -6898,7 +7315,8 @@
       "weather"
     ],
     "source": "Giphy · outsidetv",
-    "sourceUrl": "https://giphy.com/gifs/9jvjuSSkMOYTyQfJji"
+    "sourceUrl": "https://giphy.com/gifs/9jvjuSSkMOYTyQfJji",
+    "format": "video"
   },
   {
     "id": 11393,
@@ -6913,7 +7331,8 @@
       "weather"
     ],
     "source": "Giphy · teamcoco",
-    "sourceUrl": "https://giphy.com/gifs/Av0z9tdsBvFPLnnHz3"
+    "sourceUrl": "https://giphy.com/gifs/Av0z9tdsBvFPLnnHz3",
+    "format": "video"
   },
   {
     "id": 11394,
@@ -6928,7 +7347,8 @@
       "weather"
     ],
     "source": "Giphy · elle0elle",
-    "sourceUrl": "https://giphy.com/gifs/JTghlLg0d1BpZvbQlG"
+    "sourceUrl": "https://giphy.com/gifs/JTghlLg0d1BpZvbQlG",
+    "format": "video"
   },
   {
     "id": 11395,
@@ -6943,7 +7363,8 @@
       "weather"
     ],
     "source": "Giphy · justviralnet",
-    "sourceUrl": "https://giphy.com/gifs/SwV4uWoSH2eZKWtIAO"
+    "sourceUrl": "https://giphy.com/gifs/SwV4uWoSH2eZKWtIAO",
+    "format": "video"
   },
   {
     "id": 11396,
@@ -6958,7 +7379,8 @@
       "weather"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/l2JIaYp6P3WT5Ybu0"
+    "sourceUrl": "https://giphy.com/gifs/l2JIaYp6P3WT5Ybu0",
+    "format": "video"
   },
   {
     "id": 11397,
@@ -6973,7 +7395,8 @@
       "weather"
     ],
     "source": "Giphy · americangods",
-    "sourceUrl": "https://giphy.com/gifs/nAP9Ct43LubvHrrDPc"
+    "sourceUrl": "https://giphy.com/gifs/nAP9Ct43LubvHrrDPc",
+    "format": "video"
   },
   {
     "id": 11398,
@@ -6988,7 +7411,8 @@
       "weather"
     ],
     "source": "Giphy · deepsystems",
-    "sourceUrl": "https://giphy.com/gifs/0R2jgOP0GaIBVca4UT"
+    "sourceUrl": "https://giphy.com/gifs/0R2jgOP0GaIBVca4UT",
+    "format": "video"
   },
   {
     "id": 11399,
@@ -7003,7 +7427,8 @@
       "weather"
     ],
     "source": "Giphy · cushmok",
-    "sourceUrl": "https://giphy.com/gifs/26ghtax5L4WRMizK0"
+    "sourceUrl": "https://giphy.com/gifs/26ghtax5L4WRMizK0",
+    "format": "video"
   },
   {
     "id": 11400,
@@ -7018,7 +7443,8 @@
       "weather"
     ],
     "source": "Giphy · laguarimba",
-    "sourceUrl": "https://giphy.com/gifs/CrcUtaLMvAF7GMumMT"
+    "sourceUrl": "https://giphy.com/gifs/CrcUtaLMvAF7GMumMT",
+    "format": "video"
   },
   {
     "id": 11401,
@@ -7033,7 +7459,8 @@
       "weather"
     ],
     "source": "Giphy · laguarimba",
-    "sourceUrl": "https://giphy.com/gifs/PrvBCccrfrBevChvhk"
+    "sourceUrl": "https://giphy.com/gifs/PrvBCccrfrBevChvhk",
+    "format": "video"
   },
   {
     "id": 11402,
@@ -7048,7 +7475,8 @@
       "weather"
     ],
     "source": "Giphy · kurmaz",
-    "sourceUrl": "https://giphy.com/gifs/VajlaOfpkqlkoGi11J"
+    "sourceUrl": "https://giphy.com/gifs/VajlaOfpkqlkoGi11J",
+    "format": "video"
   },
   {
     "id": 11403,
@@ -7063,7 +7491,8 @@
       "weather"
     ],
     "source": "Giphy",
-    "sourceUrl": "https://giphy.com/gifs/Zt6W9aiKkUSZy"
+    "sourceUrl": "https://giphy.com/gifs/Zt6W9aiKkUSZy",
+    "format": "video"
   },
   {
     "id": 11404,
@@ -7078,7 +7507,8 @@
       "weather"
     ],
     "source": "Giphy · tkkjee",
-    "sourceUrl": "https://giphy.com/gifs/dYn1aw97jabMWqDEle"
+    "sourceUrl": "https://giphy.com/gifs/dYn1aw97jabMWqDEle",
+    "format": "video"
   },
   {
     "id": 11405,
@@ -7093,6 +7523,7 @@
       "weather"
     ],
     "source": "Giphy · theoffice",
-    "sourceUrl": "https://giphy.com/gifs/mHwiw1aa0ztS6clQGy"
+    "sourceUrl": "https://giphy.com/gifs/mHwiw1aa0ztS6clQGy",
+    "format": "video"
   }
 ]

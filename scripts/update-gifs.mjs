@@ -155,17 +155,30 @@ try {
   const otherLocalGifs = localGifs.filter((g) => !g.file.startsWith('memes/'));
   const combined = [...localMemes, ...memelordItems, ...otherLocalGifs];
 
-  // Ensure globally unique slugs
-  const seenSlugs = new Map();
+  // Ensure globally unique slugs across the entire catalog and assign explicit `format`
+  const usedSlugs = new Set();
+  const slugNextSuffix = new Map();
   const gifsWithIds = combined.map((gif, index) => {
-    let base = gif.slug || `item-${index + 1}`;
-    const count = seenSlugs.get(base) || 0;
-    seenSlugs.set(base, count + 1);
-    const uniqueSlug = count === 0 ? base : `${base}-${count + 1}`;
+    const base = gif.slug || `item-${index + 1}`;
+    let uniqueSlug = base;
+    if (usedSlugs.has(uniqueSlug)) {
+      let suffix = slugNextSuffix.get(base) || 2;
+      while (usedSlugs.has(`${base}-${suffix}`)) {
+        suffix++;
+      }
+      uniqueSlug = `${base}-${suffix}`;
+      slugNextSuffix.set(base, suffix + 1);
+    } else {
+      slugNextSuffix.set(base, 2);
+    }
+    usedSlugs.add(uniqueSlug);
+
+    const format = gif.category === 'Stickers' ? 'sticker' : gif.type || 'gif';
     return {
       id: index + 1,
       ...gif,
       slug: uniqueSlug,
+      format,
     };
   });
 

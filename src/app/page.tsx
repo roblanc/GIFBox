@@ -12,6 +12,7 @@ interface Gif {
   category: string;
   file: string;
   type?: string;
+  format?: string;
   tags?: string[];
   source?: string;
   url?: string;
@@ -265,17 +266,10 @@ export default function Home() {
     const directUrl = mediaSrc.startsWith('http')
       ? mediaSrc
       : `https://gifbox.netlify.app${mediaSrc}`;
-    const refPayload = {
-      id: slugId,
-      title: gif.title,
-      type: gif.type || 'gif',
-      url: directUrl,
-      ...(gif.previewUrl ? { previewUrl: gif.previewUrl } : {}),
-      category: gif.category,
-      ...(gif.tags ? { tags: gif.tags } : {}),
-    };
+    const itemFormat = gif.format || (gif.category === 'Stickers' ? 'sticker' : gif.type || 'gif');
+    const refLine = `[GIFBOX Ref] ID: ${slugId} (#${gif.id}) | Title: "${gif.title}" | Type: ${itemFormat} (${gif.category}) | URL: ${directUrl}`;
     try {
-      await navigator.clipboard.writeText(JSON.stringify(refPayload, null, 2));
+      await navigator.clipboard.writeText(refLine);
       setCopiedId(gif.id);
       window.setTimeout(() => {
         setCopiedId((curr) => (curr === gif.id ? null : curr));
@@ -611,7 +605,7 @@ export default function Home() {
                                 marginBottom: '2px',
                               }}
                             >
-                              #{gif.slug}
+                              {gif.slug} (#{gif.id})
                             </div>
                           )}
                           {gif.source && (
