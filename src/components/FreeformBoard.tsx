@@ -155,6 +155,7 @@ export default function FreeformBoard({
 
   // Active interaction state
   const [activeStroke, setActiveStroke] = useState<BoardStroke | null>(null);
+  const activeStrokeRef = useRef<BoardStroke | null>(null);
   const [laserPoints, setLaserPoints] = useState<LaserTrailPoint[]>([]);
   const [isRecording, setIsRecording] = useState<boolean>(false);
   const recorderRef = useRef<MediaRecorder | null>(null);
@@ -446,14 +447,49 @@ export default function FreeformBoard({
     return () => window.removeEventListener('paste', onPaste);
   }, [addMediaItem]);
 
-  // Erase strokes near world point
+  // Erase strokes near world point (supports freehand paths, arrows, boxes, and circles)
   const eraseAtPoint = useCallback(
     (pt: Point) => {
-      const threshold = 18 / zoom;
+      const distToSegment = (p: Point, a: Point, b: Point) => {
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const lenSq = dx * dx + dy * dy;
+        if (lenSq === 0) return Math.hypot(p.x - a.x, p.y - a.y);
+        const t = Math.max(0, Math.min(1, ((p.x - a.x) * dx + (p.y - a.y) * dy) / lenSq));
+        return Math.hypot(p.x - (a.x + t * dx), p.y - (a.y + t * dy));
+      };
+
+      const isStrokeHit = (s: BoardStroke): boolean => {
+        const threshold = (18 + s.size / 2) / zoom;
+        if (s.points.length === 0) return false;
+        if (s.points.length === 1) {
+          return Math.hypot(s.points[0].x - pt.x, s.points[0].y - pt.y) <= threshold;
+        }
+        if ((s.tool === 'rect' || s.tool === 'ellipse') && s.points.length >= 2) {
+          const p0 = s.points[0];
+          const p1 = s.points[s.points.length - 1];
+          const minX = Math.min(p0.x, p1.x);
+          const maxX = Math.max(p0.x, p1.x);
+          const minY = Math.min(p0.y, p1.y);
+          const maxY = Math.max(p0.y, p1.y);
+          const corners: [Point, Point][] = [
+            [{ x: minX, y: minY }, { x: maxX, y: minY }],
+            [{ x: maxX, y: minY }, { x: maxX, y: maxY }],
+            [{ x: maxX, y: maxY }, { x: minX, y: maxY }],
+            [{ x: minX, y: maxY }, { x: minX, y: minY }],
+          ];
+          return corners.some(([a, b]) => distToSegment(pt, a, b) <= threshold);
+        }
+        for (let i = 0; i < s.points.length - 1; i++) {
+          if (distToSegment(pt, s.points[i], s.points[i + 1]) <= threshold) {
+            return true;
+          }
+        }
+        return false;
+      };
+
       setStrokes((prev) => {
-        const remaining = prev.filter((s) =>
-          s.points.every((p) => Math.hypot(p.x - pt.x, p.y - pt.y) > threshold)
-        );
+        const remaining = prev.filter((s) => !isStrokeHit(s));
         if (remaining.length !== prev.length && !dragStateRef.current.snapshotSaved) {
           pushHistory(items, prev);
           dragStateRef.current.snapshotSaved = true;
@@ -545,6 +581,7 @@ export default function FreeformBoard({
         size: tool === 'highlighter' ? Math.max(18, strokeSize * 2.6) : strokeSize,
         points: [worldPt, worldPt],
       };
+      activeStrokeRef.current = newStroke;
       setActiveStroke(newStroke);
       return;
     }
@@ -567,9 +604,10 @@ export default function FreeformBoard({
       tool === 'arrow' ||
       tool === 'rect' ||
       tool === 'ellipse' ||
+      tool === 'text' ||
       tool === 'eraser'
     ) {
-      // Let the event bubble to the board drawing handler so you can draw directly over GIFs!
+      // Let the event bubble to the board drawing handler so you can draw/caption directly over GIFs!
       return;
     }
 
@@ -642,22 +680,20 @@ export default function FreeformBoard({
       return;
     }
 
-    if (st.mode === 'draw' && activeStroke) {
-      if (
-        activeStroke.tool === 'arrow' ||
-        activeStroke.tool === 'rect' ||
-        activeStroke.tool === 'ellipse'
-      ) {
-        setActiveStroke({
-          ...activeStroke,
-          points: [activeStroke.points[0], worldPt],
-        });
-      } else {
-        setActiveStroke({
-          ...activeStroke,
-          points: [...activeStroke.points, worldPt],
-        });
-      }
+    if (st.mode === 'draw' && activeStrokeRef.current) {
+      const curr = activeStrokeRef.current;
+      const nextStroke: BoardStroke =
+        curr.tool === 'arrow' || curr.tool === 'rect' || curr.tool === 'ellipse'
+          ? {
+              ...curr,
+              points: [curr.points[0], worldPt],
+            }
+          : {
+              ...curr,
+              points: [...curr.points, worldPt],
+            };
+      activeStrokeRef.current = nextStroke;
+      setActiveStroke(nextStroke);
       return;
     }
 
@@ -788,9 +824,11 @@ export default function FreeformBoard({
   };
 
   const handlePointerUp = () => {
-    if (dragStateRef.current.mode === 'draw' && activeStroke) {
+    if (dragStateRef.current.mode === 'draw' && activeStrokeRef.current) {
+      const finished = activeStrokeRef.current;
       pushHistory(items, strokes);
-      setStrokes((prev) => [...prev, activeStroke]);
+      setStrokes((prev) => [...prev, finished]);
+      activeStrokeRef.current = null;
       setActiveStroke(null);
     }
     dragStateRef.current.mode = null;
@@ -1152,7 +1190,7 @@ export default function FreeformBoard({
     return { backgroundColor: '#ffffff' };
   })();
 
-  const renderSvgAnnotations = () => (
+  const renderSvgAnnotations = (zIdx: number) => (
     <svg
       style={{
         position: 'absolute',
@@ -1161,107 +1199,107 @@ export default function FreeformBoard({
         height: '100%',
         overflow: 'visible',
         pointerEvents: 'none',
-        zIndex: drawingsOnTop ? 9999 : 0,
+        zIndex: zIdx,
       }}
     >
-      <defs>
-        {COLORS.map((c) => (
-          <marker
-            key={c}
-            id={`arrowhead-${c.replace('#', '')}`}
-            markerWidth="8"
-            markerHeight="8"
-            refX="6"
-            refY="4"
-            orient="auto"
-          >
-            <path d="M 0 0 L 8 4 L 0 8 z" fill={c} />
-          </marker>
-        ))}
-      </defs>
+      <g transform={`translate(${pan.x}, ${pan.y}) scale(${zoom})`}>
+        {allStrokes.map((s) => {
+          if (s.points.length === 0) return null;
+          if (s.tool === 'marker' || s.tool === 'highlighter') {
+            return (
+              <path
+                key={s.id}
+                d={pointsToSvgPath(s.points)}
+                fill="none"
+                stroke={s.color}
+                strokeWidth={s.size}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                opacity={s.tool === 'highlighter' ? 0.42 : 1}
+              />
+            );
+          }
+          if (s.tool === 'arrow' && s.points.length >= 2) {
+            const p0 = s.points[0];
+            const p1 = s.points[s.points.length - 1];
+            const dx = p1.x - p0.x;
+            const dy = p1.y - p0.y;
+            const dist = Math.hypot(dx, dy);
+            const angle = Math.atan2(dy, dx);
+            const headLen = Math.max(14, s.size * 3.2);
+            const xA = p1.x - headLen * Math.cos(angle - Math.PI / 6);
+            const yA = p1.y - headLen * Math.sin(angle - Math.PI / 6);
+            const xB = p1.x - headLen * Math.cos(angle + Math.PI / 6);
+            const yB = p1.y - headLen * Math.sin(angle + Math.PI / 6);
+            return (
+              <g key={s.id}>
+                <line
+                  x1={p0.x}
+                  y1={p0.y}
+                  x2={p1.x}
+                  y2={p1.y}
+                  stroke={s.color}
+                  strokeWidth={s.size}
+                  strokeLinecap="round"
+                />
+                {dist > 2 && (
+                  <polygon
+                    points={`${p1.x},${p1.y} ${xA},${yA} ${xB},${yB}`}
+                    fill={s.color}
+                  />
+                )}
+              </g>
+            );
+          }
+          if (s.tool === 'rect' && s.points.length >= 2) {
+            const p0 = s.points[0];
+            const p1 = s.points[s.points.length - 1];
+            return (
+              <rect
+                key={s.id}
+                x={Math.min(p0.x, p1.x)}
+                y={Math.min(p0.y, p1.y)}
+                width={Math.max(1, Math.abs(p1.x - p0.x))}
+                height={Math.max(1, Math.abs(p1.y - p0.y))}
+                fill="none"
+                stroke={s.color}
+                strokeWidth={s.size}
+                rx={4}
+              />
+            );
+          }
+          if (s.tool === 'ellipse' && s.points.length >= 2) {
+            const p0 = s.points[0];
+            const p1 = s.points[s.points.length - 1];
+            return (
+              <ellipse
+                key={s.id}
+                cx={(p0.x + p1.x) / 2}
+                cy={(p0.y + p1.y) / 2}
+                rx={Math.max(1, Math.abs(p1.x - p0.x) / 2)}
+                ry={Math.max(1, Math.abs(p1.y - p0.y) / 2)}
+                fill="none"
+                stroke={s.color}
+                strokeWidth={s.size}
+              />
+            );
+          }
+          return null;
+        })}
 
-      {allStrokes.map((s) => {
-        if (s.points.length === 0) return null;
-        if (s.tool === 'marker' || s.tool === 'highlighter') {
-          return (
-            <path
-              key={s.id}
-              d={pointsToSvgPath(s.points)}
-              fill="none"
-              stroke={s.color}
-              strokeWidth={s.size}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              opacity={s.tool === 'highlighter' ? 0.42 : 1}
-            />
-          );
-        }
-        if (s.tool === 'arrow' && s.points.length >= 2) {
-          const p0 = s.points[0];
-          const p1 = s.points[s.points.length - 1];
-          const markerId = `arrowhead-${s.color.replace('#', '')}`;
-          return (
-            <line
-              key={s.id}
-              x1={p0.x}
-              y1={p0.y}
-              x2={p1.x}
-              y2={p1.y}
-              stroke={s.color}
-              strokeWidth={s.size}
-              strokeLinecap="round"
-              markerEnd={`url(#${markerId})`}
-            />
-          );
-        }
-        if (s.tool === 'rect' && s.points.length >= 2) {
-          const p0 = s.points[0];
-          const p1 = s.points[s.points.length - 1];
-          return (
-            <rect
-              key={s.id}
-              x={Math.min(p0.x, p1.x)}
-              y={Math.min(p0.y, p1.y)}
-              width={Math.abs(p1.x - p0.x)}
-              height={Math.abs(p1.y - p0.y)}
-              fill="none"
-              stroke={s.color}
-              strokeWidth={s.size}
-              rx={4}
-            />
-          );
-        }
-        if (s.tool === 'ellipse' && s.points.length >= 2) {
-          const p0 = s.points[0];
-          const p1 = s.points[s.points.length - 1];
-          return (
-            <ellipse
-              key={s.id}
-              cx={(p0.x + p1.x) / 2}
-              cy={(p0.y + p1.y) / 2}
-              rx={Math.abs(p1.x - p0.x) / 2}
-              ry={Math.abs(p1.y - p0.y) / 2}
-              fill="none"
-              stroke={s.color}
-              strokeWidth={s.size}
-            />
-          );
-        }
-        return null;
-      })}
-
-      {/* Live Laser Pointer Trail */}
-      {laserPoints.length > 1 && (
-        <path
-          d={pointsToSvgPath(laserPoints)}
-          fill="none"
-          stroke="#ff2d55"
-          strokeWidth={6}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          style={{ filter: 'drop-shadow(0 0 8px #ff2d55)' }}
-        />
-      )}
+        {/* Live Laser Pointer Trail */}
+        {laserPoints.length > 1 && (
+          <path
+            d={pointsToSvgPath(laserPoints)}
+            fill="none"
+            stroke="#ff2d55"
+            strokeWidth={6}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{ filter: 'drop-shadow(0 0 8px #ff2d55)' }}
+          />
+        )}
+      </g>
     </svg>
   );
 
@@ -1823,6 +1861,7 @@ export default function FreeformBoard({
         onPointerDown={handleBoardPointerDown}
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
+        onPointerCancel={handlePointerUp}
         onWheel={handleWheel}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
@@ -1832,6 +1871,7 @@ export default function FreeformBoard({
           flex: 1,
           position: 'relative',
           overflow: 'hidden',
+          touchAction: 'none',
           cursor:
             spacePressed || tool === 'hand'
               ? 'grab'
@@ -1867,6 +1907,9 @@ export default function FreeformBoard({
           </div>
         )}
 
+        {/* Under-GIFs SVG Annotations Layer (full viewport dimensions) */}
+        {!drawingsOnTop && renderSvgAnnotations(1)}
+
         {/* World Transform Plane */}
         <div
           data-board-bg="true"
@@ -1876,12 +1919,11 @@ export default function FreeformBoard({
             top: 0,
             width: 0,
             height: 0,
+            zIndex: 5,
             transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
             transformOrigin: '0 0',
           }}
         >
-          {!drawingsOnTop && renderSvgAnnotations()}
-
           {sortedItems.map((item) => {
             const isSelected = item.id === selectedId;
             const isCropping = item.id === croppingId;
@@ -1912,6 +1954,7 @@ export default function FreeformBoard({
                   transformOrigin: 'center center',
                   zIndex: item.zIndex,
                   opacity: item.opacity,
+                  pointerEvents: tool === 'select' && !spacePressed ? 'auto' : 'none',
                   cursor:
                     tool !== 'select'
                       ? 'crosshair'
@@ -2157,9 +2200,10 @@ export default function FreeformBoard({
               </div>
             );
           })}
-
-          {drawingsOnTop && renderSvgAnnotations()}
         </div>
+
+        {/* Over-GIFs SVG Annotations Layer (full viewport dimensions) */}
+        {drawingsOnTop && renderSvgAnnotations(15)}
 
         {/* Bottom-Right Board Controls: Zoom, Background Theme, Layer Toggle */}
         <div
