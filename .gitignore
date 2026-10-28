@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# GIF binaries are stored on the 'assets' branch so Netlify builds don't hang fetching 2,200+ blobs on main
+/public/gifs/
