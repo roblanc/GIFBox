@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import gifsSeedRaw from '../../data/gifs-seed.json';
 import FreeformBoard, { LibraryGifInput } from '../components/FreeformBoard';
@@ -20,9 +20,17 @@ interface Gif {
 }
 
 const initialGifsData = gifsSeedRaw as Gif[];
-const PAGE_SIZE = 120;
+const PAGE_SIZE = 36;
 
 function getMediaSrc(gif: Gif): string {
+  // Prefer direct CDN URL (jsDelivr / Supabase) so assets load from Cloudflare edge cache (max-age=31536000)
+  // instead of hitting Netlify's uncached serverless fallback rewrite.
+  if (gif.url && gif.url.startsWith('http')) {
+    if (gif.url.startsWith('https://gifbox.netlify.app/gifs/')) {
+      return gif.url.replace('https://gifbox.netlify.app', '');
+    }
+    return gif.url;
+  }
   if (gif.file && !gif.file.startsWith('http')) {
     return `/gifs/${gif.file}`;
   }
@@ -34,15 +42,39 @@ function getPreviewSrc(gif: Gif): string {
   return getMediaSrc(gif);
 }
 
-// Silent looping clip that only loads and plays while it is on screen.
-function VideoClip({ src, poster, title }: { src: string; poster?: string; title: string }) {
+function matchesFormat(
+  gif: Gif,
+  fmt: 'all' | 'images' | 'gifs' | 'videos' | 'stickers'
+): boolean {
+  if (fmt === 'all') return true;
+  if (fmt === 'stickers') return gif.category === 'Stickers';
+  if (fmt === 'images') return gif.type === 'image';
+  if (fmt === 'videos') return gif.category === 'Video Memes';
+  if (fmt === 'gifs') {
+    return gif.type === 'gif' || (gif.type === 'video' && gif.category !== 'Video Memes');
+  }
+  return true;
+}
+
+// Silent looping clip that plays immediately for top cards and lazy-loads offscreen cards.
+function VideoClip({
+  src,
+  poster,
+  title,
+  eager = false,
+}: {
+  src: string;
+  poster?: string;
+  title: string;
+  eager?: boolean;
+}) {
   const ref = useRef<HTMLVideoElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(eager);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     const io = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), {
-      rootMargin: '200px',
+      rootMargin: '400px',
     });
     io.observe(el);
     return () => io.disconnect();
@@ -62,7 +94,8 @@ function VideoClip({ src, poster, title }: { src: string; poster?: string; title
       muted
       loop
       playsInline
-      preload="none"
+      autoPlay={eager}
+      preload={eager ? 'auto' : 'metadata'}
       style={{ maxWidth: '100%', maxHeight: '165px', objectFit: 'contain' }}
     />
   );
@@ -76,6 +109,9 @@ export default function Home() {
   >('all');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [shown, setShown] = useState(PAGE_SIZE);
+
+  const leftPaneRef = useRef<HTMLDivElement>(null);
+  const loadMoreRef = useRef<HTMLDivElement>(null);
 
   // Hydrate full 11,405-item catalog in background after instant initial paint
   useEffect(() => {
@@ -100,40 +136,75 @@ export default function Home() {
   const [pendingBoardItem, setPendingBoardItem] = useState<LibraryGifInput | null>(null);
   const [copiedId, setCopiedId] = useState<number | null>(null);
 
-  const matchesFormat = (
-    gif: Gif,
-    fmt: 'all' | 'images' | 'gifs' | 'videos' | 'stickers'
-  ): boolean => {
-    if (fmt === 'all') return true;
-    if (fmt === 'stickers') return gif.category === 'Stickers';
-    if (fmt === 'images') return gif.type === 'image';
-    if (fmt === 'videos') return gif.category === 'Video Memes';
-    if (fmt === 'gifs') {
-      // Animated .gif files + original GIFBox looping clips (non-Memelord video memes)
-      return gif.type === 'gif' || (gif.type === 'video' && gif.category !== 'Video Memes');
+  // Pre-compute search index once when catalog updates
+  const indexedGifs = useMemo(
+    () =>
+      gifsData.map((g) => ({
+        gif: g,
+        haystack: [g.slug || '', g.title, g.category, ...(g.tags || [])]
+          .join(' ')
+          .toLowerCase(),
+      })),
+    [gifsData]
+  );
+
+  const formatCounts = useMemo(() => {
+    let images = 0;
+    let gifs = 0;
+    let videos = 0;
+    let stickers = 0;
+    for (const g of gifsData) {
+      if (matchesFormat(g, 'images')) images++;
+      if (matchesFormat(g, 'gifs')) gifs++;
+      if (matchesFormat(g, 'videos')) videos++;
+      if (matchesFormat(g, 'stickers')) stickers++;
     }
-    return true;
-  };
+    return {
+      all: gifsData.length,
+      images,
+      gifs,
+      videos,
+      stickers,
+    };
+  }, [gifsData]);
 
-  const formatCounts = {
-    all: gifsData.length,
-    images: gifsData.filter((g) => matchesFormat(g, 'images')).length,
-    gifs: gifsData.filter((g) => matchesFormat(g, 'gifs')).length,
-    videos: gifsData.filter((g) => matchesFormat(g, 'videos')).length,
-    stickers: gifsData.filter((g) => matchesFormat(g, 'stickers')).length,
-  };
+  const formatFilteredGifs = useMemo(
+    () => indexedGifs.filter(({ gif }) => matchesFormat(gif, selectedFormat)),
+    [indexedGifs, selectedFormat]
+  );
 
-  const formatFilteredGifs = gifsData.filter((g) => matchesFormat(g, selectedFormat));
-  const categories = ['All', ...Array.from(new Set(formatFilteredGifs.map((g) => g.category)))];
+  const categories = useMemo(
+    () => ['All', ...Array.from(new Set(formatFilteredGifs.map(({ gif }) => gif.category)))],
+    [formatFilteredGifs]
+  );
 
-  const filteredGifs = formatFilteredGifs.filter((gif) => {
-    const categoryMatch = selectedCategory === 'All' || gif.category === selectedCategory;
-    const haystack = [gif.slug || '', gif.title, gif.category, ...(gif.tags || [])]
-      .join(' ')
-      .toLowerCase();
-    const searchMatch = haystack.includes(searchTerm.toLowerCase());
-    return categoryMatch && searchMatch;
-  });
+  const filteredGifs = useMemo(() => {
+    const q = searchTerm.trim().toLowerCase();
+    return formatFilteredGifs
+      .filter(({ gif, haystack }) => {
+        const categoryMatch = selectedCategory === 'All' || gif.category === selectedCategory;
+        if (!categoryMatch) return false;
+        if (!q) return true;
+        return haystack.includes(q);
+      })
+      .map(({ gif }) => gif);
+  }, [formatFilteredGifs, selectedCategory, searchTerm]);
+
+  // Automatic infinite scroll when reaching bottom of left library pane
+  useEffect(() => {
+    const sentinel = loadMoreRef.current;
+    if (!sentinel) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShown((prev) => Math.min(filteredGifs.length, prev + PAGE_SIZE));
+        }
+      },
+      { root: leftPaneRef.current, rootMargin: '500px' }
+    );
+    io.observe(sentinel);
+    return () => io.disconnect();
+  }, [filteredGifs.length]);
 
   useEffect(() => {
     if (!isResizingSplit) return;
@@ -330,6 +401,7 @@ export default function Home() {
         {/* LEFT PANE: GIF Library */}
         {splitMode !== 'board' && (
           <div
+            ref={leftPaneRef}
             style={{
               width: splitMode === 'library' ? '100%' : `${leftWidthPct}%`,
               height: '100%',
@@ -388,6 +460,7 @@ export default function Home() {
                       setSelectedFormat(fmt.id);
                       setSelectedCategory('All');
                       setShown(PAGE_SIZE);
+                      leftPaneRef.current?.scrollTo({ top: 0 });
                     }}
                   >
                     {fmt.label}
@@ -407,6 +480,7 @@ export default function Home() {
                     onClick={() => {
                       setSelectedCategory(category);
                       setShown(PAGE_SIZE);
+                      leftPaneRef.current?.scrollTo({ top: 0 });
                     }}
                   >
                     {category}
@@ -418,7 +492,7 @@ export default function Home() {
             {/* GIF Grid */}
             <div className="row g-3">
               {filteredGifs.length > 0 ? (
-                filteredGifs.slice(0, shown).map((gif: Gif) => {
+                filteredGifs.slice(0, shown).map((gif: Gif, idx: number) => {
                   const colClass =
                     splitMode === 'split'
                       ? 'col-xl-4 col-md-6 col-sm-6'
@@ -439,6 +513,7 @@ export default function Home() {
                       : badgeLabel === 'STICKER'
                       ? '#e67700'
                       : '#7048e8';
+                  const isEager = idx < 18;
                   return (
                     <div key={gif.id} className={colClass}>
                       <div
@@ -483,6 +558,7 @@ export default function Home() {
                               src={getMediaSrc(gif)}
                               poster={gif.previewUrl}
                               title={gif.title}
+                              eager={isEager}
                             />
                           ) : (
                             <Image
@@ -490,6 +566,7 @@ export default function Home() {
                               alt={gif.title}
                               width={145}
                               height={145}
+                              loading={isEager ? 'eager' : 'lazy'}
                               style={{ objectFit: 'contain' }}
                               unoptimized={true}
                               onError={(e) => {
@@ -594,13 +671,13 @@ export default function Home() {
             </div>
 
             {filteredGifs.length > shown && (
-              <div className="text-center my-4">
+              <div ref={loadMoreRef} className="text-center my-4">
                 <button
                   type="button"
                   className="btn btn-outline-primary"
                   onClick={() => setShown(shown + PAGE_SIZE)}
                 >
-                  Show more ({filteredGifs.length - shown} left)
+                  Show more ({(filteredGifs.length - shown).toLocaleString()} left)
                 </button>
               </div>
             )}

@@ -44,13 +44,21 @@ function getGifs(dir, basePath = '') {
       const baseName = path.basename(dirent.name, path.extname(dirent.name));
       const cleanBaseSlug = toSlug(baseName);
       const slug = src.slug || cleanBaseSlug || toSlug(`${folder}-${baseName}`);
+      const isStaticOnMain = folder === 'memes' || folder === 'portraits';
+      const encodedRel = relativePath
+        .split('/')
+        .map((seg) => encodeURIComponent(seg))
+        .join('/');
+      const directCdnUrl = isStaticOnMain
+        ? `${SITE_ORIGIN}/gifs/${encodedRel}`
+        : `https://cdn.jsdelivr.net/gh/roblanc/GIFBox@assets/public/gifs/${encodedRel}`;
       return {
         slug,
         title: src.title || formatTitle(dirent.name),
         category,
         file: relativePath,
         type,
-        url: `${SITE_ORIGIN}/gifs/${relativePath}`,
+        url: directCdnUrl,
         ...(src.tags ? { tags: src.tags.slice(0, 12) } : {}),
         ...(src.source ? { source: src.source } : {}),
         ...(src.url ? { sourceUrl: src.url } : {}),
@@ -161,17 +169,17 @@ try {
     };
   });
 
-  // Build seed with first 120 items + at least 5 items per category so all category pills render at t=0ms
+  // Build seed with first 60 items + first 24 items of EVERY category so switching to any category is 0ms instant even before /catalog.json hydrates
   const seedItems = [];
   const seedIds = new Set();
-  for (const item of gifsWithIds.slice(0, 120)) {
+  for (const item of gifsWithIds.slice(0, 60)) {
     seedItems.push(item);
     seedIds.add(item.id);
   }
   const byCatCount = new Map();
   for (const item of gifsWithIds) {
     const c = byCatCount.get(item.category) || 0;
-    if (c < 6 && !seedIds.has(item.id)) {
+    if (c < 24 && !seedIds.has(item.id)) {
       seedItems.push(item);
       seedIds.add(item.id);
       byCatCount.set(item.category, c + 1);
