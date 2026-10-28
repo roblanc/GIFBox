@@ -248,7 +248,7 @@ export default function Home() {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Search 2,198 GIFs & clips by title or tag..."
+                  placeholder={`Search ${gifsData.length.toLocaleString()} GIFs & clips by title or tag...`}
                   value={searchTerm}
                   onChange={(e) => {
                     setSearchTerm(e.target.value);

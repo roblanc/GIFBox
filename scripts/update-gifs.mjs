@@ -7,7 +7,15 @@ const dataFile = path.join(process.cwd(), 'data/gifs.json');
 const sourcesFile = path.join(process.cwd(), 'data/sources.json');
 const sources = fs.existsSync(sourcesFile) ? JSON.parse(fs.readFileSync(sourcesFile, 'utf8')) : {};
 
-const EXTENSIONS = { '.gif': 'gif', '.mp4': 'video', '.webm': 'video' };
+const EXTENSIONS = {
+  '.gif': 'gif',
+  '.mp4': 'video',
+  '.webm': 'video',
+  '.png': 'image',
+  '.jpg': 'image',
+  '.jpeg': 'image',
+  '.webp': 'image',
+};
 
 function getGifs(dir, basePath = '') {
   const dirents = fs.readdirSync(dir, { withFileTypes: true });
@@ -48,6 +56,11 @@ function formatCategory(dirname) {
 try {
   console.log('Scanning for GIFs...');
   const allGifs = getGifs(gifsDirectory);
+  allGifs.sort((a, b) => {
+    const aPin = a.file === 'memes/chad-dario.png' ? 0 : 1;
+    const bPin = b.file === 'memes/chad-dario.png' ? 0 : 1;
+    return aPin - bPin;
+  });
 
   const gifsWithIds = allGifs.map((gif, index) => ({
     id: index + 1,
