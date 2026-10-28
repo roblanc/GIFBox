@@ -161,8 +161,25 @@ try {
     };
   });
 
+  // Build seed with first 120 items + at least 5 items per category so all category pills render at t=0ms
+  const seedItems = [];
+  const seedIds = new Set();
+  for (const item of gifsWithIds.slice(0, 120)) {
+    seedItems.push(item);
+    seedIds.add(item.id);
+  }
+  const byCatCount = new Map();
+  for (const item of gifsWithIds) {
+    const c = byCatCount.get(item.category) || 0;
+    if (c < 6 && !seedIds.has(item.id)) {
+      seedItems.push(item);
+      seedIds.add(item.id);
+      byCatCount.set(item.category, c + 1);
+    }
+  }
+
   fs.writeFileSync(dataFile, JSON.stringify(gifsWithIds));
-  fs.writeFileSync(seedFile, JSON.stringify(gifsWithIds.slice(0, 240), null, 2));
+  fs.writeFileSync(seedFile, JSON.stringify(seedItems, null, 2));
   fs.writeFileSync(
     publicCatalogFile,
     JSON.stringify({

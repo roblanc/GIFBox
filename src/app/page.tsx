@@ -71,6 +71,9 @@ function VideoClip({ src, poster, title }: { src: string; poster?: string; title
 export default function Home() {
   const [gifsData, setGifsData] = useState<Gif[]>(initialGifsData);
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedFormat, setSelectedFormat] = useState<
+    'all' | 'images' | 'gifs' | 'videos' | 'stickers'
+  >('all');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [shown, setShown] = useState(PAGE_SIZE);
 
@@ -97,9 +100,33 @@ export default function Home() {
   const [pendingBoardItem, setPendingBoardItem] = useState<LibraryGifInput | null>(null);
   const [copiedId, setCopiedId] = useState<number | null>(null);
 
-  const categories = ['All', ...Array.from(new Set(gifsData.map((g) => g.category)))];
+  const matchesFormat = (
+    gif: Gif,
+    fmt: 'all' | 'images' | 'gifs' | 'videos' | 'stickers'
+  ): boolean => {
+    if (fmt === 'all') return true;
+    if (fmt === 'stickers') return gif.category === 'Stickers';
+    if (fmt === 'images') return gif.type === 'image';
+    if (fmt === 'videos') return gif.category === 'Video Memes';
+    if (fmt === 'gifs') {
+      // Animated .gif files + original GIFBox looping clips (non-Memelord video memes)
+      return gif.type === 'gif' || (gif.type === 'video' && gif.category !== 'Video Memes');
+    }
+    return true;
+  };
 
-  const filteredGifs = gifsData.filter((gif) => {
+  const formatCounts = {
+    all: gifsData.length,
+    images: gifsData.filter((g) => matchesFormat(g, 'images')).length,
+    gifs: gifsData.filter((g) => matchesFormat(g, 'gifs')).length,
+    videos: gifsData.filter((g) => matchesFormat(g, 'videos')).length,
+    stickers: gifsData.filter((g) => matchesFormat(g, 'stickers')).length,
+  };
+
+  const formatFilteredGifs = gifsData.filter((g) => matchesFormat(g, selectedFormat));
+  const categories = ['All', ...Array.from(new Set(formatFilteredGifs.map((g) => g.category)))];
+
+  const filteredGifs = formatFilteredGifs.filter((gif) => {
     const categoryMatch = selectedCategory === 'All' || gif.category === selectedCategory;
     const haystack = [gif.slug || '', gif.title, gif.category, ...(gif.tags || [])]
       .join(' ')
@@ -313,13 +340,13 @@ export default function Home() {
               flexShrink: 0,
             }}
           >
-            {/* Search and Category Controls */}
+            {/* Search, Media Format Switcher, and Category Controls */}
             <div className="mb-3">
               <div className="d-flex gap-2 align-items-center mb-2">
                 <input
                   type="text"
                   className="form-control"
-                  placeholder={`Search ${gifsData.length.toLocaleString()} GIFs & clips by title or tag...`}
+                  placeholder={`Search ${gifsData.length.toLocaleString()} memes, GIFs & clips by title, #id, or tag...`}
                   value={searchTerm}
                   onChange={(e) => {
                     setSearchTerm(e.target.value);
@@ -327,10 +354,48 @@ export default function Home() {
                   }}
                 />
                 <span className="badge bg-secondary" style={{ whiteSpace: 'nowrap' }}>
-                  {filteredGifs.length} clips
+                  {filteredGifs.length.toLocaleString()} items
                 </span>
               </div>
 
+              {/* Media Format Filter Row (Images vs GIFs vs Video Memes vs Stickers) */}
+              <div className="d-flex flex-wrap gap-1 mb-2 pb-2 border-bottom">
+                {(
+                  [
+                    { id: 'all', label: `All Media (${formatCounts.all.toLocaleString()})` },
+                    { id: 'images', label: `🖼️ Images (${formatCounts.images.toLocaleString()})` },
+                    { id: 'gifs', label: `🎞️ GIFs (${formatCounts.gifs.toLocaleString()})` },
+                    {
+                      id: 'videos',
+                      label: `🎬 Video Memes (${formatCounts.videos.toLocaleString()})`,
+                    },
+                    {
+                      id: 'stickers',
+                      label: `✂️ Stickers (${formatCounts.stickers.toLocaleString()})`,
+                    },
+                  ] as {
+                    id: 'all' | 'images' | 'gifs' | 'videos' | 'stickers';
+                    label: string;
+                  }[]
+                ).map((fmt) => (
+                  <button
+                    key={fmt.id}
+                    type="button"
+                    className={`btn btn-sm fw-semibold ${
+                      selectedFormat === fmt.id ? 'btn-dark' : 'btn-outline-dark'
+                    }`}
+                    onClick={() => {
+                      setSelectedFormat(fmt.id);
+                      setSelectedCategory('All');
+                      setShown(PAGE_SIZE);
+                    }}
+                  >
+                    {fmt.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Category Pills Row */}
               <div className="d-flex flex-wrap gap-1">
                 {categories.map((category) => (
                   <button
@@ -358,6 +423,22 @@ export default function Home() {
                     splitMode === 'split'
                       ? 'col-xl-4 col-md-6 col-sm-6'
                       : 'col-lg-3 col-md-4 col-sm-6';
+                  const badgeLabel =
+                    gif.category === 'Stickers'
+                      ? 'STICKER'
+                      : gif.type === 'image'
+                      ? 'IMG'
+                      : gif.category === 'Video Memes'
+                      ? 'VIDEO'
+                      : 'GIF';
+                  const badgeBg =
+                    badgeLabel === 'IMG'
+                      ? '#1971c2'
+                      : badgeLabel === 'GIF'
+                      ? '#2f9e44'
+                      : badgeLabel === 'STICKER'
+                      ? '#e67700'
+                      : '#7048e8';
                   return (
                     <div key={gif.id} className={colClass}>
                       <div
@@ -376,8 +457,27 @@ export default function Home() {
                             alignItems: 'center',
                             justifyContent: 'center',
                             overflow: 'hidden',
+                            position: 'relative',
                           }}
                         >
+                          <span
+                            style={{
+                              position: 'absolute',
+                              top: '6px',
+                              right: '6px',
+                              background: badgeBg,
+                              color: '#fff',
+                              fontSize: '9px',
+                              fontWeight: 700,
+                              padding: '2px 5px',
+                              borderRadius: '4px',
+                              zIndex: 2,
+                              letterSpacing: '0.4px',
+                              opacity: 0.9,
+                            }}
+                          >
+                            {badgeLabel}
+                          </span>
                           {gif.type === 'video' ? (
                             <VideoClip
                               src={getMediaSrc(gif)}
