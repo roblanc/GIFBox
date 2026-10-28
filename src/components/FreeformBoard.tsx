@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 export interface LibraryGifInput {
   id: number;
+  slug?: string;
   title: string;
   category: string;
   file: string;
@@ -13,6 +14,7 @@ export interface LibraryGifInput {
 
 export interface BoardMediaItem {
   id: string;
+  assetId?: string;
   kind: 'gif' | 'video' | 'image' | 'text';
   src: string;
   title: string;
@@ -158,8 +160,16 @@ export default function FreeformBoard({
   const activeStrokeRef = useRef<BoardStroke | null>(null);
   const [laserPoints, setLaserPoints] = useState<LaserTrailPoint[]>([]);
   const [isRecording, setIsRecording] = useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
   const recorderRef = useRef<MediaRecorder | null>(null);
   const recordAnimRef = useRef<number | null>(null);
+
+  const showToast = useCallback((msg: string) => {
+    setToastMessage(msg);
+    window.setTimeout(() => {
+      setToastMessage((curr) => (curr === msg ? null : curr));
+    }, 2800);
+  }, []);
 
   const dragStateRef = useRef<{
     mode:
@@ -188,9 +198,24 @@ export default function FreeformBoard({
     startPanY: 0,
   });
 
-  // Load saved board on mount
+  // Load saved board on mount (prioritize shared ?board= URL parameter if present)
   useEffect(() => {
     try {
+      const params = new URLSearchParams(window.location.search);
+      const sharedBoard = params.get('board');
+      if (sharedBoard) {
+        const jsonStr = decodeURIComponent(escape(window.atob(sharedBoard.replace(/-/g, '+').replace(/_/g, '/'))));
+        const parsed = JSON.parse(jsonStr) as {
+          items?: BoardMediaItem[];
+          strokes?: BoardStroke[];
+          bgTheme?: BgTheme;
+        };
+        if (Array.isArray(parsed.items)) setItems(parsed.items);
+        if (Array.isArray(parsed.strokes)) setStrokes(parsed.strokes);
+        if (parsed.bgTheme) setBgTheme(parsed.bgTheme);
+        return;
+      }
+
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw) as {
@@ -203,7 +228,7 @@ export default function FreeformBoard({
         if (parsed.bgTheme) setBgTheme(parsed.bgTheme);
       }
     } catch {
-      // ignore corrupted localStorage
+      // ignore corrupted localStorage or query param
     }
   }, []);
 
@@ -268,6 +293,7 @@ export default function FreeformBoard({
   const addMediaItem = useCallback(
     (
       input: {
+        assetId?: string;
         kind: 'gif' | 'video' | 'image' | 'text';
         src: string;
         title: string;
@@ -290,6 +316,7 @@ export default function FreeformBoard({
         const maxZ = prev.reduce((m, it) => Math.max(m, it.zIndex), 0);
         const newItem: BoardMediaItem = {
           id: uid(),
+          assetId: input.assetId,
           kind: input.kind,
           src: input.src,
           title: input.title,
@@ -330,7 +357,8 @@ export default function FreeformBoard({
       src.toLowerCase().endsWith('.mp4') ||
       src.toLowerCase().endsWith('.webm');
     addMediaItem({
-      kind: isVideo ? 'video' : 'gif',
+      assetId: pendingItem.slug,
+      kind: isVideo ? 'video' : pendingItem.type === 'image' ? 'image' : 'gif',
       src,
       title: pendingItem.title,
     });
@@ -881,7 +909,8 @@ export default function FreeformBoard({
           src.toLowerCase().endsWith('.webm');
         addMediaItem(
           {
-            kind: isVideo ? 'video' : 'gif',
+            assetId: parsed.slug,
+            kind: isVideo ? 'video' : parsed.type === 'image' ? 'image' : 'gif',
             src,
             title: parsed.title,
           },
@@ -1114,6 +1143,215 @@ export default function FreeformBoard({
     link.download = `gifbox-board-${Date.now()}.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
+  };
+
+  // Encode current board state into a shareable ?board= URL
+  const getShareableBoardUrl = useCallback(() => {
+    const origin =
+      typeof window !== 'undefined' ? window.location.origin : 'https://gifbox.netlify.app';
+    const serializableItems = items.filter((it) => !it.src.startsWith('blob:') && it.src.length < 100_000);
+    const compactPayload = {
+      items: serializableItems,
+      strokes,
+      bgTheme,
+    };
+    const b64 = window
+      .btoa(unescape(encodeURIComponent(JSON.stringify(compactPayload))))
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_')
+      .replace(/=+$/, '');
+    return `${origin}/?board=${b64}`;
+  }, [bgTheme, items, strokes]);
+
+  // Build structured AI storyboard payload (assets, positions, crops, arrows, notes)
+  const buildAiBoardPayload = useCallback(() => {
+    const origin =
+      typeof window !== 'undefined' && window.location.origin.includes('http')
+        ? 'https://gifbox.netlify.app'
+        : 'https://gifbox.netlify.app';
+    const sorted = [...items].sort((a, b) => a.zIndex - b.zIndex);
+
+    const findItemAtPoint = (pt: Point) => {
+      for (let i = sorted.length - 1; i >= 0; i--) {
+        const it = sorted[i];
+        const pad = 24;
+        if (
+          pt.x >= it.x - pad &&
+          pt.x <= it.x + it.width + pad &&
+          pt.y >= it.y - pad &&
+          pt.y <= it.y + it.height + pad
+        ) {
+          return it.assetId || (it.kind === 'text' ? `note:${it.text}` : it.title);
+        }
+      }
+      return null;
+    };
+
+    const mediaAssets = sorted
+      .filter((it) => it.kind !== 'text')
+      .map((it, idx) => {
+        const fullUrl = it.src.startsWith('http')
+          ? it.src
+          : `${origin}${it.src.startsWith('/') ? '' : '/'}${it.src}`;
+        const slugFromSrc = it.src
+          .split('/')
+          .pop()
+          ?.replace(/\.[^.]+$/, '');
+        return {
+          layerOrder: idx + 1,
+          id: it.assetId || slugFromSrc || it.id,
+          title: it.title,
+          type: it.kind,
+          url: fullUrl,
+          position: { x: Math.round(it.x), y: Math.round(it.y) },
+          size: { width: Math.round(it.width), height: Math.round(it.height) },
+          rotationDeg: Math.round(it.rotation),
+          opacity: it.opacity,
+          flipX: it.flipX,
+          crop: {
+            x: +it.cropX.toFixed(3),
+            y: +it.cropY.toFixed(3),
+            w: +it.cropW.toFixed(3),
+            h: +it.cropH.toFixed(3),
+          },
+        };
+      });
+
+    const textNotes = sorted
+      .filter((it) => it.kind === 'text')
+      .map((it) => ({
+        text: it.text || '',
+        position: { x: Math.round(it.x), y: Math.round(it.y) },
+        color: it.color,
+      }));
+
+    const arrows = strokes
+      .filter((s) => s.tool === 'arrow' && s.points.length >= 2)
+      .map((s) => {
+        const fromPt = s.points[0];
+        const toPt = s.points[s.points.length - 1];
+        return {
+          color: s.color,
+          from: { x: Math.round(fromPt.x), y: Math.round(fromPt.y) },
+          to: { x: Math.round(toPt.x), y: Math.round(toPt.y) },
+          fromTarget: findItemAtPoint(fromPt),
+          toTarget: findItemAtPoint(toPt),
+        };
+      });
+
+    const shapesAndHighlights = strokes
+      .filter((s) => s.tool !== 'arrow' && s.points.length >= 1)
+      .map((s) => {
+        const xs = s.points.map((p) => p.x);
+        const ys = s.points.map((p) => p.y);
+        const minX = Math.min(...xs);
+        const maxX = Math.max(...xs);
+        const minY = Math.min(...ys);
+        const maxY = Math.max(...ys);
+        const center = { x: (minX + maxX) / 2, y: (minY + maxY) / 2 };
+        return {
+          tool: s.tool,
+          color: s.color,
+          bounds: {
+            x: Math.round(minX),
+            y: Math.round(minY),
+            width: Math.round(maxX - minX),
+            height: Math.round(maxY - minY),
+          },
+          overTarget: findItemAtPoint(center),
+        };
+      });
+
+    let shareUrl = origin;
+    try {
+      shareUrl = getShareableBoardUrl();
+    } catch {
+      // ignore if too large
+    }
+
+    return {
+      schema: 'gifbox-board-v1',
+      site: origin,
+      catalogApi: `${origin}/api/catalog`,
+      staticCatalogUrl: `${origin}/catalog.json`,
+      boardLink: shareUrl,
+      exportedAt: new Date().toISOString(),
+      assets: mediaAssets,
+      notes: textNotes,
+      arrows,
+      annotations: shapesAndHighlights,
+    };
+  }, [getShareableBoardUrl, items, strokes]);
+
+  const handleCopyShareLink = async () => {
+    try {
+      const url = getShareableBoardUrl();
+      window.history.replaceState(null, '', `/?board=${url.split('?board=')[1]}`);
+      await navigator.clipboard.writeText(url);
+      showToast('🔗 Saved Board Link copied to clipboard!');
+    } catch {
+      showToast('Could not copy board link');
+    }
+  };
+
+  const handleCopyAiSpec = async () => {
+    try {
+      const payload = buildAiBoardPayload();
+      const md = [
+        `### GIFBox Board Spec (${payload.assets.length} assets, ${payload.notes.length} notes, ${payload.arrows.length} arrows)`,
+        `Board URL: ${payload.boardLink}`,
+        '```json',
+        JSON.stringify(payload, null, 2),
+        '```',
+      ].join('\n');
+      await navigator.clipboard.writeText(md);
+      showToast('📋 Copied AI Board JSON + Prompt to clipboard!');
+    } catch {
+      showToast('Could not copy AI spec');
+    }
+  };
+
+  const handleShareWithAi = async () => {
+    const ts = Date.now();
+    // 1. Export PNG
+    const rect = viewportRef.current?.getBoundingClientRect();
+    if (rect) {
+      const canvas = document.createElement('canvas');
+      canvas.width = Math.round(rect.width * window.devicePixelRatio);
+      canvas.height = Math.round(rect.height * window.devicePixelRatio);
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+        renderBoardToCanvas(ctx, rect.width, rect.height);
+        const pngLink = document.createElement('a');
+        pngLink.download = `gifbox-board-${ts}.png`;
+        pngLink.href = canvas.toDataURL('image/png');
+        pngLink.click();
+      }
+    }
+
+    // 2. Export JSON + Copy AI Markdown/JSON to clipboard
+    const payload = buildAiBoardPayload();
+    const jsonBlob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const jsonUrl = URL.createObjectURL(jsonBlob);
+    const jsonLink = document.createElement('a');
+    jsonLink.download = `gifbox-board-${ts}.json`;
+    jsonLink.href = jsonUrl;
+    jsonLink.click();
+
+    try {
+      const md = [
+        `### GIFBox Board Spec (${payload.assets.length} assets, ${payload.notes.length} notes, ${payload.arrows.length} arrows)`,
+        `Board URL: ${payload.boardLink}`,
+        '```json',
+        JSON.stringify(payload, null, 2),
+        '```',
+      ].join('\n');
+      await navigator.clipboard.writeText(md);
+    } catch {
+      // ignore clipboard error
+    }
+    showToast('🤖 Downloaded PNG + JSON & copied AI spec to clipboard!');
   };
 
   const handleToggleRecording = () => {
@@ -1569,17 +1807,69 @@ export default function FreeformBoard({
 
           <button
             type="button"
+            onClick={handleCopyShareLink}
+            style={{
+              padding: '5px 9px',
+              fontSize: '12px',
+              borderRadius: '6px',
+              border: '1px solid rgba(116,192,252,0.4)',
+              background: '#183b56',
+              color: '#fff',
+              cursor: 'pointer',
+            }}
+            title="Copy shareable board URL (?board=...) so AI or teammates can open this exact arrangement"
+          >
+            🔗 Share Link
+          </button>
+
+          <button
+            type="button"
+            onClick={handleCopyAiSpec}
+            style={{
+              padding: '5px 9px',
+              fontSize: '12px',
+              borderRadius: '6px',
+              border: '1px solid rgba(175,82,222,0.5)',
+              background: '#3b1f54',
+              color: '#fff',
+              cursor: 'pointer',
+            }}
+            title="Copy AI-ready Board JSON (asset IDs, URLs, positions, crops, arrows, and notes) to clipboard"
+          >
+            📋 Copy AI Spec
+          </button>
+
+          <button
+            type="button"
+            onClick={handleShareWithAi}
+            style={{
+              padding: '5px 9px',
+              fontSize: '12px',
+              fontWeight: 700,
+              borderRadius: '6px',
+              border: '1px solid rgba(52,199,89,0.55)',
+              background: '#214d30',
+              color: '#fff',
+              cursor: 'pointer',
+            }}
+            title="Export Board PNG + JSON together and copy AI Spec to clipboard"
+          >
+            🤖 Share with AI
+          </button>
+
+          <button
+            type="button"
             onClick={handleExportPng}
             style={{
               padding: '5px 9px',
               fontSize: '12px',
               borderRadius: '6px',
-              border: '1px solid rgba(52,199,89,0.4)',
-              background: '#214d30',
+              border: '1px solid rgba(255,255,255,0.18)',
+              background: '#252936',
               color: '#fff',
               cursor: 'pointer',
             }}
-            title="Export board snapshot as PNG"
+            title="Export board snapshot as PNG only"
           >
             📷 PNG
           </button>
@@ -1619,6 +1909,29 @@ export default function FreeformBoard({
           </button>
         </div>
       </div>
+
+      {/* Toast Notification Banner */}
+      {toastMessage && (
+        <div
+          style={{
+            position: 'absolute',
+            top: '58px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            background: '#1971c2',
+            color: '#fff',
+            padding: '6px 14px',
+            borderRadius: '20px',
+            fontSize: '12px',
+            fontWeight: 700,
+            boxShadow: '0 6px 20px rgba(0,0,0,0.45)',
+            zIndex: 50,
+            pointerEvents: 'none',
+          }}
+        >
+          {toastMessage}
+        </div>
+      )}
 
       {/* Contextual Floating Item Inspector when an item is selected */}
       {selectedItem && (

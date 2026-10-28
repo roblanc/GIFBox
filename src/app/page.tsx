@@ -7,6 +7,7 @@ import FreeformBoard, { LibraryGifInput } from '../components/FreeformBoard';
 
 interface Gif {
   id: number;
+  slug?: string;
   title: string;
   category: string;
   file: string;
@@ -14,6 +15,7 @@ interface Gif {
   tags?: string[];
   source?: string;
   url?: string;
+  sourceUrl?: string;
 }
 
 const gifsData = gifsDataRaw as Gif[];
@@ -62,12 +64,15 @@ export default function Home() {
   const [leftWidthPct, setLeftWidthPct] = useState<number>(42);
   const [isResizingSplit, setIsResizingSplit] = useState<boolean>(false);
   const [pendingBoardItem, setPendingBoardItem] = useState<LibraryGifInput | null>(null);
+  const [copiedId, setCopiedId] = useState<number | null>(null);
 
   const categories = ['All', ...Array.from(new Set(gifsData.map((g) => g.category)))];
 
   const filteredGifs = gifsData.filter((gif) => {
     const categoryMatch = selectedCategory === 'All' || gif.category === selectedCategory;
-    const haystack = [gif.title, ...(gif.tags || [])].join(' ').toLowerCase();
+    const haystack = [gif.slug || '', gif.title, gif.category, ...(gif.tags || [])]
+      .join(' ')
+      .toLowerCase();
     const searchMatch = haystack.includes(searchTerm.toLowerCase());
     return categoryMatch && searchMatch;
   });
@@ -90,6 +95,7 @@ export default function Home() {
   const handleDragStartCard = (e: React.DragEvent, gif: Gif) => {
     const payload: LibraryGifInput = {
       id: gif.id,
+      slug: gif.slug,
       title: gif.title,
       category: gif.category,
       file: gif.file,
@@ -108,12 +114,41 @@ export default function Home() {
     }
     setPendingBoardItem({
       id: gif.id,
+      slug: gif.slug,
       title: gif.title,
       category: gif.category,
       file: gif.file,
       type: gif.type,
       srcUrl: `/gifs/${gif.file}`,
     });
+  };
+
+  const handleCopyReference = async (gif: Gif) => {
+    const slugId =
+      gif.slug ||
+      gif.file
+        .split('/')
+        .pop()
+        ?.replace(/\.[^.]+$/, '') ||
+      String(gif.id);
+    const directUrl = gif.url || `https://gifbox.netlify.app/gifs/${gif.file}`;
+    const refPayload = {
+      id: slugId,
+      title: gif.title,
+      type: gif.type || 'gif',
+      url: directUrl,
+      category: gif.category,
+      ...(gif.tags ? { tags: gif.tags } : {}),
+    };
+    try {
+      await navigator.clipboard.writeText(JSON.stringify(refPayload, null, 2));
+      setCopiedId(gif.id);
+      window.setTimeout(() => {
+        setCopiedId((curr) => (curr === gif.id ? null : curr));
+      }, 1800);
+    } catch {
+      // ignore clipboard errors
+    }
   };
 
   return (
@@ -344,13 +379,31 @@ export default function Home() {
                           >
                             {gif.title}
                           </h6>
+                          {gif.slug && (
+                            <div
+                              onClick={() => handleCopyReference(gif)}
+                              title="Click to copy AI reference (ID, title & direct URL)"
+                              style={{
+                                fontSize: '10px',
+                                fontFamily: 'monospace',
+                                color: '#6c757d',
+                                overflow: 'hidden',
+                                textOverflow: 'ellipsis',
+                                whiteSpace: 'nowrap',
+                                cursor: 'pointer',
+                                marginBottom: '2px',
+                              }}
+                            >
+                              #{gif.slug}
+                            </div>
+                          )}
                           {gif.source && (
                             <p
                               className="card-text small text-muted mb-0"
                               style={{ fontSize: '11px' }}
                             >
-                              {gif.url ? (
-                                <a href={gif.url} target="_blank" rel="noreferrer">
+                              {gif.sourceUrl || gif.url ? (
+                                <a href={gif.sourceUrl || gif.url} target="_blank" rel="noreferrer">
                                   {gif.source}
                                 </a>
                               ) : (
@@ -367,6 +420,16 @@ export default function Home() {
                             title="Add this clip to the Freeform Board"
                           >
                             + Board
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => handleCopyReference(gif)}
+                            className={`btn btn-sm ${
+                              copiedId === gif.id ? 'btn-warning' : 'btn-outline-secondary'
+                            }`}
+                            title="Copy Reference for AI (ID, title, direct original URL)"
+                          >
+                            {copiedId === gif.id ? '✓ Ref' : '📋 Ref'}
                           </button>
                           <a
                             href={`/gifs/${gif.file}`}
