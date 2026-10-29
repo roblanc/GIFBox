@@ -87,6 +87,7 @@ try {
     'memes/donald-trump-looking-at-nicki-minaj.webp',
     'memes/wojak-group-hug.webp',
     'memes/chad-xi-template.jpg',
+    'memes/charlie-and-the-chocolate-factory-willy-wonka.png',
   ];
   localGifs.sort((a, b) => {
     const aIdx = PINNED_ORDER.indexOf(a.file);
@@ -155,11 +156,32 @@ try {
   const otherLocalGifs = localGifs.filter((g) => !g.file.startsWith('memes/'));
   const combined = [...localMemes, ...memelordItems, ...otherLocalGifs];
 
+  // Preserve existing permanent numeric `id` and `slug` when adding new items
+  const existingByKey = new Map();
+  let maxExistingId = 0;
+  if (fs.existsSync(dataFile)) {
+    try {
+      const prevItems = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+      for (const p of prevItems) {
+        const key = p.file || p.url;
+        if (key && typeof p.id === 'number') {
+          existingByKey.set(key, { id: p.id, slug: p.slug });
+          if (p.id > maxExistingId) maxExistingId = p.id;
+        }
+      }
+    } catch {
+      // ignore if previous file cannot be parsed
+    }
+  }
+
   // Ensure globally unique slugs across the entire catalog and assign explicit `format`
   const usedSlugs = new Set();
   const slugNextSuffix = new Map();
+  let nextNewId = maxExistingId + 1;
   const gifsWithIds = combined.map((gif, index) => {
-    const base = gif.slug || `item-${index + 1}`;
+    const key = gif.file || gif.url;
+    const prev = key ? existingByKey.get(key) : null;
+    const base = (prev && prev.slug) || gif.slug || `item-${index + 1}`;
     let uniqueSlug = base;
     if (usedSlugs.has(uniqueSlug)) {
       let suffix = slugNextSuffix.get(base) || 2;
@@ -173,9 +195,10 @@ try {
     }
     usedSlugs.add(uniqueSlug);
 
+    const itemId = prev ? prev.id : nextNewId++;
     const format = gif.category === 'Stickers' ? 'sticker' : gif.type || 'gif';
     return {
-      id: index + 1,
+      id: itemId,
       ...gif,
       slug: uniqueSlug,
       format,
