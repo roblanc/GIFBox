@@ -16,6 +16,7 @@ interface Gif {
   tags?: string[];
   source?: string;
   url?: string;
+  cutoutUrl?: string;
   previewUrl?: string;
   sourceUrl?: string;
 }
@@ -48,7 +49,7 @@ function matchesFormat(
   fmt: 'all' | 'images' | 'gifs' | 'videos' | 'stickers'
 ): boolean {
   if (fmt === 'all') return true;
-  if (fmt === 'stickers') return gif.category === 'Stickers';
+  if (fmt === 'stickers') return gif.category === 'Stickers' || Boolean(gif.cutoutUrl);
   if (fmt === 'images') return gif.type === 'image';
   if (fmt === 'videos') return gif.category === 'Video Memes';
   if (fmt === 'gifs') {
@@ -136,6 +137,34 @@ export default function Home() {
   const [isResizingSplit, setIsResizingSplit] = useState<boolean>(false);
   const [pendingBoardItem, setPendingBoardItem] = useState<LibraryGifInput | null>(null);
   const [copiedId, setCopiedId] = useState<number | null>(null);
+  const [preferCutoutsGlobal, setPreferCutoutsGlobal] = useState<boolean>(false);
+  const [cardCutoutOverrides, setCardCutoutOverrides] = useState<Record<number, boolean>>({
+    11406: true,
+  });
+
+  const isUsingCutout = (gif: Gif): boolean => {
+    if (!gif.cutoutUrl) return false;
+    if (gif.id in cardCutoutOverrides) return cardCutoutOverrides[gif.id];
+    if (selectedFormat === 'stickers') return true;
+    return preferCutoutsGlobal;
+  };
+
+  const getActiveMediaSrc = (gif: Gif): string => {
+    if (isUsingCutout(gif) && gif.cutoutUrl) return gif.cutoutUrl;
+    return getMediaSrc(gif);
+  };
+
+  const getActivePreviewSrc = (gif: Gif): string => {
+    if (isUsingCutout(gif) && gif.cutoutUrl) return gif.cutoutUrl;
+    return getPreviewSrc(gif);
+  };
+
+  const toggleCardCutout = (e: React.MouseEvent, gif: Gif) => {
+    e.stopPropagation();
+    e.preventDefault();
+    const curr = isUsingCutout(gif);
+    setCardCutoutOverrides((prev) => ({ ...prev, [gif.id]: !curr }));
+  };
 
   // Pre-compute search index once when catalog updates
   const indexedGifs = useMemo(
@@ -154,11 +183,13 @@ export default function Home() {
     let gifs = 0;
     let videos = 0;
     let stickers = 0;
+    let cutouts = 0;
     for (const g of gifsData) {
       if (matchesFormat(g, 'images')) images++;
       if (matchesFormat(g, 'gifs')) gifs++;
       if (matchesFormat(g, 'videos')) videos++;
       if (matchesFormat(g, 'stickers')) stickers++;
+      if (g.cutoutUrl) cutouts++;
     }
     return {
       all: gifsData.length,
@@ -166,6 +197,7 @@ export default function Home() {
       gifs,
       videos,
       stickers,
+      cutouts,
     };
   }, [gifsData]);
 
@@ -223,7 +255,11 @@ export default function Home() {
   }, [isResizingSplit]);
 
   const handleDragStartCard = (e: React.DragEvent, gif: Gif) => {
-    const srcUrl = getMediaSrc(gif);
+    const origSrc = getMediaSrc(gif);
+    const originalUrl = origSrc.startsWith('http')
+      ? origSrc
+      : `https://gifbox.netlify.app${origSrc}`;
+    const srcUrl = getActiveMediaSrc(gif);
     const payload: LibraryGifInput = {
       id: gif.id,
       slug: gif.slug,
@@ -232,6 +268,8 @@ export default function Home() {
       file: gif.file,
       type: gif.type,
       srcUrl,
+      originalUrl,
+      cutoutUrl: gif.cutoutUrl,
     };
     e.dataTransfer.setData('application/x-gifbox-item', JSON.stringify(payload));
     e.dataTransfer.setData('text/uri-list', srcUrl);
@@ -243,6 +281,10 @@ export default function Home() {
     if (splitMode === 'library') {
       setSplitMode('split');
     }
+    const origSrc = getMediaSrc(gif);
+    const originalUrl = origSrc.startsWith('http')
+      ? origSrc
+      : `https://gifbox.netlify.app${origSrc}`;
     setPendingBoardItem({
       id: gif.id,
       slug: gif.slug,
@@ -250,7 +292,9 @@ export default function Home() {
       category: gif.category,
       file: gif.file,
       type: gif.type,
-      srcUrl: getMediaSrc(gif),
+      srcUrl: getActiveMediaSrc(gif),
+      originalUrl,
+      cutoutUrl: gif.cutoutUrl,
     });
   };
 
@@ -262,11 +306,14 @@ export default function Home() {
         .pop()
         ?.replace(/\.[^.]+$/, '') ||
       String(gif.id);
-    const mediaSrc = getMediaSrc(gif);
+    const activeCutout = isUsingCutout(gif);
+    const mediaSrc = getActiveMediaSrc(gif);
     const directUrl = mediaSrc.startsWith('http')
       ? mediaSrc
       : `https://gifbox.netlify.app${mediaSrc}`;
-    const itemFormat = gif.format || (gif.category === 'Stickers' ? 'sticker' : gif.type || 'gif');
+    const itemFormat = activeCutout
+      ? 'cutout'
+      : gif.format || (gif.category === 'Stickers' ? 'sticker' : gif.type || 'gif');
     const refLine = `[GIFBOX Ref] ID: ${slugId} (#${gif.id}) | Title: "${gif.title}" | Type: ${itemFormat} (${gif.category}) | URL: ${directUrl}`;
     try {
       await navigator.clipboard.writeText(refLine);
@@ -437,7 +484,7 @@ export default function Home() {
                     },
                     {
                       id: 'stickers',
-                      label: `✂️ Stickers (${formatCounts.stickers.toLocaleString()})`,
+                      label: `✂️ Stickers & Cutouts (${formatCounts.stickers.toLocaleString()})`,
                     },
                   ] as {
                     id: 'all' | 'images' | 'gifs' | 'videos' | 'stickers';
@@ -460,6 +507,24 @@ export default function Home() {
                     {fmt.label}
                   </button>
                 ))}
+                {formatCounts.cutouts > 0 && (
+                  <button
+                    type="button"
+                    className={`btn btn-sm fw-semibold ${
+                      preferCutoutsGlobal ? 'btn-success' : 'btn-outline-success'
+                    }`}
+                    onClick={() => {
+                      const next = !preferCutoutsGlobal;
+                      setPreferCutoutsGlobal(next);
+                      setCardCutoutOverrides({});
+                    }}
+                    title="Toggle all character memes between Original background and transparent No-BG cutout"
+                  >
+                    {preferCutoutsGlobal
+                      ? `✂️ All No-BG: ON (${formatCounts.cutouts.toLocaleString()})`
+                      : `✂️ All No-BG: OFF (${formatCounts.cutouts.toLocaleString()})`}
+                  </button>
+                )}
               </div>
 
               {/* Category Pills Row */}
@@ -491,16 +556,22 @@ export default function Home() {
                     splitMode === 'split'
                       ? 'col-xl-4 col-md-6 col-sm-6'
                       : 'col-lg-3 col-md-4 col-sm-6';
+                  const activeCutout = isUsingCutout(gif);
+                  const showCheckerboard = activeCutout || gif.category === 'Stickers';
                   const badgeLabel =
                     gif.category === 'Stickers'
                       ? 'STICKER'
+                      : activeCutout
+                      ? 'NO-BG'
                       : gif.type === 'image'
                       ? 'IMG'
                       : gif.category === 'Video Memes'
                       ? 'VIDEO'
                       : 'GIF';
                   const badgeBg =
-                    badgeLabel === 'IMG'
+                    badgeLabel === 'NO-BG'
+                      ? '#087f5b'
+                      : badgeLabel === 'IMG'
                       ? '#1971c2'
                       : badgeLabel === 'GIF'
                       ? '#2f9e44'
@@ -522,6 +593,14 @@ export default function Home() {
                             width: '100%',
                             height: '170px',
                             backgroundColor: '#f0f0f0',
+                            ...(showCheckerboard
+                              ? {
+                                  backgroundImage:
+                                    'linear-gradient(45deg, #e2e5ea 25%, transparent 25%), linear-gradient(-45deg, #e2e5ea 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #e2e5ea 75%), linear-gradient(-45deg, transparent 75%, #e2e5ea 75%)',
+                                  backgroundSize: '16px 16px',
+                                  backgroundPosition: '0 0, 0 8px, 8px -8px, -8px 0px',
+                                }
+                              : {}),
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
@@ -529,6 +608,38 @@ export default function Home() {
                             position: 'relative',
                           }}
                         >
+                          {gif.cutoutUrl && (
+                            <button
+                              type="button"
+                              onClick={(e) => toggleCardCutout(e, gif)}
+                              title={
+                                activeCutout
+                                  ? 'Showing transparent No-BG character cutout — click for Original'
+                                  : 'Click to remove background (character cutout)'
+                              }
+                              style={{
+                                position: 'absolute',
+                                top: '6px',
+                                left: '6px',
+                                background: activeCutout
+                                  ? '#087f5b'
+                                  : 'rgba(17, 19, 26, 0.78)',
+                                color: '#fff',
+                                border: activeCutout
+                                  ? '1px solid #38d9a9'
+                                  : '1px solid rgba(255,255,255,0.35)',
+                                fontSize: '10px',
+                                fontWeight: 700,
+                                padding: '2px 7px',
+                                borderRadius: '12px',
+                                zIndex: 3,
+                                cursor: 'pointer',
+                                lineHeight: 1.4,
+                              }}
+                            >
+                              {activeCutout ? '🖼 Orig' : '✂️ No-BG'}
+                            </button>
+                          )}
                           <span
                             style={{
                               position: 'absolute',
@@ -556,7 +667,7 @@ export default function Home() {
                             />
                           ) : (
                             <Image
-                              src={getPreviewSrc(gif)}
+                              src={getActivePreviewSrc(gif)}
                               alt={gif.title}
                               width={145}
                               height={145}
@@ -643,12 +754,16 @@ export default function Home() {
                             {copiedId === gif.id ? '✓ Ref' : '📋 Ref'}
                           </button>
                           <a
-                            href={getMediaSrc(gif)}
+                            href={getActiveMediaSrc(gif)}
                             target="_blank"
                             rel="noreferrer"
                             download
                             className="btn btn-sm btn-success"
-                            title="Download original file"
+                            title={
+                              activeCutout
+                                ? 'Download transparent No-BG cutout'
+                                : 'Download original file'
+                            }
                           >
                             ⬇
                           </a>

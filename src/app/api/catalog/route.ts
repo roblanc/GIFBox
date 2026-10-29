@@ -12,6 +12,7 @@ interface CatalogItem {
   type?: string;
   format?: string;
   url?: string;
+  cutoutUrl?: string;
   tags?: string[];
   source?: string;
   sourceUrl?: string;
@@ -37,6 +38,13 @@ export async function GET(req: NextRequest) {
   const formatParam = (searchParams.get('format') || searchParams.get('type') || '')
     .trim()
     .toLowerCase();
+  const cutoutParam = (
+    searchParams.get('cutout') ||
+    searchParams.get('hasCutout') ||
+    ''
+  )
+    .trim()
+    .toLowerCase();
   const offset = Math.max(0, parseInt(searchParams.get('offset') || '0', 10) || 0);
   const limit = Math.min(15000, Math.max(1, parseInt(searchParams.get('limit') || '200', 10) || 200));
 
@@ -60,6 +68,9 @@ export async function GET(req: NextRequest) {
 
   if (formatParam) {
     filtered = filtered.filter((it) => {
+      if (formatParam === 'cutout' || formatParam === 'cutouts') {
+        return Boolean(it.cutoutUrl);
+      }
       const fmt = (
         it.format ||
         (it.category.toLowerCase() === 'stickers' ? 'sticker' : it.type || 'gif')
@@ -70,6 +81,12 @@ export async function GET(req: NextRequest) {
       }
       return fmt === formatParam || typ === formatParam;
     });
+  }
+
+  if (cutoutParam === 'true' || cutoutParam === '1' || cutoutParam === 'yes') {
+    filtered = filtered.filter(
+      (it) => Boolean(it.cutoutUrl) || it.category.toLowerCase() === 'stickers'
+    );
   }
 
   if (q) {

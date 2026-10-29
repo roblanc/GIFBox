@@ -10,6 +10,8 @@ export interface LibraryGifInput {
   file: string;
   type?: string;
   srcUrl?: string;
+  originalUrl?: string;
+  cutoutUrl?: string;
 }
 
 export interface BoardMediaItem {
@@ -17,6 +19,8 @@ export interface BoardMediaItem {
   assetId?: string;
   kind: 'gif' | 'video' | 'image' | 'text';
   src: string;
+  originalSrc?: string;
+  cutoutSrc?: string;
   title: string;
   x: number;
   y: number;
@@ -296,6 +300,8 @@ export default function FreeformBoard({
         assetId?: string;
         kind: 'gif' | 'video' | 'image' | 'text';
         src: string;
+        originalSrc?: string;
+        cutoutSrc?: string;
         title: string;
         width?: number;
         height?: number;
@@ -319,6 +325,8 @@ export default function FreeformBoard({
           assetId: input.assetId,
           kind: input.kind,
           src: input.src,
+          originalSrc: input.originalSrc,
+          cutoutSrc: input.cutoutSrc,
           title: input.title,
           x: centerWorld.x - w / 2,
           y: centerWorld.y - h / 2,
@@ -360,6 +368,8 @@ export default function FreeformBoard({
       assetId: pendingItem.slug,
       kind: isVideo ? 'video' : pendingItem.type === 'image' ? 'image' : 'gif',
       src,
+      originalSrc: pendingItem.originalUrl,
+      cutoutSrc: pendingItem.cutoutUrl,
       title: pendingItem.title,
     });
     onPendingConsumed();
@@ -912,6 +922,8 @@ export default function FreeformBoard({
             assetId: parsed.slug,
             kind: isVideo ? 'video' : parsed.type === 'image' ? 'image' : 'gif',
             src,
+            originalSrc: parsed.originalUrl,
+            cutoutSrc: parsed.cutoutUrl,
             title: parsed.title,
           },
           dropPos
@@ -1203,6 +1215,13 @@ export default function FreeformBoard({
           title: it.title,
           type: it.kind,
           url: fullUrl,
+          ...(it.cutoutSrc
+            ? {
+                backgroundRemoved: it.src === it.cutoutSrc,
+                cutoutUrl: it.cutoutSrc,
+                ...(it.originalSrc ? { originalUrl: it.originalSrc } : {}),
+              }
+            : {}),
           position: { x: Math.round(it.x), y: Math.round(it.y) },
           size: { width: Math.round(it.width), height: Math.round(it.height) },
           rotationDeg: Math.round(it.rotation),
@@ -1954,6 +1973,46 @@ export default function FreeformBoard({
 
           {selectedItem.kind !== 'text' && (
             <>
+              {selectedItem.cutoutSrc && selectedItem.originalSrc && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    pushHistory(items, strokes);
+                    const nextIsCutout = selectedItem.src !== selectedItem.cutoutSrc;
+                    setItems((prev) =>
+                      prev.map((it) =>
+                        it.id === selectedItem.id
+                          ? {
+                              ...it,
+                              src: nextIsCutout
+                                ? it.cutoutSrc || it.src
+                                : it.originalSrc || it.src,
+                            }
+                          : it
+                      )
+                    );
+                  }}
+                  style={{
+                    padding: '3px 8px',
+                    borderRadius: '5px',
+                    border:
+                      selectedItem.src === selectedItem.cutoutSrc
+                        ? '1px solid #20c997'
+                        : '1px solid rgba(255,255,255,0.2)',
+                    background:
+                      selectedItem.src === selectedItem.cutoutSrc ? '#087f5b' : '#2c3244',
+                    color: '#fff',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                  }}
+                  title="Toggle between transparent No-BG character cutout and Original image"
+                >
+                  {selectedItem.src === selectedItem.cutoutSrc
+                    ? '✂️ No-BG ✓ (Show Orig)'
+                    : '✂️ Remove BG'}
+                </button>
+              )}
+
               <button
                 type="button"
                 onClick={() =>

@@ -6,8 +6,12 @@ const dataFile = path.join(process.cwd(), 'data/gifs.json');
 const seedFile = path.join(process.cwd(), 'data/gifs-seed.json');
 const publicCatalogFile = path.join(process.cwd(), 'public/catalog.json');
 const memelordFullFile = path.join(process.cwd(), 'data/memelord_full.json');
+const cutoutsManifestFile = path.join(process.cwd(), 'data/cutouts-manifest.json');
 const sourcesFile = path.join(process.cwd(), 'data/sources.json');
 const sources = fs.existsSync(sourcesFile) ? JSON.parse(fs.readFileSync(sourcesFile, 'utf8')) : {};
+const cutoutsManifest = fs.existsSync(cutoutsManifestFile)
+  ? JSON.parse(fs.readFileSync(cutoutsManifestFile, 'utf8'))
+  : { commit: 'cutouts', items: {} };
 
 const SITE_ORIGIN = 'https://gifbox.netlify.app';
 
@@ -197,11 +201,17 @@ try {
 
     const itemId = prev ? prev.id : nextNewId++;
     const format = gif.category === 'Stickers' ? 'sticker' : gif.type || 'gif';
+    const cutoutEntry = cutoutsManifest.items && cutoutsManifest.items[uniqueSlug];
+    const cutoutsRef = (cutoutEntry && cutoutEntry.commit) || cutoutsManifest.commit || 'cutouts';
+    const cutoutUrl = cutoutEntry
+      ? `https://cdn.jsdelivr.net/gh/roblanc/GIFBox@${cutoutsRef}/${cutoutEntry.file}`
+      : undefined;
     return {
       id: itemId,
       ...gif,
       slug: uniqueSlug,
       format,
+      ...(cutoutUrl ? { cutoutUrl } : {}),
     };
   });
 
